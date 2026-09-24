@@ -1,0 +1,3574 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/prabasco/PMDM/ut/ut03/05_MaterialDesign.html">
+      
+      
+        <link rel="prev" href="04_SistemasNotificacion.html">
+      
+      
+        <link rel="next" href="../ut04/ResumenUT.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>05. Material Design - Programación multimedia y dispositivos móviles</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra_index.css">
+    
+      <link rel="stylesheet" href="../../css/extra_pd.css">
+    
+      <link rel="stylesheet" href="../../css/extra_tablasresumen.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#material-design-en-android" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../index.html" title="Programación multimedia y dispositivos móviles" class="md-header__button md-logo" aria-label="Programación multimedia y dispositivos móviles" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programación multimedia y dispositivos móviles
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              05. Material Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="blue" aria-label="Cambiar a modo noche" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="blue" aria-label="Cambiar a modo día" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Programación multimedia y dispositivos móviles" class="md-nav__button md-logo" aria-label="Programación multimedia y dispositivos móviles" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    Programación multimedia y dispositivos móviles
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kotlin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/00_Intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a Kotlin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/01_VariablesEntradaDatos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables y entrada de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/02_ElementosControl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/03_FunCol.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones y colecciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/04_POO.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 01. Análisis de tecnologías para aplicaciones en dispositivos móviles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 01. Análisis de tecnologías para aplicaciones en dispositivos móviles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/01_TecnologiasMoviles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Tecnologías móviles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/02_IntroAndroid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Introducción a Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/03_FundamentosAPP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Fundamentos de una aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/04_RecursosAPP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Recursos de una aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/05_ClaseR.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. La clase R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/06_EstructuraProyecto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Estructura de un proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/07_Permisos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Permisos en Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 02. Elementos básicos de una aplicación e interfaz de usuario para dispositivos móviles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 02. Elementos básicos de una aplicación e interfaz de usuario para dispositivos móviles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/01_ElementosBasicos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Elementos básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/02_CicloVidaAplicacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Ciclo de vida de una aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/03_CicloVidaActivity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Ciclo de vida de una Actividad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/04_DisenyoIU.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Diseño de la IU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/05_ElementosBasicos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Elementos básicos de la IU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/06_DiferentesConfiguraciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Adaptando configuraciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/07_JetpackCompose.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/08_ControlesBasicos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Controles básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 03. Introducción al desarrollo de aplicaciones multiplataforma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 03. Introducción al desarrollo de aplicaciones multiplataforma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_ManejoListas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Manejo de listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_Adaptadores.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Adaptadores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_CreacionListas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Creación de listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_SistemasNotificacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Sistemas de notificiaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Material Design
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05_MaterialDesign.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Material Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#material-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-design-2-vs-material-design-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Design 2 vs. Material Design 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-material-design-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Material Design 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 04. Profundización en el desarrollo de aplicaciones multiplataforma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 04. Profundización en el desarrollo de aplicaciones multiplataforma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/01_Funciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/02_PurasImpuras.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Funciones puras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/03_Arrays.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/04_POO.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. POO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/05_Herencia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Herencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/06_Interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 05. Patrones de arquitectura de diseño en aplicaciones para dispositivos móviles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 05. Patrones de arquitectura de diseño en aplicaciones para dispositivos móviles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/01_Arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Arquitecturas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/02_Lambda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/03_Corrutinas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Corrutinas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/04_ArquitecturasAndroid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Arquitecturas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/05_MVVM.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. MVVM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 06. Almacenamiento de datos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 06. Almacenamiento de datos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/01_AlmacenamientoDatos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Almacenamiento de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/02_SharedPreferences.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. SharedPreferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/03_MemoriaInterna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Memoria interna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/04_MemoriaSD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Memoria SD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/05_SQLite.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Bases de datos SQLite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/06_Room.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 07. Librerías Multimedia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 07. Librerías Multimedia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/01_Fundamentos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/02_Roles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/03_Uso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Uso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 08. Acceso a internet y uso de Servicios REST
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 08. Acceso a internet y uso de Servicios REST
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 08
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/01_FundamentosTeoricos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/02_ContratoAPIModelos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Contrato API y modelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/03_EjecucionCorrutinas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Ejecución y corrutinas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/Reto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="material-design-en-android">Material Design en Android<a class="headerlink" href="#material-design-en-android" title="Permanent link">¶</a></h1>
+<p>En el proceso de diseño de una aplicación, el desarrollador debe tener en cuenta la <strong>experiencia de usuario (UX)</strong> y la <strong>interfaz de usuario (UI)</strong>. La experiencia de usuario se refiere a cómo se siente el usuario al interactuar con la aplicación, mientras que la interfaz de usuario se refiere a cómo se ve la aplicación y cómo se organizan los elementos de la interfaz de usuario.</p>
+<p>Tradicionalmente en muchos frameworks de diseño de aplicaciones, se ha intentado separar el diseño de la interfaz de usuario de la implementación de la lógica de la aplicación. Esto permite que los <strong>diseñadores</strong> de aplicaciones y los <strong>desarrolladores</strong> de aplicaciones trabajen en paralelo. Existiendo por tanto, una parte del equipo especializada en diseño gráfico y otra en programación.</p>
+<p>Sin embargo, esta separación puede ser problemática por ciertos motivos:</p>
+<ol>
+<li>Sucederá que el <strong>diseñador y el programador no trabajan en paralelo</strong>, sino que el diseñador entrega un diseño a un programador que debe implementarlo. En este caso, el programador debe entender el diseño y el diseñador debe entender las limitaciones de la implementación.</li>
+<li>Por la razón anterior, en entornos medios o pequeños, lo más común es que <strong>el diseño y la programación la realiza la misma persona</strong> que suele ser un programador carente, la mayoría de las veces, de conocimientos suficientes de diseño gráfico. Por tanto, el programador, además de tener gusto por el diseño, debe aprender a utilizar herramientas de diseño gráfico <strong><a href="https://es.wikipedia.org/wiki/Desarrollo_r%C3%A1pido_de_aplicaciones">RAD</a></strong> cómo las que incluyen los propios IDE para de forma visual generar el XML que define el interfaz y que a menudo consumían mucho tiempo de desarrollo.</li>
+<li>Se produce la <strong>mezcla de lenguajes de programación</strong> con lenguajes de diseño gráfico. Por ejemplo, en Android, el diseño de la interfaz de usuario se define en archivos XML y la lógica de la aplicación se implementa en Java o Kotlin. Esto obligaba al programador a mantener dos fuentes de código diferentes para una sola pantalla de la aplicación. En la mayoría de los casos el programador iba directamente al código XML y no utilizaba las herramientas visuales de diseño o producía errores al intentar <em>renderizar</em> los cambios pues al ser XML un lenguaje para máquinas era fácil cometer errores y encontrarlos.</li>
+<li>La <strong>reutilización de los componentes</strong> de la interfaz de usuario era más compleja pues en el caso de Android se lograba a través, de estructuras como <strong><code>Fragments</code></strong>, que añaden capas de complejidad al código.</li>
+<li>Por último, la separación de la lógica de la aplicación y la interfaz de usuario puede hacer que el programador no tenga en cuenta la <strong>experiencia de usuario</strong> y se centre en la funcionalidad de la aplicación. Esto puede dar lugar a aplicaciones que funcionan correctamente pero que no son <strong>fáciles de usar o reconocibles</strong> por los usuarios.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Resumen</p>
+<p>El desarrollador de aplicaciones móviles debe tener en cuenta:</p>
+<ul>
+<li>La necesidad reutilización de los componentes de la interfaz de usuario.</li>
+<li>Lo que usuarios esperan que las aplicaciones se comporten de una manera determinada. Esto es, debemos tener en cuenta la experiencia de usuario UX.</li>
+<li>Que debe desentenderse, en la medida de lo posible, del diseño gráfico y centrarse en la funcionalidad de la aplicación.</li>
+<li>La facilidad para adaptar la interfaz de usuario a diferentes dispositivos y tamaños de pantalla. Así como cambiar fácilmente nuestros diseños de tipografía, paleta de colores, modos de luz y oscuridad, etc.</li>
+</ul>
+</div>
+<h2 id="material-design">Material Design<a class="headerlink" href="#material-design" title="Permanent link">¶</a></h2>
+<ul>
+<li>Documentación oficial: <strong><a href="https://material.io/design">Material Design</a></strong></li>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/guide/topics/ui/look-and-feel?hl=es-419">Android</a></strong></li>
+</ul>
+<p>Para evitar muchos de los inconvenientes anteriores, Google ha desarrollado <strong>Material Design</strong>. Material Design es un <strong>conjunto de pautas de diseño</strong> que se pueden utilizar <strong>para crear aplicaciones con una interfaz de usuario moderna y coherente</strong>. Material Design también <strong>incluye un conjunto de componentes de interfaz de usuario</strong> que se pueden utilizar para crear diseños de interfaz de usuario <strong>creados expertos en diseño gráfico y UX</strong>. Por hacer una analogía simple, podemos decir que Material Design es a Android lo que Bootstrap es a la web.</p>
+<p>En Material Design, los elementos de la interfaz de usuario se denominan <strong>componentes</strong>. Los componentes de Material Design se pueden utilizar para crear diseños de interfaz de usuario que se pueden utilizar en diferentes dispositivos y tamaños de pantalla. Los componentes de Material Design también se pueden utilizar para crear <strong>diseños de interfaz</strong> de usuario <strong>que se pueden adaptar a diferentes modos de luz y oscuridad, así como a diferentes paletas de colores y tipografías</strong> a este concepto se le llama <strong>tematización</strong>.</p>
+<p>Material genera diseños comunes para las aplicaciones de Android, iOS, Flutter y la web. Por tanto, podemos decir que Material Design es un <strong>lenguaje de diseño</strong> que se puede utilizar para crear aplicaciones para diferentes plataformas. En este tema nos centraremos en el uso de Material Design para crear aplicaciones de Android.</p>
+<p>Dentro de android, Material Design se puede utilizar de dos formas:</p>
+<ul>
+<li><strong>MDC-Android</strong>: Componentes para las vistas XML de Android. Aunque usemos vistas XML, el uso de estos componentes minimiza algunas de las desventajas que hemos mencionado en la introducción.</li>
+<li><strong>Jetpack Compose</strong>: Componentes para la nueva forma de crear interfaces de usuario en Android de forma declarativa..</li>
+</ul>
+<p>No obstante, el uso de Material Design no es excluyente y se puede combinar con diseños personalizados. De hecho, pese a su <em>'juventud</em>', empiezan a aparecer librerías de componentes OpenSource de terceros en GitHub o webs de recopilación de estos como:</p>
+<ul>
+<li><a href="https://www.jetpackcompose.app/compose-catalog">https://www.jetpackcompose.app/compose-catalog</a> (Libre)</li>
+<li><a href="https://composables.com/">https://composables.com/</a></li>
+<li><a href="https://composeexamples.com/components">https://composeexamples.com/components</a> (Suscripción)</li>
+</ul>
+<p>Además, un diseñador puede crear un diseño personalizado con herramientas genéricas como <strong><a href="https://es.wikipedia.org/wiki/Figma">Figma</a></strong> y el desarrollador puede implementar usar esos diseños en JetpackCompose utilizando herramientas de importación como el <strong><a href="https://developer.android.com/jetpack/compose/tooling/relay?hl=es-419">Plug-in Relay</a></strong> para Android Studio. (<a href="https://www.youtube.com/watch?v=N3t7SIlFPrQ">Vídeo Ejemplo1</a>, <a href="https://www.youtube.com/watch?v=-_zp8x5L5eo">Vídeo Ejemplo2</a>).</p>
+<div class="admonition info">
+<p class="admonition-title">Nota:</p>
+<p>Nosotros en estos apuntes vamos a tratar solo algunos componentes de básicos de <strong>Material Design 3</strong> por ser la versión más reciente. Además, profundizar en temas de diseño gráfico y UX está fuera del alcance de este módulo y más en el Diseño de Interfaces.</p>
+</div>
+<h3 id="material-design-2-vs-material-design-3">Material Design 2 vs. Material Design 3<a class="headerlink" href="#material-design-2-vs-material-design-3" title="Permanent link">¶</a></h3>
+<p>Una de las principales novedades de Material 3 respecto a sus versiones anteriores, es el soporte de colores dinámicos. Este permite que los colores utilizados en las aplicaciones se adapten automáticamente para coincidir con la selección de fondo de pantalla del usuario. Aunque como hemos comentado, nosotros no vamos a profundizar en tanto detalle.</p>
+<p>Puede que encontraremos muchos proyectos de ejemplo en Internet que aún utilicen <strong>Material Design 2</strong> y por tanto componentes que aún no están migrados a <strong>Material Design 3</strong> o incluso que ya no van a existir en esta versión. Por lo que es conveniente saber distinguirlas y usar, <strong>por coherencia de interfaz</strong>, solamente los componentes de la 3.</p>
+<h4 id="material-2">Material 2<a class="headerlink" href="#material-2" title="Permanent link">¶</a></h4>
+<p><strong><code>androidx.compose.material</code></strong> Actualmente va por la <strong><a href="https://developer.android.com/jetpack/androidx/releases/compose-material">versión 1.8.0</a></strong> aún en versión beta. (<strong>Última estable 1.7.3</strong>)</p>
+<p>Aunque es una versión anterior aún tiene mantenimiento para aquellas aplicaciones que la usan.</p>
+<h4 id="material-3">Material 3<a class="headerlink" href="#material-3" title="Permanent link">¶</a></h4>
+<p>Actualmente va por la <strong><a href="https://developer.android.com/jetpack/androidx/releases/compose-material3">versión 1.5.0</a></strong> aún en versión alfa está. (<strong>Última estable 1.4.0</strong>), Nosotros es la que tenemos que incluir nuestros proyectos</p>
+<ul>
+<li>En el <strong><code>libs.versions.toml</code></strong></li>
+</ul>
+<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>[libraries]
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span># Al no indicar la versión, tomaría la última estable.
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+</span></code></pre></div>
+- En el <strong><code>build.gradle.kts</code></strong> (Módulo App)<p></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>dependencies {
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>    implementation(libs.androidx.material3)
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>}
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">A tener en cuenta...</p>
+<p>Por tanto, cualquier componente fuera de <strong><a href="https://developer.android.com/jetpack/androidx/releases/compose-material3#compose_material3_version_13_2">material3-android:1.3.0</a></strong> no lo vamos poder usar y si indicamos en el <strong><code>libs.versions.toml</code></strong> una la versión <strong><a href="https://developer.android.com/jetpack/androidx/releases/compose-material3#1.4.0-alpha01">material3-android:1.4.0-alpha01</a></strong> al estar en versión alfa (debe pasar aún por beta y release) es <strong>susceptible de cambios y errores</strong>.</p>
+<p>Además, material3 tiene una <strong><a href="https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive">versión especial con componentes adaptativos</a></strong> que aunque aún está en sus primeras etapas, permite adaptar de forma automática ciertos <strong><a href="https://m3.material.io/foundations/layout/canonical-layouts/overview">layouts canónicos</a></strong> a los tamaños de pantalla y resoluciones de los dispositivos.</p>
+</div>
+<h3 id="componentes-material-design-3">Componentes Material Design 3<a class="headerlink" href="#componentes-material-design-3" title="Permanent link">¶</a></h3>
+<h4 id="introduccion-componentes-material-design-3">Introducción Componentes Material Design 3<a class="headerlink" href="#introduccion-componentes-material-design-3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://m3.material.io/components">Components Material Design 3</a></strong></li>
+<li>Vídeo Tutorial Inglés (Introducción): <strong><a href="https://www.youtube.com/watch?v=I3eT32LXAKc">Philipp Lackner</a></strong></li>
+<li>Vídeo Tutorial Inglés (Avanzado): <strong><a href="https://www.youtube.com/watch?v=h7K4n9C2jkI">Philipp Lackner</a></strong></li>
+<li>Vídeo Tutorial Inglés: <strong><a href="https://www.youtube.com/watch?v=h_JYW2hdI8U">Stevdza-San</a></strong></li>
+</ul>
+<p>Puesto que son muchos componentes y esta documentación no pretende ser una copia de la página oficial de material. Vamos a ver algunos de los componentes más básicos y que más se usan. Para ver el resto de componentes, puedes consultar la documentación oficial de Material Design 3. Además, más adelante trataremos componentes de navegación y scaffolding con más detalle.</p>
+<p>Los podemos clasificar en:</p>
+<ol>
+<li><strong>Acciones</strong></li>
+</ol>
+<ul>
+<li>Botones normales</li>
+<li>Botones flotantes (FAB)</li>
+<li>Botones extendidos flotantes (extended FABs)</li>
+<li>Botones con texto e iconos.</li>
+<li>
+<p>Botones Segmentados
+2. <strong>Comunicación</strong></p>
+</li>
+<li>
+<p>Snackbars</p>
+</li>
+<li>Badges</li>
+<li>
+<p>Progress indicators
+3. <strong>Contenedores</strong></p>
+</li>
+<li>
+<p>Cards</p>
+</li>
+<li>Bottom sheets</li>
+<li>Carousels</li>
+<li>Diálogos</li>
+<li>Divider</li>
+<li>Listas</li>
+<li>Side sheets</li>
+<li>
+<p>Tooltips
+4. <strong>Navegación</strong></p>
+</li>
+<li>
+<p>Top app bar</p>
+</li>
+<li>Bottom app bar</li>
+<li>Navigation bar</li>
+<li>Navigation drawer</li>
+<li>Navigation rail</li>
+<li>
+<p>Tabs
+5. <strong>Selección</strong></p>
+</li>
+<li>
+<p>Checkboxes</p>
+</li>
+<li>Radio buttons</li>
+<li>Switches</li>
+<li>Sliders</li>
+<li>Chips</li>
+<li>Menus</li>
+<li>
+<p>Pickers (Time &amp; Date)
+6. <strong>Entrada de texto</strong></p>
+</li>
+<li>
+<p>Text fields</p>
+</li>
+</ul>
+<p>No todos los <strong><a href="https://m3.material.io/components">componentes</a></strong> están disponible para todas las plataformas. Deberemos consultar su <strong>disponibilidad para Jetpack Compose</strong> en los recursos de desarrollo. Por ejemplo, el <strong><a href="https://m3.material.io/components/buttons/overview#26686b3a-1ecb-4bf1-b071-cf740fe3a315">botón común</a></strong> tiene:</p>
+<p><a href="../../img/ut03/ut03_05.png">!</a></p>
+<div class="admonition abstract">
+<p class="admonition-title">Enlaces Importantes</p>
+<ol>
+<li>Documentación oficial de los <strong><a href="https://developer.android.com/jetpack/compose/components">Componentes básicos en Jetpack Compose</a></strong>. Aquí, puedes encontrar la documentación en la que nos basaremos en esta documentación y la de los componentes que no trataemos en el tema.</li>
+<li>Documentación oficial de <strong><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary">Todo el paquete de Material 3 para Jetpack Compose</a></strong>. Aquí, puedes encontrar configuraciones más avanzadas de los componentes que no trataremos en el tema.</li>
+<li>Google además, tiene una App en el <strong>Play Store</strong> denominada <strong><a href="https://play.google.com/store/apps/details?id=androidx.compose.material.catalog&amp;hl=es_419">Compose Material Catalog</a></strong>. Esta App tiene un catálogo de componentes de Material Design 3 del que puedes <strong>ver su código fuente</strong>. Si quieres acceder a los ejemplos se encuentran disponibles en los siguientes repositorios de <strong><a href="https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/material3/material3/samples/src/main/java/androidx/compose/material3/samples/">Google</a></strong> o en este de <strong><a href="https://github.com/androidx/androidx/tree/androidx-main/compose/material3/material3/samples/src/main/java/androidx/compose/material3/samples">GitHub</a></strong>.</li>
+</ol>
+</div>
+<h4 id="botones">Botones<a class="headerlink" href="#botones" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/jetpack/compose/components/button">Buttons</a></strong></li>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.ui.graphics.Shape,androidx.compose.material3.ButtonColors,androidx.compose.material3.ButtonElevation,androidx.compose.foundation.BorderStroke,androidx.compose.foundation.layout.PaddingValues,androidx.compose.foundation.interaction.MutableInteractionSource,kotlin.Function1)">Material 3</a></strong></li>
+</ul>
+<p><strong>Algunas de las cosas que vamos a contar para botones, son aplicables para el resto de componentes de Material Design 3</strong>.</p>
+<p>Material me proveerá de muchos <strong>tipos de botones ya predefinidos</strong> que se adaptan sus guías de diseño de Material Design. <strong>Lo más adecuado, es usarlos sin ningún tipo de modificador de aspecto y funcionalidad.</strong></p>
+<p>Por ejemplo, aquí tenemos tres casos simples descritos en la documentación.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span>@Preview(showBackground = true)
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>private fun BotonesPreview() {
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>    ProyectoBaseTheme {
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>            Button(onClick = { /*TODO*/ }) { Text(text = "IES Las Espeñetas") }
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>            OutlinedButton(onClick = { /*TODO*/ }) { Text(text = "IES Las Espeñetas") }
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>            FilledTonalButton(onClick = { /*TODO*/ }) { Text(text = "IES Las Espeñetas") }
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>        }
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>    }
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>}
+</span></code></pre></div>
+<p>De hecho, si colocamos el ratón sobre la función <strong><code>@Composable</code></strong> <strong><code>Button</code></strong> en el propio Android Studio, nos aparecerá el siguiente interfaz.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>fun Button(
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>    onClick: () -&gt; Unit,
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>    modifier: Modifier = Modifier,
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>    enabled: Boolean = true,
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>    shape: Shape = ButtonDefaults.shape,
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>    colors: ButtonColors = ButtonDefaults.buttonColors(),
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(),
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>    border: BorderStroke? = null,
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>    contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>    interactionSource: MutableInteractionSource? = null,
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>    content: @Composable RowScope.() -&gt; Unit
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>)
+</span></code></pre></div>
+<p>En el podemos observar que muchos de los parámetros tienen valores por defecto como <strong><code>ButtonDefaults.shape</code></strong>, <strong><code>ButtonDefaults.buttonElevation()</code></strong>, <strong><code>ButtonDefaults.buttonColors()</code></strong> o <strong><code>ButtonDefaults.ContentPadding</code></strong> todos ellos definidos en Material 3 sobre los valores de diseño concretos de Material Design 3.</p>
+<p>Además, como en la mayoría de funciones <em>composables</em> el último parámetro <strong><code>content</code></strong> es un landa composable que me permite añadir otros elementos composables dentro del botón como Textos, Imágenes, etc. Con un layout <strong><code>RowScope</code></strong> que me permite añadir elementos en horizontal.</p>
+<p>Si por algún casual, quisiéramos crear un botón más personalizado. Deberíamos aplicar en la medida por defecto los valores de diseño de Material Design 3. Por ejemplo, si quisiéramos crear un <strong>composable</strong> botón personalizado como el del siguiente ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>@Preview(showBackground = true)
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>@Composable
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>private fun BotonePreview() {
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span>    HolaMundoTheme {
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span>        ButtonLike(onClick = { /*TODO*/ })
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span>    }
+</span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span>}
+</span></code></pre></div>
+<p>Fíjate que en todos los casos no personalizados hemos mantenido los valores por defecto de Material Design 3. En caso de que no sea así:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>private fun ButtonLike(onClick: () -&gt; Unit) {
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>    // Va a ser un botón con los colores de borde de Material Design 3,
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>    // pero cambiando el contentColor a Rojo.
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>    val colors: ButtonColors = ButtonDefaults.outlinedButtonColors(
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>        contentColor = Color.Red
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>    )
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>    Button(
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>        onClick = onClick,
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>        // El bode tendrá el color del contentColor pero mantendrá
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>        // el grosor definido de Material 3 para los botones con borde.
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>        border = BorderStroke(
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span>            width = ButtonDefaults.outlinedButtonBorder.width,
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span>            color = colors.contentColor
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>        ),
+</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span>        colors = colors,
+</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span>        // El padding será el mismo que usen los botones con Icono.
+</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span>        contentPadding = ButtonDefaults.ButtonWithIconContentPadding
+</span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span>    ) {
+</span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span>        // La imagen será un Icono de Material Design 3 pero ...
+</span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span>        Image(
+</span><span id="__span-5-22"><span class="linenos" data-linenos="22 "></span>            // Su tamaño será el de los iconos en los botones de Material 3.
+</span><span id="__span-5-23"><span class="linenos" data-linenos="23 "></span>            modifier = Modifier.size(ButtonDefaults.IconSize),
+</span><span id="__span-5-24"><span class="linenos" data-linenos="24 "></span>            // Icono añadido a los recursos
+</span><span id="__span-5-25"><span class="linenos" data-linenos="25 "></span>            painter = painterResource(id = R.drawable.favorite_24px),
+</span><span id="__span-5-26"><span class="linenos" data-linenos="26 "></span>            contentDescription = "Favorite",
+</span><span id="__span-5-27"><span class="linenos" data-linenos="27 "></span>            // El color del icono será también contentColor
+</span><span id="__span-5-28"><span class="linenos" data-linenos="28 "></span>            colorFilter = ColorFilter.tint(colors.contentColor)
+</span><span id="__span-5-29"><span class="linenos" data-linenos="29 "></span>        )
+</span><span id="__span-5-30"><span class="linenos" data-linenos="30 "></span>        // El espaciado tiene el mismo tamaño que el de los botones con Icono.
+</span><span id="__span-5-31"><span class="linenos" data-linenos="31 "></span>        Spacer(Modifier.size(ButtonDefaults.IconSpacing))
+</span><span id="__span-5-32"><span class="linenos" data-linenos="32 "></span>        Text("I love Espeñetas")
+</span><span id="__span-5-33"><span class="linenos" data-linenos="33 "></span>    }
+</span><span id="__span-5-34"><span class="linenos" data-linenos="34 "></span>}
+</span></code></pre></div>
+<p>Como ves, para dibujar un simple botón personalizado, hemos tenido que tener muchas cosas en cuenta y más si <strong>queremos mantener la coherencia de UX con el resto de botones de la aplicación</strong>. Por tanto, lo más adecuado es usar los botones predefinidos de Material Design 3, donde lan gran mayoría de casos de uso de botones están cubiertos en sus <strong><a href="https://m3.material.io/components/buttons/guidelines">guías de uso</a></strong> donde nos indicará una sería de <strong>buenas y malas prácticas</strong> de uso de botones según el tipo. Esto además, es aplicable al resto de componentes.</p>
+<h4 id="checkbox">CheckBox<a class="headerlink" href="#checkbox" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#Checkbox(kotlin.Boolean,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.material3.CheckboxColors,androidx.compose.foundation.interaction.MutableInteractionSource)">Material 3</a></strong></li>
+</ul>
+<p>Básicamente es una caja con dos estados, marcado o no marcado. Normalmente va asociado a un texto por lo que sería interesante definirnos un componente personalizado.</p>
+<p>Una posible implementación de este componente más complejo podría ser <strong><code>CheckboxWithLabel</code></strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span>// Estará preparado para hacer State Hoisting por tanto es Stateless
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span>private fun CheckboxWithLabel(
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>    label: String,
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span>    modifier: Modifier = Modifier,
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>    checkedState: Boolean,
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>    enabledState: Boolean = true,
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>    onStateChange: (Boolean) -&gt; Unit) {
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>    // Definimos un Row para alinear Checkbox y Texto
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>    Row(
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>        modifier = modifier,
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>        verticalAlignment = Alignment.CenterVertically,
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span>        horizontalArrangement = Arrangement.Start
+</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span>    ) {
+</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>        Checkbox(
+</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span>            checked = checkedState,
+</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span>            onCheckedChange = onStateChange,
+</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span>            enabled = enabledState,
+</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span>        )
+</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span>        Text(
+</span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span>            text = label,
+</span><span id="__span-6-22"><span class="linenos" data-linenos="22 "></span>            maxLines = 1,
+</span><span id="__span-6-23"><span class="linenos" data-linenos="23 "></span>            style = MaterialTheme.typography.bodySmall
+</span><span id="__span-6-24"><span class="linenos" data-linenos="24 "></span>        )
+</span><span id="__span-6-25"><span class="linenos" data-linenos="25 "></span>    }
+</span><span id="__span-6-26"><span class="linenos" data-linenos="26 "></span>}
+</span></code></pre></div>
+<p>Por ejemplo, para probar nuestro componente podemos usar el siguiente <strong><code>@Preview</code></strong> ...</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span>@Preview(showBackground = true, name = "CheckBoxPreview")
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>fun CheckBoxPreview() {
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>    var checkedState by remember { mutableStateOf(true) }
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span>    HolaMundoTheme {
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>        Box {
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>            CheckboxWithLabel(
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span>                label = "I Love One Piede",
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>                modifier = Modifier.padding(12.dp)
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span>                                   .wrapContentWidth(),
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span>                checkedState = checkedState,
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span>                onStateChange = { checkedState = it }
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span>            )
+</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span>        }
+</span><span id="__span-7-15"><span class="linenos" data-linenos="15 "></span>    }
+</span><span id="__span-7-16"><span class="linenos" data-linenos="16 "></span>}
+</span></code></pre></div>
+<h5 id="guia-de-uso-de-checkbox">Guía de uso de CheckBox<a class="headerlink" href="#guia-de-uso-de-checkbox" title="Permanent link">¶</a></h5>
+<ul>
+<li>Seleccionar una o más opciones de una lista.</li>
+<li>Aceptar los términos y condiciones de un contrato o solicitud.</li>
+<li>Cuando queramos seleccionar una lista multiple de opciones o sub-opciones que también contengan una CheckBox.</li>
+<li>No deberemos usarlo cuando queramos seleccionar una única opción de una lista de opciones. En ese caso, deberemos usar <strong>RadioButtons</strong>.</li>
+</ul>
+<h4 id="cards">Cards<a class="headerlink" href="#cards" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/jetpack/compose/components/card">Cards</a></strong></li>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#Card(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Shape,androidx.compose.material3.CardColors,androidx.compose.material3.CardElevation,androidx.compose.foundation.BorderStroke,kotlin.Function1)">Material 3</a></strong></li>
+</ul>
+<p>El componible <strong><code>Card</code></strong> (<strong>Tarjeta</strong>) actúa como un contenedor de Material Design para tu interfaz de usuario. Lo podemos encontrar en otros frameworks como <strong>Bootstrap</strong> o <strong>Materialize</strong> y por lo general, las tarjetas <strong>presentan un único y coherente elemento de contenido</strong>.</p>
+<p>El enfoque es <strong>representar un único elemento de contenido</strong> lo que distingue a Card de otros contenedores como <strong><code>Surface</code></strong>, <strong><code>Box</code></strong>, etc. Por ejemplo, una tarjeta puede contener un texto, una imagen y un botón, pero <strong>no debe contener una lista de elementos</strong>.</p>
+<h5 id="cuando-y-como-usar-cards">Cuando y como usar Cards<a class="headerlink" href="#cuando-y-como-usar-cards" title="Permanent link">¶</a></h5>
+<ul>
+<li>Deben ser <strong>fáciles de ver de un vistazo</strong> para encontrar información.</li>
+<li>Los <strong>elementos e imagenes</strong> deben colocarse de forma <strong>que indiquen claramente la jerarquía</strong>.</li>
+<li>Pueden ofrecernos un <strong>punto de entrada a niveles más profundos</strong> de detalle o navegación.</li>
+<li>Pueden ser <strong>mostradas juntas en una cuadrícula, lista vertical o carrusel</strong>.</li>
+</ul>
+<p>Algunos parámetros clave para tener en cuenta son los siguientes:</p>
+<ul>
+<li><strong><code>elevation</code></strong>: Agrega una sombra al componente que hace que parezca elevado sobre el fondo.</li>
+<li><strong><code>colors</code></strong>: Utiliza el tipo <strong><code>CardColors</code></strong> para establecer el color predeterminado tanto del contenedor como de cualquier hijo.</li>
+<li><strong><code>enabled</code></strong>: Si se pasa <strong><code>false</code></strong> para este parámetro, la tarjeta aparece como deshabilitada y no responde a la entrada del usuario.</li>
+</ul>
+<p>Como realmente un card es un contenedor. Lo más importante es seguir la <strong><a href="https://m3.material.io/components/cards/guidelines">guía de diseño de Material Design 3</a></strong> para rellenarlo.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span>private fun TarjetaEspenyetas(modifier: Modifier = Modifier) = ElevatedCard(
+</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span>    modifier = modifier.then(Modifier.wrapContentSize()),
+</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span>    elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
+</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span>) {
+</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span>    Column {
+</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span>        Surface(
+</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span>            modifier = Modifier.clip(CardDefaults.shape),
+</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span>            color = MaterialTheme.colorScheme.primary
+</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span>        ) {
+</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span>            Image(
+</span><span id="__span-8-12"><span class="linenos" data-linenos="12 "></span>                modifier = Modifier.fillMaxWidth(),
+</span><span id="__span-8-13"><span class="linenos" data-linenos="13 "></span>                painter = painterResource(id = R.drawable.logo),
+</span><span id="__span-8-14"><span class="linenos" data-linenos="14 "></span>                contentDescription = "IES Las Espeñetas",
+</span><span id="__span-8-15"><span class="linenos" data-linenos="15 "></span>                contentScale = ContentScale.FillWidth,
+</span><span id="__span-8-16"><span class="linenos" data-linenos="16 "></span>                alpha = 0.8f
+</span><span id="__span-8-17"><span class="linenos" data-linenos="17 "></span>            )
+</span><span id="__span-8-18"><span class="linenos" data-linenos="18 "></span>        }
+</span><span id="__span-8-19"><span class="linenos" data-linenos="19 "></span>        Spacer(modifier = Modifier.size(12.dp))
+</span><span id="__span-8-20"><span class="linenos" data-linenos="20 "></span>        Text(
+</span><span id="__span-8-21"><span class="linenos" data-linenos="21 "></span>            modifier = Modifier.padding(start = 12.dp, end = 12.dp),
+</span><span id="__span-8-22"><span class="linenos" data-linenos="22 "></span>            text = "IES Las Espeñetas",
+</span><span id="__span-8-23"><span class="linenos" data-linenos="23 "></span>            style = MaterialTheme.typography.headlineLarge
+</span><span id="__span-8-24"><span class="linenos" data-linenos="24 "></span>        )
+</span><span id="__span-8-25"><span class="linenos" data-linenos="25 "></span>        Text(
+</span><span id="__span-8-26"><span class="linenos" data-linenos="26 "></span>            modifier = Modifier.padding(start = 12.dp, end = 12.dp),
+</span><span id="__span-8-27"><span class="linenos" data-linenos="27 "></span>            text = "Orihuela",
+</span><span id="__span-8-28"><span class="linenos" data-linenos="28 "></span>            style = MaterialTheme.typography.headlineSmall
+</span><span id="__span-8-29"><span class="linenos" data-linenos="29 "></span>        )
+</span><span id="__span-8-30"><span class="linenos" data-linenos="30 "></span>        Spacer(modifier = Modifier.size(12.dp))
+</span><span id="__span-8-31"><span class="linenos" data-linenos="31 "></span>        Text(
+</span><span id="__span-8-32"><span class="linenos" data-linenos="32 "></span>            modifier = Modifier.padding(start = 12.dp, end = 12.dp),
+</span><span id="__span-8-33"><span class="linenos" data-linenos="33 "></span>            text = "Instituto de Educación Secundaria donde se imparte el Ciclo Formativo"
+</span><span id="__span-8-34"><span class="linenos" data-linenos="34 "></span>                   + " de Grado Superior de Desarrollo de Aplicaciones Multiplataforma",
+</span><span id="__span-8-35"><span class="linenos" data-linenos="35 "></span>            style = MaterialTheme.typography.bodyMedium
+</span><span id="__span-8-36"><span class="linenos" data-linenos="36 "></span>        )
+</span><span id="__span-8-37"><span class="linenos" data-linenos="37 "></span>        Row(
+</span><span id="__span-8-38"><span class="linenos" data-linenos="38 "></span>            modifier = Modifier.fillMaxWidth().padding(12.dp),
+</span><span id="__span-8-39"><span class="linenos" data-linenos="39 "></span>            horizontalArrangement = Arrangement.End
+</span><span id="__span-8-40"><span class="linenos" data-linenos="40 "></span>        ) {
+</span><span id="__span-8-41"><span class="linenos" data-linenos="41 "></span>            Button(onClick = { }) {
+</span><span id="__span-8-42"><span class="linenos" data-linenos="42 "></span>                Text(text = "Saber más")
+</span><span id="__span-8-43"><span class="linenos" data-linenos="43 "></span>            }
+</span><span id="__span-8-44"><span class="linenos" data-linenos="44 "></span>        }
+</span><span id="__span-8-45"><span class="linenos" data-linenos="45 "></span>    }
+</span><span id="__span-8-46"><span class="linenos" data-linenos="46 "></span>}
+</span></code></pre></div>
+<h4 id="textfield-campos-de-texto">TextField (Campos de Texto)<a class="headerlink" href="#textfield-campos-de-texto" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#TextField(kotlin.String,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Boolean,androidx.compose.ui.text.input.VisualTransformation,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Shape,androidx.compose.material3.TextFieldColors)">Material 3</a></strong></li>
+<li>Video Tutorial Inglés: <strong><a href="https://www.youtube.com/watch?v=ZERIxmBYP-U&amp;t=1021s">Philipp Lackner</a></strong></li>
+<li>Video Tutorial Inglés: <strong><a href="https://www.youtube.com/watch?v=6w4l-3jC21E">Stevdza-San</a></strong></li>
+<li>Video Tutorial Español: <strong><a href="https://www.youtube.com/watch?v=WjcJPQ5N3Fo">DevExperto</a></strong></li>
+<li>Video Tutorial Español: <strong><a href="https://www.youtube.com/watch?v=OAG4Qphl9AQ">Martin Kiperszmid</a></strong></li>
+</ul>
+<p>Usaremos un campo de texto cuando alguien necesite introducir texto en una interfaz de usuario, como rellenar información de contacto o de pago.</p>
+<p>Hay dos tipos de campos de texto. Ambos usan un contenedor para proporcionar una pista visual para la interacción y <strong>proporcionan la misma funcionalidad</strong>. La única diferencia es el aspecto visual.</p>
+<ol>
+<li><strong><code>TexField</code></strong>: Campos de texto rellenos</li>
+<li><strong><code>OutlinedTexField</code></strong>: Campos de texto con contorno. Estos <strong>tienen menos énfasis visual</strong> que los campos de texto rellenos. Cuando aparecen en lugares como formularios (donde se colocan muchos campos de texto juntos) su énfasis reducido ayuda a simplificar el diseño.</li>
+</ol>
+<p>Veamos un ejemplo de uso de un <strong><code>OutlineTextField</code></strong> propio a partir del proporcionado por Material Design 3. En él decidiremos que los mensajes de error se muestren debajo del campo de texto y añadiremos el carácter <strong><code>*</code></strong> tras el <em>label</em> cuando haya un error.</p>
+<p>Primero, definiremos una clase para pasar el estado de error del <strong><code>TextField</code></strong> si lo hubiese. Por ejemplo ....</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>interface Validacion {
+</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span>    val hayError: Boolean      // Si hay error o no.
+</span><span id="__span-9-3"><span class="linenos" data-linenos="3 "></span>        get() = false
+</span><span id="__span-9-4"><span class="linenos" data-linenos="4 "></span>    val mensajeError: String? // EL mensaje asociado al error.
+</span><span id="__span-9-5"><span class="linenos" data-linenos="5 "></span>        get() = null
+</span><span id="__span-9-6"><span class="linenos" data-linenos="6 "></span>}
+</span></code></pre></div>
+<p>Veamos una posible implementación de nuestro <strong><code>OutlinedTextField</code></strong> derivado al que denominaremos <strong><code>OutlinedTextFieldWithErrorState</code></strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-10-2"><span class="linenos" data-linenos=" 2 "></span>private fun OutlinedTextFieldWithErrorState(
+</span><span id="__span-10-3"><span class="linenos" data-linenos=" 3 "></span>    modifier: Modifier = Modifier,
+</span><span id="__span-10-4"><span class="linenos" data-linenos=" 4 "></span>    label: String,
+</span><span id="__span-10-5"><span class="linenos" data-linenos=" 5 "></span>    textoState: String,
+</span><span id="__span-10-6"><span class="linenos" data-linenos=" 6 "></span>    textoPista: String = "",
+</span><span id="__span-10-7"><span class="linenos" data-linenos=" 7 "></span>    leadingIcon: @Composable (() -&gt; Unit)? = null,
+</span><span id="__span-10-8"><span class="linenos" data-linenos=" 8 "></span>    validacionState: Validacion,
+</span><span id="__span-10-9"><span class="linenos" data-linenos=" 9 "></span>    keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+</span><span id="__span-10-10"><span class="linenos" data-linenos="10 "></span>    keyboardActions: KeyboardActions = KeyboardActions(),
+</span><span id="__span-10-11"><span class="linenos" data-linenos="11 "></span>    onValueChange: (String) -&gt; Unit
+</span><span id="__span-10-12"><span class="linenos" data-linenos="12 "></span>) {
+</span><span id="__span-10-13"><span class="linenos" data-linenos="13 "></span>    OutlinedTextField(
+</span><span id="__span-10-14"><span class="linenos" data-linenos="14 "></span>        modifier = modifier,
+</span><span id="__span-10-15"><span class="linenos" data-linenos="15 "></span>        value = textoState,
+</span><span id="__span-10-16"><span class="linenos" data-linenos="16 "></span>        onValueChange = onValueChange,
+</span><span id="__span-10-17"><span class="linenos" data-linenos="17 "></span>        singleLine = true,
+</span><span id="__span-10-18"><span class="linenos" data-linenos="18 "></span>        // Icono al principio del TextField por defecto vale null.
+</span><span id="__span-10-19"><span class="linenos" data-linenos="19 "></span>        leadingIcon = leadingIcon,
+</span><span id="__span-10-20"><span class="linenos" data-linenos="20 "></span>        // Como vamos a mostrar el texto de la pista o hint cuando estemos editando.
+</span><span id="__span-10-21"><span class="linenos" data-linenos="21 "></span>        // por defecto la pista es la cadena vacía.
+</span><span id="__span-10-22"><span class="linenos" data-linenos="22 "></span>        placeholder = {
+</span><span id="__span-10-23"><span class="linenos" data-linenos="23 "></span>            Text(
+</span><span id="__span-10-24"><span class="linenos" data-linenos="24 "></span>                text = textoPista,
+</span><span id="__span-10-25"><span class="linenos" data-linenos="25 "></span>                style = TextStyle(
+</span><span id="__span-10-26"><span class="linenos" data-linenos="26 "></span>                    color = MaterialTheme.colorScheme
+</span><span id="__span-10-27"><span class="linenos" data-linenos="27 "></span>                        .onSurfaceVariant.copy(alpha = 0.4f)
+</span><span id="__span-10-28"><span class="linenos" data-linenos="28 "></span>                )
+</span><span id="__span-10-29"><span class="linenos" data-linenos="29 "></span>            )
+</span><span id="__span-10-30"><span class="linenos" data-linenos="30 "></span>        },
+</span><span id="__span-10-31"><span class="linenos" data-linenos="31 "></span>        // Etiqueta personalizada que se muestra cuando no hay texto o
+</span><span id="__span-10-32"><span class="linenos" data-linenos="32 "></span>        // encima del TextField cuando estamos editando.
+</span><span id="__span-10-33"><span class="linenos" data-linenos="33 "></span>        // Le ponemos un asterisco si hay error como hemos especificado.
+</span><span id="__span-10-34"><span class="linenos" data-linenos="34 "></span>        label = { Text(if (validacionState.hayError) "${label}*" else label) },
+</span><span id="__span-10-35"><span class="linenos" data-linenos="35 "></span>        // La opciones del teclado permitirán la entrada alfanumérica.
+</span><span id="__span-10-36"><span class="linenos" data-linenos="36 "></span>        keyboardOptions = keyboardOptions,
+</span><span id="__span-10-37"><span class="linenos" data-linenos="37 "></span>        // Composable bajo el TextField que se muestra cuando hay error.
+</span><span id="__span-10-38"><span class="linenos" data-linenos="38 "></span>        supportingText = {
+</span><span id="__span-10-39"><span class="linenos" data-linenos="39 "></span>            if (validacionState.hayError) {
+</span><span id="__span-10-40"><span class="linenos" data-linenos="40 "></span>                Text(text = validacionState.mensajeError!!)
+</span><span id="__span-10-41"><span class="linenos" data-linenos="41 "></span>            }
+</span><span id="__span-10-42"><span class="linenos" data-linenos="42 "></span>        },
+</span><span id="__span-10-43"><span class="linenos" data-linenos="43 "></span>        // Parámetro con el estado del error.
+</span><span id="__span-10-44"><span class="linenos" data-linenos="44 "></span>        isError = validacionState.hayError,
+</span><span id="__span-10-45"><span class="linenos" data-linenos="45 "></span>        keyboardActions = keyboardActions
+</span><span id="__span-10-46"><span class="linenos" data-linenos="46 "></span>    )
+</span><span id="__span-10-47"><span class="linenos" data-linenos="47 "></span>}
+</span></code></pre></div>
+<p>A continuación, vamos a definir un componente derivado de <strong><code>OutlinedTextFieldWithErrorState</code></strong> que nos permita introducir correos electrónicos y validarlos denominado <strong><code>OutlinedTextFieldEmail</code></strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-11-2"><span class="linenos" data-linenos=" 2 "></span>private fun OutlinedTextFieldEmail(
+</span><span id="__span-11-3"><span class="linenos" data-linenos=" 3 "></span>    modifier: Modifier = Modifier,
+</span><span id="__span-11-4"><span class="linenos" data-linenos=" 4 "></span>    label: String = "Email",
+</span><span id="__span-11-5"><span class="linenos" data-linenos=" 5 "></span>    emailState: String,
+</span><span id="__span-11-6"><span class="linenos" data-linenos=" 6 "></span>    validacionState: Validacion,
+</span><span id="__span-11-7"><span class="linenos" data-linenos=" 7 "></span>    onValueChange: (String) -&gt; Unit
+</span><span id="__span-11-8"><span class="linenos" data-linenos=" 8 "></span>) {
+</span><span id="__span-11-9"><span class="linenos" data-linenos=" 9 "></span>    OutlinedTextFieldWithErrorState(
+</span><span id="__span-11-10"><span class="linenos" data-linenos="10 "></span>        modifier = modifier,
+</span><span id="__span-11-11"><span class="linenos" data-linenos="11 "></span>        label = label,
+</span><span id="__span-11-12"><span class="linenos" data-linenos="12 "></span>        textoState = emailState,
+</span><span id="__span-11-13"><span class="linenos" data-linenos="13 "></span>        // La pista cambiará.
+</span><span id="__span-11-14"><span class="linenos" data-linenos="14 "></span>        textoPista = "ejemplo@correo.com",
+</span><span id="__span-11-15"><span class="linenos" data-linenos="15 "></span>        // Las opciones de teclado serán para un email.
+</span><span id="__span-11-16"><span class="linenos" data-linenos="16 "></span>        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+</span><span id="__span-11-17"><span class="linenos" data-linenos="17 "></span>        // El icono será el de un email.
+</span><span id="__span-11-18"><span class="linenos" data-linenos="18 "></span>        leadingIcon = {
+</span><span id="__span-11-19"><span class="linenos" data-linenos="19 "></span>            Icon(
+</span><span id="__span-11-20"><span class="linenos" data-linenos="20 "></span>                imageVector = Icons.Filled.Email,
+</span><span id="__span-11-21"><span class="linenos" data-linenos="21 "></span>                contentDescription = "Email"
+</span><span id="__span-11-22"><span class="linenos" data-linenos="22 "></span>            )
+</span><span id="__span-11-23"><span class="linenos" data-linenos="23 "></span>        },
+</span><span id="__span-11-24"><span class="linenos" data-linenos="24 "></span>        // Será Stateles y la forma de validar la decidiremos al usarlo.
+</span><span id="__span-11-25"><span class="linenos" data-linenos="25 "></span>        validacionState = validacionState,
+</span><span id="__span-11-26"><span class="linenos" data-linenos="26 "></span>        onValueChange = onValueChange
+</span><span id="__span-11-27"><span class="linenos" data-linenos="27 "></span>    )
+</span><span id="__span-11-28"><span class="linenos" data-linenos="28 "></span>}
+</span></code></pre></div>
+<p>En el siguiente ejemplo, podemos ver como quedarán la redefinición de nuestro composables <strong><code>OutlinedTextFieldEmail</code></strong> y <strong><code>OutlinedTextFieldWithErrorState</code></strong> con el código de <strong><code>@Preview</code></strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos=" 1 "></span>@PreviewLightDark
+</span><span id="__span-12-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-12-3"><span class="linenos" data-linenos=" 3 "></span>private fun TextFiledPreview() {
+</span><span id="__span-12-4"><span class="linenos" data-linenos=" 4 "></span>    var nombreState by remember { mutableStateOf("") }
+</span><span id="__span-12-5"><span class="linenos" data-linenos=" 5 "></span>    var validacionNombre by remember { mutableStateOf(object : Validacion {} as Validacion) }
+</span><span id="__span-12-6"><span class="linenos" data-linenos=" 6 "></span>    var emailState by remember { mutableStateOf("") }
+</span><span id="__span-12-7"><span class="linenos" data-linenos=" 7 "></span>    var validacionEmail by remember { mutableStateOf(object : Validacion {} as Validacion) }
+</span><span id="__span-12-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-12-9"><span class="linenos" data-linenos=" 9 "></span>    ProyectoBaseTheme {
+</span><span id="__span-12-10"><span class="linenos" data-linenos="10 "></span>        Surface {
+</span><span id="__span-12-11"><span class="linenos" data-linenos="11 "></span>        Column {
+</span><span id="__span-12-12"><span class="linenos" data-linenos="12 "></span>            OutlinedTextFieldWithErrorState(
+</span><span id="__span-12-13"><span class="linenos" data-linenos="13 "></span>                modifier = Modifier.fillMaxWidth(),
+</span><span id="__span-12-14"><span class="linenos" data-linenos="14 "></span>                label = "Nombre", textoState = nombreState,
+</span><span id="__span-12-15"><span class="linenos" data-linenos="15 "></span>                validacionState = validacionNombre,
+</span><span id="__span-12-16"><span class="linenos" data-linenos="16 "></span>                onValueChange = {
+</span><span id="__span-12-17"><span class="linenos" data-linenos="17 "></span>                    nombreState = it
+</span><span id="__span-12-18"><span class="linenos" data-linenos="18 "></span>                    validacionNombre = object : Validacion {
+</span><span id="__span-12-19"><span class="linenos" data-linenos="19 "></span>                        override val hayError: Boolean
+</span><span id="__span-12-20"><span class="linenos" data-linenos="20 "></span>                            get() = it.isEmpty()
+</span><span id="__span-12-21"><span class="linenos" data-linenos="21 "></span>                        override val mensajeError: String?
+</span><span id="__span-12-22"><span class="linenos" data-linenos="22 "></span>                            get() = "El nombre no puede estar vacío"
+</span><span id="__span-12-23"><span class="linenos" data-linenos="23 "></span>                    }
+</span><span id="__span-12-24"><span class="linenos" data-linenos="24 "></span>                }
+</span><span id="__span-12-25"><span class="linenos" data-linenos="25 "></span>            )
+</span><span id="__span-12-26"><span class="linenos" data-linenos="26 "></span>            OutlinedTextFieldEmail(
+</span><span id="__span-12-27"><span class="linenos" data-linenos="27 "></span>                modifier = Modifier.fillMaxWidth(), emailState = emailState,
+</span><span id="__span-12-28"><span class="linenos" data-linenos="28 "></span>                validacionState = validacionEmail,
+</span><span id="__span-12-29"><span class="linenos" data-linenos="29 "></span>                onValueChange = {
+</span><span id="__span-12-30"><span class="linenos" data-linenos="30 "></span>                    emailState = it
+</span><span id="__span-12-31"><span class="linenos" data-linenos="31 "></span>                    validacionEmail = object : Validacion {
+</span><span id="__span-12-32"><span class="linenos" data-linenos="32 "></span>                        override val hayError: Boolean
+</span><span id="__span-12-33"><span class="linenos" data-linenos="33 "></span>                            get() = it.isEmpty()
+</span><span id="__span-12-34"><span class="linenos" data-linenos="34 "></span>                                    || !Regex("^[A-Za-z](.*)([@]{1})(.{1,})(\\.)(.{1,})$")
+</span><span id="__span-12-35"><span class="linenos" data-linenos="35 "></span>                                .matches(it)
+</span><span id="__span-12-36"><span class="linenos" data-linenos="36 "></span>                        override val mensajeError: String?
+</span><span id="__span-12-37"><span class="linenos" data-linenos="37 "></span>                            get() = "El email no es válido"
+</span><span id="__span-12-38"><span class="linenos" data-linenos="38 "></span>                    }
+</span><span id="__span-12-39"><span class="linenos" data-linenos="39 "></span>                }
+</span><span id="__span-12-40"><span class="linenos" data-linenos="40 "></span>            )
+</span><span id="__span-12-41"><span class="linenos" data-linenos="41 "></span>        }
+</span><span id="__span-12-42"><span class="linenos" data-linenos="42 "></span>        }
+</span><span id="__span-12-43"><span class="linenos" data-linenos="43 "></span>    }
+</span><span id="__span-12-44"><span class="linenos" data-linenos="44 "></span>}
+</span></code></pre></div>
+<p>Si modificamos el ejemplo anterior podemos dejar únicamente el <strong><code>@Preview</code></strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos=" 1 "></span>@PreviewLightDark
+</span><span id="__span-13-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-13-3"><span class="linenos" data-linenos=" 3 "></span>private fun TextFiledPreview() {
+</span><span id="__span-13-4"><span class="linenos" data-linenos=" 4 "></span>    var nombreState by remember { mutableStateOf("") }
+</span><span id="__span-13-5"><span class="linenos" data-linenos=" 5 "></span>    var validacionNombre by remember {
+</span><span id="__span-13-6"><span class="linenos" data-linenos=" 6 "></span>        mutableStateOf(object : Validacion {} as Validacion) }
+</span><span id="__span-13-7"><span class="linenos" data-linenos=" 7 "></span>    // Ya tienes un montón de validadores predefinidos.
+</span><span id="__span-13-8"><span class="linenos" data-linenos=" 8 "></span>    var validadorNombre = remember {
+</span><span id="__span-13-9"><span class="linenos" data-linenos=" 9 "></span>        ValidadorTextoNoVacio("El nombre no puede estar vacío") }
+</span><span id="__span-13-10"><span class="linenos" data-linenos="10 "></span>    var emailState by remember { mutableStateOf("") }
+</span><span id="__span-13-11"><span class="linenos" data-linenos="11 "></span>    var validacionEmail by remember {
+</span><span id="__span-13-12"><span class="linenos" data-linenos="12 "></span>        mutableStateOf(object : Validacion {} as Validacion) }
+</span><span id="__span-13-13"><span class="linenos" data-linenos="13 "></span>    // Además, puedes combinarlos para hacer validaciones más complejas.
+</span><span id="__span-13-14"><span class="linenos" data-linenos="14 "></span>    val validadorCorreo = remember { ValidadorCompuesto&lt;String&gt;()
+</span><span id="__span-13-15"><span class="linenos" data-linenos="15 "></span>        .add(ValidadorTextoNoVacio("El correo no puede estar vacío"))
+</span><span id="__span-13-16"><span class="linenos" data-linenos="16 "></span>        .add(ValidadorCorreo("El correo no es válido"))
+</span><span id="__span-13-17"><span class="linenos" data-linenos="17 "></span>    }
+</span><span id="__span-13-18"><span class="linenos" data-linenos="18 "></span>    ProyectoBaseTheme {
+</span><span id="__span-13-19"><span class="linenos" data-linenos="19 "></span>        Surface {
+</span><span id="__span-13-20"><span class="linenos" data-linenos="20 "></span>            Column {
+</span><span id="__span-13-21"><span class="linenos" data-linenos="21 "></span>                OutlinedTextFieldWithErrorState(
+</span><span id="__span-13-22"><span class="linenos" data-linenos="22 "></span>                    modifier = Modifier.fillMaxWidth(),
+</span><span id="__span-13-23"><span class="linenos" data-linenos="23 "></span>                    label = "Nombre", textoState = nombreState,
+</span><span id="__span-13-24"><span class="linenos" data-linenos="24 "></span>                    validacionState = validacionNombre,
+</span><span id="__span-13-25"><span class="linenos" data-linenos="25 "></span>                    onValueChange = {
+</span><span id="__span-13-26"><span class="linenos" data-linenos="26 "></span>                        nombreState = it
+</span><span id="__span-13-27"><span class="linenos" data-linenos="27 "></span>                        validacionNombre = validadorNombre.valida(it)
+</span><span id="__span-13-28"><span class="linenos" data-linenos="28 "></span>                    }
+</span><span id="__span-13-29"><span class="linenos" data-linenos="29 "></span>                )
+</span><span id="__span-13-30"><span class="linenos" data-linenos="30 "></span>                OutlinedTextFieldEmail(
+</span><span id="__span-13-31"><span class="linenos" data-linenos="31 "></span>                    modifier = Modifier.fillMaxWidth(), emailState = emailState,
+</span><span id="__span-13-32"><span class="linenos" data-linenos="32 "></span>                    validacionState = validacionEmail,
+</span><span id="__span-13-33"><span class="linenos" data-linenos="33 "></span>                    onValueChange = {
+</span><span id="__span-13-34"><span class="linenos" data-linenos="34 "></span>                        emailState = it
+</span><span id="__span-13-35"><span class="linenos" data-linenos="35 "></span>                        validacionEmail = validadorCorreo.valida(it)
+</span><span id="__span-13-36"><span class="linenos" data-linenos="36 "></span>                    }
+</span><span id="__span-13-37"><span class="linenos" data-linenos="37 "></span>                )
+</span><span id="__span-13-38"><span class="linenos" data-linenos="38 "></span>            }
+</span><span id="__span-13-39"><span class="linenos" data-linenos="39 "></span>        }
+</span><span id="__span-13-40"><span class="linenos" data-linenos="40 "></span>    }
+</span><span id="__span-13-41"><span class="linenos" data-linenos="41 "></span>}
+</span></code></pre></div>
+<h4 id="chips">Chips<a class="headerlink" href="#chips" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/jetpack/compose/components/chip">Chips</a></strong></li>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary">Material 3</a></strong></li>
+</ul>
+<p>El componente <strong><code>Chip</code></strong> es un elemento de interfaz de usuario compacto e interactivo. Representa entidades complejas como un contacto o una etiqueta, a menudo con un icono y una etiqueta. Puede ser seleccionable, eliminable o clickeable.</p>
+<h5 id="diferencia-con-los-botones">Diferencia con los botones<a class="headerlink" href="#diferencia-con-los-botones" title="Permanent link">¶</a></h5>
+<ul>
+<li>
+<p><strong>Los Botones</strong>:</p>
+</li>
+<li>
+<p>Se utilizan siempre para <strong>iniciar acciones</strong>.</p>
+</li>
+<li>Deben aparecer en grupos de <strong>uno o dos elementos</strong>.</li>
+<li>Son estáticos y predefinidos. Esto es, <strong>no cambian de aspecto según su contexto</strong>.</li>
+<li>
+<p><strong>Los Chips</strong>:</p>
+</li>
+<li>
+<p>Deben <strong>aparecer de manera dinámica</strong> como un grupo de múltiples elementos interactivos.</p>
+</li>
+<li>No se utilizan para iniciar acciones, sino para <strong>representar un estado o atributo</strong>, o para realizar una <strong>acción secundaria</strong>.</li>
+<li>Pueden aparecer en grupos de <strong>más de dos elementos</strong>.</li>
+<li>Son reactivos y contextuales, Esto es, <strong>deben ofrecer una acción diferente según la naturaleza del contenido que respalda</strong>.</li>
+<li>Representan bifurcaciones o posibles caminos en una experiencia.</li>
+<li>Pueden tener scroll horizontal.</li>
+</ul>
+<h5 id="tipos-de-chips">Tipos de Chips<a class="headerlink" href="#tipos-de-chips" title="Permanent link">¶</a></h5>
+<p>Los <strong>cuatro tipos de chips</strong> y <strong>dónde podrías usarlos</strong> son los siguientes:</p>
+<p>Además de estos <em>composables</em>, tendremos una versión con elevación con el prefijo <strong><code>Elevated</code></strong>. Por ejemplo, <strong><code>ElevatedFilterChip</code></strong>.</p>
+<ul>
+<li><strong><code>AssistChip</code> (Ayuda)</strong>: Guía al usuario durante una tarea. A menudo aparece como un elemento de interfaz de usuario temporal en respuesta a la entrada del usuario.</li>
+<li><strong><code>FilterChip</code> (Filtro)</strong>: Permite a los usuarios refinar el contenido de un conjunto de opciones. Pueden ser seleccionados o deseleccionados, y pueden incluir un icono de marca de verificación cuando están seleccionados.</li>
+<li><strong><code>InputChip</code> (Entrada)</strong>: Representa información proporcionada por el usuario, como selecciones en un menú. Pueden contener un icono y texto, y proporcionan una '<strong><code>X</code></strong>' para eliminarlos.</li>
+<li><strong><code>SuggestionChp</code> (Sugerencia)</strong>: Proporciona recomendaciones al usuario basadas en su actividad o entrada reciente. Suelen aparecer debajo de un campo de entrada para provocar acciones del usuario.</li>
+</ul>
+<p>Por ejemplo, veamos como crear un <strong><code>FilterChip</code></strong> personalizado.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-14-2"><span class="linenos" data-linenos=" 2 "></span>fun FilterChipWithIcon(
+</span><span id="__span-14-3"><span class="linenos" data-linenos=" 3 "></span>    modifier: Modifier = Modifier,
+</span><span id="__span-14-4"><span class="linenos" data-linenos=" 4 "></span>    seleccionadoState: Boolean = true,
+</span><span id="__span-14-5"><span class="linenos" data-linenos=" 5 "></span>    textoState: String = "Etiqueta",
+</span><span id="__span-14-6"><span class="linenos" data-linenos=" 6 "></span>    iconState: Painter? = null,
+</span><span id="__span-14-7"><span class="linenos" data-linenos=" 7 "></span>    onClick: () -&gt; Unit = {}
+</span><span id="__span-14-8"><span class="linenos" data-linenos=" 8 "></span>) {
+</span><span id="__span-14-9"><span class="linenos" data-linenos=" 9 "></span>    FilterChip(
+</span><span id="__span-14-10"><span class="linenos" data-linenos="10 "></span>        modifier = modifier.then(Modifier.height(FilterChipDefaults.Height)),
+</span><span id="__span-14-11"><span class="linenos" data-linenos="11 "></span>        selected = seleccionadoState,
+</span><span id="__span-14-12"><span class="linenos" data-linenos="12 "></span>        onClick = onClick,
+</span><span id="__span-14-13"><span class="linenos" data-linenos="13 "></span>        label = { Text(textoState) },
+</span><span id="__span-14-14"><span class="linenos" data-linenos="14 "></span>        leadingIcon = {
+</span><span id="__span-14-15"><span class="linenos" data-linenos="15 "></span>            // Al estar seleccionado, mostramos el icono de selección
+</span><span id="__span-14-16"><span class="linenos" data-linenos="16 "></span>            // y sustituimos el icono iconState por este.
+</span><span id="__span-14-17"><span class="linenos" data-linenos="17 "></span>            if (seleccionadoState) {
+</span><span id="__span-14-18"><span class="linenos" data-linenos="18 "></span>                Icon(
+</span><span id="__span-14-19"><span class="linenos" data-linenos="19 "></span>                    painter = Filled.getCheckIcon(),
+</span><span id="__span-14-20"><span class="linenos" data-linenos="20 "></span>                    contentDescription = "Icono seleccionado",
+</span><span id="__span-14-21"><span class="linenos" data-linenos="21 "></span>                    modifier = Modifier.size(FilterChipDefaults.IconSize)
+</span><span id="__span-14-22"><span class="linenos" data-linenos="22 "></span>                )
+</span><span id="__span-14-23"><span class="linenos" data-linenos="23 "></span>            } else {
+</span><span id="__span-14-24"><span class="linenos" data-linenos="24 "></span>                iconState?.let {
+</span><span id="__span-14-25"><span class="linenos" data-linenos="25 "></span>                    Icon(
+</span><span id="__span-14-26"><span class="linenos" data-linenos="26 "></span>                        painter = it,
+</span><span id="__span-14-27"><span class="linenos" data-linenos="27 "></span>                        contentDescription = "Icono asociado a la etiqueta",
+</span><span id="__span-14-28"><span class="linenos" data-linenos="28 "></span>                        modifier = Modifier.size(FilterChipDefaults.IconSize)
+</span><span id="__span-14-29"><span class="linenos" data-linenos="29 "></span>                    )
+</span><span id="__span-14-30"><span class="linenos" data-linenos="30 "></span>                }
+</span><span id="__span-14-31"><span class="linenos" data-linenos="31 "></span>            }
+</span><span id="__span-14-32"><span class="linenos" data-linenos="32 "></span>        }
+</span><span id="__span-14-33"><span class="linenos" data-linenos="33 "></span>    )
+</span><span id="__span-14-34"><span class="linenos" data-linenos="34 "></span>}
+</span></code></pre></div>
+<p>A continuación podemos ver un ejemplo de uso de este componente personalizado. El cual nos permite filtrar por estudiantes de 2DAM.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Aunque en el ejemplo solo se visualiza una opción de filtrado, recuerda que debería haber más de dos opciones de filtrado para que el uso de este componente tenga sentido. Es caso contrario podríamos usar un <strong><code>CheckBox</code></strong>.</p>
+</div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos=" 1 "></span>@PreviewLightDark
+</span><span id="__span-15-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-15-3"><span class="linenos" data-linenos=" 3 "></span>fun ChipPreview() {
+</span><span id="__span-15-4"><span class="linenos" data-linenos=" 4 "></span>    var filtrarPor2DAM by remember { mutableStateOf(false) }
+</span><span id="__span-15-5"><span class="linenos" data-linenos=" 5 "></span>    ProyectoBaseTheme {
+</span><span id="__span-15-6"><span class="linenos" data-linenos=" 6 "></span>        Surface (modifier = Modifier.background(MaterialTheme.colorScheme.surface)
+</span><span id="__span-15-7"><span class="linenos" data-linenos=" 7 "></span>                                    .padding(8.dp))
+</span><span id="__span-15-8"><span class="linenos" data-linenos=" 8 "></span>        {
+</span><span id="__span-15-9"><span class="linenos" data-linenos=" 9 "></span>            FilterChipWithIcon(
+</span><span id="__span-15-10"><span class="linenos" data-linenos="10 "></span>                seleccionadoState = filtrarPor2DAM,
+</span><span id="__span-15-11"><span class="linenos" data-linenos="11 "></span>                textoState = "Estudiante 2DAM",
+</span><span id="__span-15-12"><span class="linenos" data-linenos="12 "></span>                iconState = Filled.getPersonIcon(),
+</span><span id="__span-15-13"><span class="linenos" data-linenos="13 "></span>                onClick = { filtrarPor2DAM = !filtrarPor2DAM }
+</span><span id="__span-15-14"><span class="linenos" data-linenos="14 "></span>            )
+</span><span id="__span-15-15"><span class="linenos" data-linenos="15 "></span>        }
+</span><span id="__span-15-16"><span class="linenos" data-linenos="16 "></span>    }
+</span><span id="__span-15-17"><span class="linenos" data-linenos="17 "></span>}
+</span></code></pre></div>
+<p>Este código de ejemplo nos generaría el chip personalizado, donde podemos ver sus dos estados posibles.</p>
+<h4 id="dialogos">Diálogos<a class="headerlink" href="#dialogos" title="Permanent link">¶</a></h4>
+<ul>
+<li>Documentación oficial: <strong><a href="https://developer.android.com/jetpack/compose/components/dialog">Dialogs</a></strong></li>
+<li>Video Tutorial Español: <strong><a href="https://www.youtube.com/watch?v=2rCyXaYkTp0">AristiDevs</a></strong></li>
+</ul>
+<p>El componente Dialog <strong>muestra mensajes</strong> emergentes o <strong>solicita la entrada del usuario</strong> en <strong>una capa por encima del contenido principal</strong> de la aplicación. Crea una experiencia de interfaz de usuario interrumpida para <strong>captar la atención del usuario</strong>.</p>
+<p>Entre los casos de uso de un diálogo se incluyen los siguientes:</p>
+<ol>
+<li><strong>Confirmar la acción</strong> del usuario, como al eliminar un archivo.</li>
+<li><strong>Solicitar la entrada</strong> del usuario, como en una aplicación de lista de tareas pendientes.</li>
+<li><strong>Presentar una lista de opciones</strong> para que el usuario elija, como seleccionar un país en la configuración de un perfil.</li>
+</ol>
+<h5 id="alertdialog">AlertDialog<a class="headerlink" href="#alertdialog" title="Permanent link">¶</a></h5>
+<p>Proporciona una API conveniente para crear un cuadro de diálogo con temática de Material Design. <strong><code>AlertDialog</code></strong> tiene parámetros específicos para manejar elementos particulares del diálogo. Entre ellos se incluyen los siguientes:</p>
+<ul>
+<li><strong><code>title</code></strong>: El texto que aparece en la parte superior del cuadro de diálogo.</li>
+<li><strong><code>text</code></strong>: El texto que aparece centrado en el cuadro de diálogo.</li>
+<li><strong><code>icon</code></strong>: El gráfico que aparece en la parte superior del cuadro de diálogo.</li>
+<li><strong><code>onDismissRequest</code></strong>: La función que se llama cuando el usuario cierra el cuadro de diálogo, como al tocar fuera de él.</li>
+<li><strong><code>dismissButton</code></strong>: Un composable que sirve como botón de cierre.</li>
+<li><strong><code>confirmButton</code></strong>: Un composable que sirve como botón de confirmación.</li>
+</ul>
+<p>El siguiente ejemplo tendremos un <strong><code>Box</code></strong> con un botón que al pulsarlo nos mostrará una oferta de entre tres aleatorias en un <strong><code>AlertDialog</code></strong>. Si en el dialogo pulsamos en el <strong>botón de <code>Aceptar</code></strong>, se mostrará un mensaje en el <strong><code>Box</code></strong> de despedida <em>'alegre'</em>; si pulsamos <strong>el botón de <code>Rechazar</code></strong>, se mostrará un mensaje de despedida <em>'triste'</em> y si cancelamos el dialogo, se volverá a mostrar el botón.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>// Definimos una clase con los tres posibles contenidos del Box.
+</span><span id="__span-16-2"><span class="linenos" data-linenos="2 "></span>enum class ContenidoCaja { BOTON, DESPEDIDA_TRISTE, DESPEDIDA_ALEGRE }
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos=" 1 "></span>// Composable Stateless que nos genera el composable con el contenido
+</span><span id="__span-17-2"><span class="linenos" data-linenos=" 2 "></span>// del Box según el estado gestionado por el AlertDialog
+</span><span id="__span-17-3"><span class="linenos" data-linenos=" 3 "></span>@Composable
+</span><span id="__span-17-4"><span class="linenos" data-linenos=" 4 "></span>fun ContenidoCaja(
+</span><span id="__span-17-5"><span class="linenos" data-linenos=" 5 "></span>    contenidoCajaState: ContenidoCaja,
+</span><span id="__span-17-6"><span class="linenos" data-linenos=" 6 "></span>    // Función que se ejecutará cuando pulsemos el botón de ver oferta.
+</span><span id="__span-17-7"><span class="linenos" data-linenos=" 7 "></span>    // y que cambiará el estado para mostrar el AlertDialog.
+</span><span id="__span-17-8"><span class="linenos" data-linenos=" 8 "></span>    onClickVerOferta: () -&gt; Unit
+</span><span id="__span-17-9"><span class="linenos" data-linenos=" 9 "></span>) {
+</span><span id="__span-17-10"><span class="linenos" data-linenos="10 "></span>    when (contenidoCajaState) {
+</span><span id="__span-17-11"><span class="linenos" data-linenos="11 "></span>        ContenidoCaja.BOTON -&gt; {
+</span><span id="__span-17-12"><span class="linenos" data-linenos="12 "></span>            Button(onClick = onClickVerOferta) {
+</span><span id="__span-17-13"><span class="linenos" data-linenos="13 "></span>                Text(text = "Ver Oferta")
+</span><span id="__span-17-14"><span class="linenos" data-linenos="14 "></span>            }
+</span><span id="__span-17-15"><span class="linenos" data-linenos="15 "></span>        }
+</span><span id="__span-17-16"><span class="linenos" data-linenos="16 "></span>        ContenidoCaja.DESPEDIDA_TRISTE -&gt; {
+</span><span id="__span-17-17"><span class="linenos" data-linenos="17 "></span>            Text(text = "Adios, tu te lo pierdes")
+</span><span id="__span-17-18"><span class="linenos" data-linenos="18 "></span>        }
+</span><span id="__span-17-19"><span class="linenos" data-linenos="19 "></span>        ContenidoCaja.DESPEDIDA_ALEGRE -&gt; {
+</span><span id="__span-17-20"><span class="linenos" data-linenos="20 "></span>            Text(text = "Enhorabuena, excelente elección")
+</span><span id="__span-17-21"><span class="linenos" data-linenos="21 "></span>        }
+</span><span id="__span-17-22"><span class="linenos" data-linenos="22 "></span>    }
+</span><span id="__span-17-23"><span class="linenos" data-linenos="23 "></span>}
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-18-2"><span class="linenos" data-linenos=" 2 "></span>fun DialogoOferta(
+</span><span id="__span-18-3"><span class="linenos" data-linenos=" 3 "></span>    onAceptarDialogoOferta: () -&gt; Unit,
+</span><span id="__span-18-4"><span class="linenos" data-linenos=" 4 "></span>    onRechazarDialogoOferta: () -&gt; Unit,
+</span><span id="__span-18-5"><span class="linenos" data-linenos=" 5 "></span>    onCalcelaDialogoOferta: () -&gt; Unit
+</span><span id="__span-18-6"><span class="linenos" data-linenos=" 6 "></span>) =
+</span><span id="__span-18-7"><span class="linenos" data-linenos=" 7 "></span>    // AlertDialog de Material 3
+</span><span id="__span-18-8"><span class="linenos" data-linenos=" 8 "></span>    AlertDialog(
+</span><span id="__span-18-9"><span class="linenos" data-linenos=" 9 "></span>        icon = {
+</span><span id="__span-18-10"><span class="linenos" data-linenos="10 "></span>            Icon(
+</span><span id="__span-18-11"><span class="linenos" data-linenos="11 "></span>                painterResource(R.drawable.gifts_24px),
+</span><span id="__span-18-12"><span class="linenos" data-linenos="12 "></span>                contentDescription = "Pregunta"
+</span><span id="__span-18-13"><span class="linenos" data-linenos="13 "></span>            )
+</span><span id="__span-18-14"><span class="linenos" data-linenos="14 "></span>        },
+</span><span id="__span-18-15"><span class="linenos" data-linenos="15 "></span>        title = { Text(text = "Oferta") },
+</span><span id="__span-18-16"><span class="linenos" data-linenos="16 "></span>        text = {
+</span><span id="__span-18-17"><span class="linenos" data-linenos="17 "></span>            // La lista la recordamos para no volver a generarla en cada recomposición.
+</span><span id="__span-18-18"><span class="linenos" data-linenos="18 "></span>            val ofertas = remember {
+</span><span id="__span-18-19"><span class="linenos" data-linenos="19 "></span>                listOf(
+</span><span id="__span-18-20"><span class="linenos" data-linenos="20 "></span>                    "Apartamento en Torrevieja (Alicante)",
+</span><span id="__span-18-21"><span class="linenos" data-linenos="21 "></span>                    "Aston Martin DB9",
+</span><span id="__span-18-22"><span class="linenos" data-linenos="22 "></span>                    "100 Ceniceros"
+</span><span id="__span-18-23"><span class="linenos" data-linenos="23 "></span>                )
+</span><span id="__span-18-24"><span class="linenos" data-linenos="24 "></span>            }
+</span><span id="__span-18-25"><span class="linenos" data-linenos="25 "></span>            // Mostramos una oferta aleatoria de la lista.
+</span><span id="__span-18-26"><span class="linenos" data-linenos="26 "></span>            Text(text = ofertas.random())
+</span><span id="__span-18-27"><span class="linenos" data-linenos="27 "></span>        },
+</span><span id="__span-18-28"><span class="linenos" data-linenos="28 "></span>        // Lo que hacemos al pulsar fuera del AlertDialog para cancelarlo.
+</span><span id="__span-18-29"><span class="linenos" data-linenos="29 "></span>        onDismissRequest = onCalcelaDialogoOferta,
+</span><span id="__span-18-30"><span class="linenos" data-linenos="30 "></span>        confirmButton = {
+</span><span id="__span-18-31"><span class="linenos" data-linenos="31 "></span>            // En los AlertDialog de Material 3, el botón de confirmación
+</span><span id="__span-18-32"><span class="linenos" data-linenos="32 "></span>            // debería ser un TextButton
+</span><span id="__span-18-33"><span class="linenos" data-linenos="33 "></span>            TextButton(onClick = {
+</span><span id="__span-18-34"><span class="linenos" data-linenos="34 "></span>                // Acción de Aceptar la oferta.
+</span><span id="__span-18-35"><span class="linenos" data-linenos="35 "></span>                onAceptarDialogoOferta()
+</span><span id="__span-18-36"><span class="linenos" data-linenos="36 "></span>                onCalcelaDialogoOferta()
+</span><span id="__span-18-37"><span class="linenos" data-linenos="37 "></span>            }) {
+</span><span id="__span-18-38"><span class="linenos" data-linenos="38 "></span>                Text("Aceptar")
+</span><span id="__span-18-39"><span class="linenos" data-linenos="39 "></span>            }
+</span><span id="__span-18-40"><span class="linenos" data-linenos="40 "></span>        },
+</span><span id="__span-18-41"><span class="linenos" data-linenos="41 "></span>        dismissButton = {
+</span><span id="__span-18-42"><span class="linenos" data-linenos="42 "></span>            TextButton(onClick = {
+</span><span id="__span-18-43"><span class="linenos" data-linenos="43 "></span>                / Acción de Rechazar la oferta.
+</span><span id="__span-18-44"><span class="linenos" data-linenos="44 "></span>                onRechazarDialogoOferta()
+</span><span id="__span-18-45"><span class="linenos" data-linenos="45 "></span>                onCalcelaDialogoOferta()
+</span><span id="__span-18-46"><span class="linenos" data-linenos="46 "></span>            }) {
+</span><span id="__span-18-47"><span class="linenos" data-linenos="47 "></span>                Text("Rechazar")
+</span><span id="__span-18-48"><span class="linenos" data-linenos="48 "></span>            }
+</span><span id="__span-18-49"><span class="linenos" data-linenos="49 "></span>        }
+</span><span id="__span-18-50"><span class="linenos" data-linenos="50 "></span>    )
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos=" 1 "></span>// Componente Box que implementará la lógica de la oferta.
+</span><span id="__span-19-2"><span class="linenos" data-linenos=" 2 "></span>@Composable
+</span><span id="__span-19-3"><span class="linenos" data-linenos=" 3 "></span>fun BoxOferta() = Box(
+</span><span id="__span-19-4"><span class="linenos" data-linenos=" 4 "></span>    modifier = Modifier
+</span><span id="__span-19-5"><span class="linenos" data-linenos=" 5 "></span>        .fillMaxWidth().size(height = 300.dp, width = 0.dp),
+</span><span id="__span-19-6"><span class="linenos" data-linenos=" 6 "></span>    contentAlignment = Alignment.Center
+</span><span id="__span-19-7"><span class="linenos" data-linenos=" 7 "></span>) {
+</span><span id="__span-19-8"><span class="linenos" data-linenos=" 8 "></span>    var verDialogoOferta by remember { mutableStateOf(false) }
+</span><span id="__span-19-9"><span class="linenos" data-linenos=" 9 "></span>    var contenidoCaja by remember { mutableStateOf(ContenidoCaja.BOTON) }
+</span><span id="__span-19-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-19-11"><span class="linenos" data-linenos="11 "></span>    ContenidoCaja(
+</span><span id="__span-19-12"><span class="linenos" data-linenos="12 "></span>        contenidoCajaState = contenidoCaja,
+</span><span id="__span-19-13"><span class="linenos" data-linenos="13 "></span>        onClickVerOferta = { verDialogoOferta = true }
+</span><span id="__span-19-14"><span class="linenos" data-linenos="14 "></span>    )
+</span><span id="__span-19-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-19-16"><span class="linenos" data-linenos="16 "></span>    if (verDialogoOferta) {
+</span><span id="__span-19-17"><span class="linenos" data-linenos="17 "></span>        DialogoOferta(
+</span><span id="__span-19-18"><span class="linenos" data-linenos="18 "></span>            onAceptarDialogoOferta = {
+</span><span id="__span-19-19"><span class="linenos" data-linenos="19 "></span>                contenidoCaja = ContenidoCaja.DESPEDIDA_ALEGRE
+</span><span id="__span-19-20"><span class="linenos" data-linenos="20 "></span>            },
+</span><span id="__span-19-21"><span class="linenos" data-linenos="21 "></span>            onRechazarDialogoOferta = {
+</span><span id="__span-19-22"><span class="linenos" data-linenos="22 "></span>                contenidoCaja = ContenidoCaja.DESPEDIDA_TRISTE
+</span><span id="__span-19-23"><span class="linenos" data-linenos="23 "></span>            },
+</span><span id="__span-19-24"><span class="linenos" data-linenos="24 "></span>        ) {
+</span><span id="__span-19-25"><span class="linenos" data-linenos="25 "></span>            verDialogoOferta = false
+</span><span id="__span-19-26"><span class="linenos" data-linenos="26 "></span>        }
+</span><span id="__span-19-27"><span class="linenos" data-linenos="27 "></span>    }
+</span><span id="__span-19-28"><span class="linenos" data-linenos="28 "></span>}
+</span></code></pre></div>
+<h3 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">¶</a></h3>
+<p>En este tema hemos visto algunos conceptos básicos de <strong>Material Design 3</strong> y como usarlos en nuestras aplicaciones. Además, hemos visto como usar algunos componentes, personalizados y crear concreciones de los mismos.</p>
+<p>Aunque existen más componentes, son muy similares en uso y conceptos a los que hemos visto en este tema. Por tanto, si necesitas usar alguno de ellos, puedes consultar la documentación oficial de Material Design 3.</p>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><abbr title="Actividades de clase.">AC</abbr> 310</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Crea un nuevo proyecto de Jetpack Compose.</li>
+</ul>
+<p>En la función @Composable MainScreen(), muestra:</p>
+<ul>
+<li>Un título (Text).</li>
+<li>Un botón (Button) que al pulsarlo cambie el texto mostrado.</li>
+<li>Una tarjeta (Card) que contenga una breve descripción de tu plato de comida favorito.</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 311</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Crea una pantalla llamada <code>PerfilScreen()</code>. Incluye:</p>
+</li>
+<li>
+<p>Una <code>Card</code> con tu nombre, avatar (imagen) y rol (“Estudiante DAM”).</p>
+</li>
+<li>Un <code>OutlinedTextField</code> editable con el correo electrónico.</li>
+<li>Un <code>Checkbox</code> para aceptar términos de uso.</li>
+<li>Un <code>Button</code> que al pulsarlo muestre un <code>Snackbar</code> confirmando la acción.
+  !!! info "Info"
+    Mantén el estilo coherente con el tema <code>MaterialTheme</code> del proyecto.</li>
+<li>
+<p><strong><abbr title="Prácticas">PR</abbr> 312</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Crea una lista de productos (nombre, imagen, categoría, precio). Muestra cada producto en una Card con:</p>
+</li>
+<li>
+<p>Imagen del producto.</p>
+</li>
+<li>Nombre y precio.</li>
+<li>Botón “Ver más”.</li>
+</ul>
+<p>Usa <code>LazyColumn</code> o <code>LazyVerticalGrid</code> para la disposición.
+- <strong><abbr title="Prácticas">PR</abbr> 313</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Crea una pantalla LoginScreen() con:</p>
+<ul>
+<li>Dos <code>OutlinedTextField</code> (correo y contraseña).</li>
+<li>Validación en tiempo real (campos vacíos, formato de email).</li>
+<li><code>Button</code> de inicio de sesión.</li>
+<li><code>Dialog</code> o <code>Snackbar</code> de éxito o error.
+  !!! info "Info"
+    Implementa validadores similares a los de los apuntes (<code>Validacion</code>, <code>ValidadorTextoNoVacio</code>, <code>ValidadorCorreo</code>).
+    Personaliza el diseño usando los colores del tema <code>MaterialTheme</code>.</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie">
+        
+          
+          <a href="04_SistemasNotificacion.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 04. Sistemas de notificiaciones">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                04. Sistemas de notificiaciones
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ut04/ResumenUT.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Propuesta didáctica UT 04">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Propuesta didáctica UT 04
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026-2027 Pablo Rabasco (by Ginés López García)
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/prabasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://prabasco.github.io" target="_blank" rel="noopener" title="prabasco.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm32 104c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24m0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24m0 120a32 32 0 1 1 64 0 32 32 0 1 1-64 0"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:&lt;p.rabascorodriguez@edu.gva.es&gt;" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

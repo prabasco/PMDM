@@ -1,0 +1,3164 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/prabasco/PMDM/ut/ut02/03_CicloVidaActivity.html">
+      
+      
+        <link rel="prev" href="02_CicloVidaAplicacion.html">
+      
+      
+        <link rel="next" href="04_DisenyoIU.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>03. Ciclo de vida de una Actividad - Programación multimedia y dispositivos móviles</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra_index.css">
+    
+      <link rel="stylesheet" href="../../css/extra_pd.css">
+    
+      <link rel="stylesheet" href="../../css/extra_tablasresumen.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ciclo-de-vida-de-una-activity" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../index.html" title="Programación multimedia y dispositivos móviles" class="md-header__button md-logo" aria-label="Programación multimedia y dispositivos móviles" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programación multimedia y dispositivos móviles
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03. Ciclo de vida de una Actividad
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="blue" aria-label="Cambiar a modo noche" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="blue" aria-label="Cambiar a modo día" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Programación multimedia y dispositivos móviles" class="md-nav__button md-logo" aria-label="Programación multimedia y dispositivos móviles" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    Programación multimedia y dispositivos móviles
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kotlin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/00_Intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a Kotlin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/01_VariablesEntradaDatos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables y entrada de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/02_ElementosControl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructuras de control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/03_FunCol.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones y colecciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kotlin/04_POO.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 01. Análisis de tecnologías para aplicaciones en dispositivos móviles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 01. Análisis de tecnologías para aplicaciones en dispositivos móviles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/01_TecnologiasMoviles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Tecnologías móviles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/02_IntroAndroid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Introducción a Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/03_FundamentosAPP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Fundamentos de una aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/04_RecursosAPP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Recursos de una aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/05_ClaseR.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. La clase R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/06_EstructuraProyecto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Estructura de un proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/07_Permisos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Permisos en Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 02. Elementos básicos de una aplicación e interfaz de usuario para dispositivos móviles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 02. Elementos básicos de una aplicación e interfaz de usuario para dispositivos móviles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_ElementosBasicos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Elementos básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_CicloVidaAplicacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Ciclo de vida de una aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Ciclo de vida de una Actividad
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="03_CicloVidaActivity.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Ciclo de vida de una Actividad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#callbacks-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks principales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oncreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onCreate()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onStart()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onresume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onResume()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onpause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onPause()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onStop()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onrestart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onRestart()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondestroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onDestroy()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-ciclo-de-vida-de-una-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: Ciclo de vida de una Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-ciclo-de-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama ciclo de vida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas-y-errores-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas y errores comunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conservar-el-estado-de-una-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conservar el estado de una aplicación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conservar el estado de una aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrategias-para-conservar-el-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrategias para conservar el estado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estado-de-la-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado de la instancia
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegacion-entre-actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navegación entre actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-iniciar-una-activity-desde-otra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo iniciar una Activity desde otra
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo iniciar una Activity desde otra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordinacion-entre-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinación entre Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_DisenyoIU.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Diseño de la IU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_ElementosBasicos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Elementos básicos de la IU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_DiferentesConfiguraciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Adaptando configuraciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07_JetpackCompose.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08_ControlesBasicos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Controles básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 03. Introducción al desarrollo de aplicaciones multiplataforma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 03. Introducción al desarrollo de aplicaciones multiplataforma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/01_ManejoListas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Manejo de listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/02_Adaptadores.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Adaptadores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/03_CreacionListas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Creación de listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/04_SistemasNotificacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Sistemas de notificiaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/05_MaterialDesign.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Material Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 04. Profundización en el desarrollo de aplicaciones multiplataforma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 04. Profundización en el desarrollo de aplicaciones multiplataforma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/01_Funciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/02_PurasImpuras.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Funciones puras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/03_Arrays.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/04_POO.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. POO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/05_Herencia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Herencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/06_Interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 05. Patrones de arquitectura de diseño en aplicaciones para dispositivos móviles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 05. Patrones de arquitectura de diseño en aplicaciones para dispositivos móviles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/01_Arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Arquitecturas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/02_Lambda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/03_Corrutinas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Corrutinas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/04_ArquitecturasAndroid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Arquitecturas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/05_MVVM.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. MVVM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 06. Almacenamiento de datos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 06. Almacenamiento de datos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/01_AlmacenamientoDatos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Almacenamiento de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/02_SharedPreferences.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. SharedPreferences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/03_MemoriaInterna.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Memoria interna
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/04_MemoriaSD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Memoria SD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/05_SQLite.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Bases de datos SQLite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/06_Room.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 07. Librerías Multimedia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 07. Librerías Multimedia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/01_Fundamentos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/02_Roles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/03_Uso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Uso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 08. Acceso a internet y uso de Servicios REST
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 08. Acceso a internet y uso de Servicios REST
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 08
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/01_FundamentosTeoricos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/02_ContratoAPIModelos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Contrato API y modelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/03_EjecucionCorrutinas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Ejecución y corrutinas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/Reto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../img/ut02/ut02_01.png"><img alt="Ciclo de vida de una Activity " src="../../img/ut02/ut02_01.png"></a></p>
+<h1 id="ciclo-de-vida-de-una-activity">Ciclo de vida de una Activity<a class="headerlink" href="#ciclo-de-vida-de-una-activity" title="Permanent link">¶</a></h1>
+<p>A lo largo de su vida útil, una <strong>Activity</strong> pasa por varios <strong>estados</strong> y el sistema invoca <strong>métodos de devolución de llamada</strong> (callbacks) en cada transición. Conocerlos te permite <strong>inicializar</strong>, <strong>persistir</strong> y <strong>liberar</strong> recursos correctamente.</p>
+<h2 id="callbacks-principales">Callbacks principales<a class="headerlink" href="#callbacks-principales" title="Permanent link">¶</a></h2>
+<h3 id="oncreate"><code>onCreate()</code><a class="headerlink" href="#oncreate" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> al crear la Activity por primera vez.</li>
+<li><strong>Qué hacer:</strong></li>
+<li>Inicializar la interfaz de usuario con <code>setContentView()</code>.</li>
+<li>Configurar vistas, adaptadores o datos iniciales.</li>
+<li><strong>Qué evitar:</strong> operaciones largas en el hilo principal.</li>
+<li><strong>Siguiente:</strong> siempre se ejecuta <code>onStart()</code>.</li>
+</ul>
+<h3 id="onstart"><code>onStart()</code><a class="headerlink" href="#onstart" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> la Activity pasa a ser <strong>visible</strong>.</li>
+<li><strong>Qué hacer:</strong> últimos ajustes antes de que el usuario interactúe (registrar listeners, animaciones ligeras).</li>
+<li><strong>Siguiente:</strong> <code>onResume()</code>.</li>
+</ul>
+<h3 id="onresume"><code>onResume()</code><a class="headerlink" href="#onresume" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> la Activity está en <strong>primer plano</strong> y el usuario puede interactuar.</li>
+<li><strong>Qué hacer:</strong> reanudar lógica principal (cámara, sensores, animaciones, reproducción multimedia).</li>
+<li><strong>Qué evitar:</strong> operaciones de guardado persistente o llamadas de red.</li>
+<li><strong>Siguiente:</strong> siempre se ejecuta <code>onPause()</code>.</li>
+</ul>
+<h3 id="onpause"><code>onPause()</code><a class="headerlink" href="#onpause" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> la Activity pierde el foco (otra Activity encima, diálogo, multitarea).</li>
+<li><strong>Qué hacer:</strong> pausar recursos costosos (animaciones pesadas, cámara, sensores).</li>
+<li><strong>Qué evitar:</strong> guardar datos de forma persistente, operaciones de red o base de datos (no hay garantías de tiempo).</li>
+<li><strong>Siguiente:</strong> puede ir a <code>onResume()</code> (si vuelve al frente) o <code>onStop()</code>.</li>
+</ul>
+<h3 id="onstop"><code>onStop()</code><a class="headerlink" href="#onstop" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> la Activity deja de ser <strong>visible</strong>.</li>
+<li><strong>Qué hacer:</strong> guardar estado persistente, cancelar suscripciones y liberar recursos no visibles.</li>
+<li><strong>Siguiente:</strong> <code>onRestart()</code> (si vuelve al usuario) o <code>onDestroy()</code>.</li>
+</ul>
+<h3 id="onrestart"><code>onRestart()</code><a class="headerlink" href="#onrestart" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> la Activity estaba detenida y vuelve a iniciarse.</li>
+<li><strong>Qué hacer:</strong> restaurar el estado previo, volver a configurar recursos necesarios.</li>
+<li><strong>Siguiente:</strong> siempre <code>onStart()</code>.</li>
+</ul>
+<h3 id="ondestroy"><code>onDestroy()</code><a class="headerlink" href="#ondestroy" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Cuándo:</strong> justo antes de que la Activity sea eliminada.</li>
+<li><strong>Qué hacer:</strong> liberar <strong>todos los recursos</strong> restantes (listeners, hilos, ejecutores).</li>
+<li><strong>Nota:</strong> no siempre se invoca si el sistema mata el proceso abruptamente.</li>
+</ul>
+<h2 id="tabla-ciclo-de-vida-de-una-activity">Tabla: Ciclo de vida de una Activity<a class="headerlink" href="#tabla-ciclo-de-vida-de-una-activity" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Callback |</th>
+<th>Estado / Contexto |</th>
+<th>Qué hacer |</th>
+<th>Qué evitar |</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onCreate</code> |</td>
+<td>Creación inicial |</td>
+<td><code>setContentView</code>, inicializar IU, dependencias |</td>
+<td>Tareas pesadas en el hilo principal |</td>
+</tr>
+<tr>
+<td><code>onStart</code> |</td>
+<td>Visible (no interactiva aún) |</td>
+<td>Registrar listeners livianos |</td>
+<td>Trabajo de larga duración |</td>
+</tr>
+<tr>
+<td><code>onResume</code> |</td>
+<td>Primer plano (interactiva) |</td>
+<td>Reanudar cámara, sensores, animaciones críticas |</td>
+<td>Persistencia o I/O de red |</td>
+</tr>
+<tr>
+<td><code>onPause</code> |</td>
+<td>Pierde foco (parcialmente visible) |</td>
+<td>Pausar recursos costosos |</td>
+<td>Guardado persistente, I/O bloqueante |</td>
+</tr>
+<tr>
+<td><code>onStop</code> |</td>
+<td>No visible |</td>
+<td>Guardar estado, liberar recursos no visibles |</td>
+<td>Mantener recursos que ya no se usan |</td>
+</tr>
+<tr>
+<td><code>onRestart</code> |</td>
+<td>Regresa desde <code>onStop</code> |</td>
+<td>Reconfigurar para volver a primer plano |</td>
+<td>— |</td>
+</tr>
+<tr>
+<td><code>onDestroy</code> |</td>
+<td>Antes de eliminarse |</td>
+<td>Limpieza total (hilos, ejecutores, receptores) |</td>
+<td>Confiar en que siempre se llamará |</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diagrama-ciclo-de-vida">Diagrama ciclo de vida<a class="headerlink" href="#diagrama-ciclo-de-vida" title="Permanent link">¶</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>flowchart LR
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>  A[onCreate] --&gt; B[onStart] --&gt; C[onResume]
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>  C --&gt;|pierde foco| D[onPause]
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span>  D --&gt;|se vuelve visible otra vez| C
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span>  D --&gt;|ya no es visible| E[onStop]
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span>  E --&gt;|regresa| F[onRestart] --&gt; B
+</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span>  E --&gt;|finaliza| G[onDestroy]
+</span></code></pre></div>
+<h2 id="buenas-practicas-y-errores-comunes">Buenas prácticas y errores comunes<a class="headerlink" href="#buenas-practicas-y-errores-comunes" title="Permanent link">¶</a></h2>
+<ul>
+<li>Persistencia: guarda preferencias/estado ligero en <code>onStop()</code>, no en <code>onPause()</code>.</li>
+<li>Rendimiento: evita bloqueos en UI; usa coroutines o <em>WorkManager</em> para trabajo en background.</li>
+<li>Recursos exclusivos (cámara, micrófono, sensores): adquiérelos en <code>onResume()</code> y libéralos en <code>onPause()</code>.</li>
+<li>Navegación: maneja retornos y recomposición de IU pensando en recreaciones (cambios de orientación, <em>multiwindow</em>).</li>
+<li>Evita fugas: desuscribe observadores/<em>listeners</em> en <code>onStop()</code>/<code>onDestroy()</code> según el caso.</li>
+</ul>
+<h2 id="conservar-el-estado-de-una-aplicacion">Conservar el estado de una aplicación<a class="headerlink" href="#conservar-el-estado-de-una-aplicacion" title="Permanent link">¶</a></h2>
+<p>El usuario espera que <strong>el estado de la IU se conserve</strong> en situaciones como:</p>
+<ul>
+<li>Rotación de pantalla.</li>
+<li>Cambio a modo multiventana.</li>
+<li>Salida temporal de la app para abrir otra.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">El problema</p>
+<p>El sistema <strong>finaliza la Activity</strong> por defecto en estas situaciones, y se pierde el estado de la interfaz.</p>
+</div>
+<h3 id="estrategias-para-conservar-el-estado">Estrategias para conservar el estado<a class="headerlink" href="#estrategias-para-conservar-el-estado" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>onSaveInstanceState(Bundle)</strong></p>
+</li>
+<li>
+<p>Callback que guarda <strong>datos simples y ligeros</strong> (Strings, números…).</p>
+</li>
+<li>Los guarda en un <code>Bundle</code> de pares clave-valor.</li>
+<li>El sistema restaura automáticamente datos de las <code>Views</code> con <code>android:id</code>.</li>
+<li>
+<p><strong>ViewModel</strong></p>
+</li>
+<li>
+<p>Mantiene datos de la IU aunque se destruya y recree la Activity.</p>
+</li>
+<li>Ideal para <strong>datos más complejos o pesados</strong>.</li>
+<li>
+<p><strong>Almacenamiento local persistente</strong></p>
+</li>
+<li>
+<p>Para conservar datos que deben sobrevivir incluso si se mata el proceso.</p>
+</li>
+<li>Ejemplo: SharedPreferences, Base de datos.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Importante</p>
+<p>Un <code>Bundle</code> no es adecuado para grandes cantidades de datos (consume memoria y requiere serialización en el hilo principal).</p>
+</div>
+<h3 id="estado-de-la-instancia">Estado de la instancia<a class="headerlink" href="#estado-de-la-instancia" title="Permanent link">¶</a></h3>
+<ul>
+<li>Si la Activity se <strong>cierra voluntariamente</strong> (<code>finish()</code> o botón Atrás) → el estado se pierde y <strong>no se restaura</strong>.</li>
+<li>Si la Activity se <strong>finaliza por el sistema</strong> (rotación, falta de memoria) → el sistema guarda el estado en un <code>Bundle</code> y crea una nueva instancia con esos datos cuando el usuario vuelve.</li>
+</ul>
+<h2 id="navegacion-entre-actividades">Navegación entre actividades<a class="headerlink" href="#navegacion-entre-actividades" title="Permanent link">¶</a></h2>
+<p>Las aplicaciones Android suelen <strong>entrar y salir de actividades</strong> varias veces durante su uso.
+Ejemplo: abrir la app de correo desde la pantalla principal, o iniciar la cámara desde una app de chat.</p>
+<h2 id="como-iniciar-una-activity-desde-otra">Cómo iniciar una Activity desde otra<a class="headerlink" href="#como-iniciar-una-activity-desde-otra" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><strong>startActivity(Intent)</strong></p>
+</li>
+<li>
+<p>Inicia otra Activity sin esperar resultado.</p>
+</li>
+<li>Puede ser de la misma app o de otra (ej. abrir un email, compartir un archivo).</li>
+<li>
+<p><strong>startActivityForResult(Intent, int)</strong></p>
+</li>
+<li>
+<p>Inicia otra Activity esperando un <strong>resultado</strong>.</p>
+</li>
+<li>Ejemplo: elegir un contacto y devolverlo a la Activity que lo pidió.</li>
+<li>El resultado se recibe en <code>onActivityResult(requestCode, resultCode, data)</code>.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Códigos de resultado</p>
+<ul>
+<li><code>RESULT_OK</code> → todo correcto.</li>
+<li><code>RESULT_CANCELED</code> → cancelado o error.</li>
+<li><code>RESULT_FIRST_USER</code> → códigos personalizados.</li>
+</ul>
+</div>
+<h3 id="coordinacion-entre-activities">Coordinación entre Activities<a class="headerlink" href="#coordinacion-entre-activities" title="Permanent link">¶</a></h3>
+<p>Cuando una Activity inicia otra, ambas experimentan <strong>transiciones de ciclo de vida</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span>sequenceDiagram
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    participant A as Activity A
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    participant B as Activity B
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    A-&gt;&gt;B: onPause()
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    Note over B: Válido para casos onCreate(), onStart(), onResume()
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    B-&gt;&gt;B: onCreate()
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>    Note over B: B ahora está en primer plano
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>    B-&gt;&gt;A: onStop()
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    Note over B: B sigue estando en primer plano
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">A tener en cuenta</p>
+<p>Así, la <strong>primera Activity no se detiene por completo hasta que la segunda esté lista</strong>. Esto permite coordinar datos y transiciones de forma predecible.</p>
+</div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><abbr title="Actividades de clase.">AC</abbr> 201</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p) Analiza de forma teórica el ciclo de vida de una Activity en Android y reflexiona sobre su importancia.</li>
+</ul>
+<p>!!! info "Tareas a realizar"
+    - Analogía personal: Crea tu propia analogía comparando cada estado del ciclo de vida de una Activity con situaciones de la vida real (puede ser un día de clase, un viaje, un partido de fútbol…). Explica en 1–2 frases cada relación.
+    - Preguntas de reflexión</p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>  - ¿Qué podría pasar si una app no guardara la información al pasar de `onPause` a `onStop`?
+<span class="linenos" data-linenos="2 "></span>  - ¿Por qué crees que Android no garantiza siempre que se llame a `onDestroy`?
+<span class="linenos" data-linenos="3 "></span>  - ¿En qué se parecen `onPause` y `onStop` y en qué se diferencian?
+<span class="linenos" data-linenos="4 "></span>  - ¿Por qué es importante diferenciar entre estar visible y estar interactiva?
+<span class="linenos" data-linenos="5 "></span>- Resumen final: Redacta en 5–6 líneas por qué crees que el ciclo de vida es fundamental para que una app funcione correctamente en móviles, donde los recursos son limitados y el usuario cambia de tareas con frecuencia.
+</code></pre></div>
+<ul>
+<li><strong><abbr title="Actividades de clase.">AC</abbr> 202</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p) Reflexiona sobre la conservación del estado de una aplicación y la navegación entre Activities en Android.</li>
+</ul>
+<ol>
+<li>
+<p>Escenario A: Imagina que estás escribiendo un correo electrónico en una app. En mitad de la redacción, giras el dispositivo (rotación de pantalla).</p>
+<ul>
+<li>¿Qué esperas que ocurra con el texto que estabas escribiendo?</li>
+<li>¿Qué sucedería si la app no guardara el estado correctamente?</li>
+<li>
+<p>¿Por qué crees que el sistema destruye y recrea la Activity en una rotación?
+  2. Escenario B: Imagina que en una app de mensajería seleccionas <strong>“Adjuntar foto”</strong>. La app abre la <strong>galería</strong> (otra Activity).</p>
+</li>
+<li>
+<p>¿Qué datos debe enviar la app de mensajería a la galería?</p>
+</li>
+<li>¿Qué resultado debe devolver la galería a la app de mensajería?</li>
+<li>
+<p>¿Qué ocurre con la primera Activity mientras la segunda está activa?
+  3. Comparación</p>
+</li>
+<li>
+<p>¿En qué se parecen los problemas de <strong>conservar estado</strong> y <strong>navegación entre Activities</strong>?</p>
+</li>
+<li>¿Cómo afectan ambos al usuario si no se implementan correctamente?</li>
+</ul>
+</li>
+</ol>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie">
+        
+          
+          <a href="02_CicloVidaAplicacion.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 02. Ciclo de vida de una aplicación">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                02. Ciclo de vida de una aplicación
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="04_DisenyoIU.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 04. Diseño de la IU">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                04. Diseño de la IU
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026-2027 Pablo Rabasco (by Ginés López García)
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/prabasco" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://prabasco.github.io" target="_blank" rel="noopener" title="prabasco.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm32 104c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24m0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24m0 120a32 32 0 1 1 64 0 32 32 0 1 1-64 0"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:&lt;p.rabascorodriguez@edu.gva.es&gt;" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
