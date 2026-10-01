@@ -803,6 +803,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#declaracion-de-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración de permisos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tipos-de-permisos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -811,14 +822,25 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tipos de permisos">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-permisos-concedidos-durante-la-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Permisos concedidos durante la instalación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Permisos concedidos durante la instalación">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-permisos-en-el-momento-de-instalacion" class="md-nav__link">
+  <a href="#permisos-normales" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Permisos en el momento de instalación
+        Permisos normales
       
     </span>
   </a>
@@ -826,21 +848,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-permisos-de-tiempo-de-ejecucion-peligrosos" class="md-nav__link">
+  <a href="#permisos-de-firma" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Permisos de tiempo de ejecución (peligrosos)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-permisos-especiales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Permisos especiales
+        Permisos de firma
       
     </span>
   </a>
@@ -853,43 +864,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grupos-de-permisos" class="md-nav__link">
+  <a href="#2-permisos-de-tiempo-de-ejecucion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grupos de permisos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#buenas-practicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Buenas prácticas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permisos-en-componentes-de-la-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Permisos en componentes de la app
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Actividades
+        2. Permisos de tiempo de ejecución
       
     </span>
   </a>
@@ -1256,77 +1234,587 @@
 
 
 <h1 id="los-permisos-en-android">Los permisos en Android<a class="headerlink" href="#los-permisos-en-android" title="Permanent link">¶</a></h1>
-<p>Los permisos ayudan a proteger la <strong>privacidad del usuario</strong> y a controlar qué datos o acciones puede realizar una aplicación.
-Sirven para restringir el acceso a:</p>
+<p>Los <strong>permisos en Android</strong> forman parte del modelo de seguridad del sistema operativo. Su objetivo es proteger la <strong>privacidad del usuario</strong> y controlar a qué datos, recursos y funciones del dispositivo puede acceder una aplicación.</p>
+<p>Por defecto, cada aplicación Android se ejecuta dentro de un entorno aislado denominado <strong>Application Sandbox</strong>. Esto impide que una aplicación pueda acceder libremente a los datos de otras aplicaciones o a determinados recursos protegidos del sistema.</p>
+<p>Cuando una aplicación necesita acceder a información o funcionalidades protegidas, debe utilizar el sistema de permisos de Android.</p>
+<p>Los permisos pueden restringir el acceso a:</p>
 <ul>
-<li><strong>Datos sensibles</strong>: contactos, ubicación, estado del sistema.</li>
-<li><strong>Acciones restringidas</strong>: conectarse a dispositivos externos, grabar audio, enviar SMS, etc.</li>
-</ul>
-<p>En muchos casos, una app puede cumplir su función <strong>sin solicitar permisos</strong> adicionales (ej. reproducir contenido multimedia o mostrar anuncios). Pero si necesita acceder a recursos sensibles, debe declarar y solicitar los permisos correspondientes.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut01/ut01_02.svg" data-desc-position="bottom"><img alt="Permisos" src="../../img/ut01/ut01_02.svg"></a></p>
-<h2 id="tipos-de-permisos">Tipos de permisos<a class="headerlink" href="#tipos-de-permisos" title="Permanent link">¶</a></h2>
-<h3 id="1-permisos-en-el-momento-de-instalacion">1. Permisos en el momento de instalación<a class="headerlink" href="#1-permisos-en-el-momento-de-instalacion" title="Permanent link">¶</a></h3>
+<li>
+<p><strong>Datos sensibles</strong>:</p>
 <ul>
-<li>Se conceden automáticamente al instalar la app.</li>
-<li>Otorgan acceso limitado a datos o acciones de bajo riesgo.</li>
+<li>Contactos.</li>
+<li>Ubicación.</li>
+<li>Calendario.</li>
+<li>Fotografías y vídeos.</li>
+<li>Información relacionada con la salud.</li>
 </ul>
-<p><strong>Permisos normales</strong>:</p>
+</li>
+<li>
+<p><strong>Hardware del dispositivo</strong>:</p>
 <ul>
-<li>Acceden a datos fuera de la sandbox, pero con riesgo mínimo.</li>
-<li>Ejemplo: acceso a Internet.</li>
+<li>Cámara.</li>
+<li>Micrófono.</li>
+<li>Bluetooth.</li>
+<li>Dispositivos cercanos.</li>
 </ul>
-<p><strong>Permisos de firma</strong>:</p>
+</li>
+<li>
+<p><strong>Acciones restringidas</strong>:</p>
 <ul>
-<li>Solo se otorgan si la app está firmada con el mismo certificado que la app o el SO que define el permiso.</li>
-<li>Usados en servicios sensibles como VPN o Autocompletar.</li>
+<li>Realizar llamadas.</li>
+<li>Enviar SMS.</li>
+<li>Mostrar contenido sobre otras aplicaciones.</li>
+<li>Modificar determinados ajustes del sistema.</li>
 </ul>
-<h3 id="2-permisos-de-tiempo-de-ejecucion-peligrosos">2. Permisos de tiempo de ejecución (peligrosos)<a class="headerlink" href="#2-permisos-de-tiempo-de-ejecucion-peligrosos" title="Permanent link">¶</a></h3>
-<ul>
-<li>Se solicitan <strong>cuando la app los necesita durante la ejecución</strong>.</li>
-<li>Requieren aprobación explícita del usuario.</li>
-<li>Ejemplos: cámara, micrófono, ubicación, contactos.</li>
-<li>La app debe verificar antes de usarlos y volver a solicitarlos si no están concedidos.</li>
+</li>
 </ul>
-<div class="admonition example">
-<p class="admonition-title">Solicitud de permiso en tiempo de ejecución</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>    ActivityCompat.requestPermissions(this,
-</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>        arrayOf(Manifest.permission.CAMERA), 1)
-</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span>}
+<div class="admonition info">
+<p class="admonition-title">Principio fundamental</p>
+<p>Una aplicación debe solicitar <strong>únicamente los permisos estrictamente necesarios</strong> para realizar sus funciones.</p>
+<p>Siempre que sea posible, se deben utilizar APIs que permitan realizar una operación <strong>sin solicitar permisos</strong>.</p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut01/ut01_02_Permisos_Android.png" data-desc-position="bottom"><img alt="Permisos en Android" src="../../img/ut01/ut01_02_Permisos_Android.png"></a></p>
+<h2 id="declaracion-de-permisos">Declaración de permisos<a class="headerlink" href="#declaracion-de-permisos" title="Permanent link">¶</a></h2>
+<p>Los permisos que necesita una aplicación se declaran normalmente en el archivo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>AndroidManifest.xml
 </span></code></pre></div>
+<p>Para ello se utiliza el elemento:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"NOMBRE_DEL_PERMISO"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Por ejemplo, para indicar que una aplicación necesita acceder a Internet:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Para utilizar la cámara:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.CAMERA"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Y para acceder a la ubicación:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.ACCESS_FINE_LOCATION"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Declarar no siempre significa conceder</p>
+<p>Declarar un permiso en <code>AndroidManifest.xml</code> <strong>no significa necesariamente que la aplicación ya pueda utilizarlo</strong>.</p>
+<p>Algunos permisos se conceden automáticamente, mientras que otros necesitan además la autorización explícita del usuario durante la ejecución.</p>
 </div>
-<h3 id="3-permisos-especiales">3. Permisos especiales<a class="headerlink" href="#3-permisos-especiales" title="Permanent link">¶</a></h3>
-<ul>
-<li>Definidos por el sistema o fabricantes (OEM).</li>
-<li>Protegen funciones críticas como <strong>modificar ajustes del sistema</strong> o <strong>mostrar sobre otras apps</strong>.</li>
-<li>Solo se conceden en casos muy concretos.</li>
-</ul>
-<h2 id="grupos-de-permisos">Grupos de permisos<a class="headerlink" href="#grupos-de-permisos" title="Permanent link">¶</a></h2>
-<ul>
-<li>Varios permisos relacionados pueden agruparse en un mismo diálogo.</li>
-<li>Ejemplo: el grupo <strong>Contactos</strong> incluye lectura y escritura de contactos.</li>
-<li>El usuario concede el grupo entero, simplificando la experiencia.</li>
-</ul>
-<h2 id="buenas-practicas">Buenas prácticas<a class="headerlink" href="#buenas-practicas" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>Solicita el mínimo necesario</strong>: no pidas más permisos de los que uses realmente.</li>
-<li><strong>Asocia permisos a acciones específicas</strong>: pide el permiso justo en el momento en que se necesita.</li>
-</ul>
+<h2 id="tipos-de-permisos">Tipos de permisos<a class="headerlink" href="#tipos-de-permisos" title="Permanent link">¶</a></h2>
+<p>Android clasifica los permisos principalmente según el nivel de protección que necesita el recurso al que permiten acceder.</p>
+<p>Podemos distinguir tres grandes situaciones:</p>
+<ol>
+<li>Permisos concedidos durante la instalación.</li>
+<li>Permisos solicitados durante la ejecución.</li>
+<li>Permisos especiales.</li>
+</ol>
+<h2 id="1-permisos-concedidos-durante-la-instalacion">1. Permisos concedidos durante la instalación<a class="headerlink" href="#1-permisos-concedidos-durante-la-instalacion" title="Permanent link">¶</a></h2>
+<p>Son permisos asociados a operaciones que presentan un riesgo reducido para la privacidad del usuario o que cumplen determinadas condiciones establecidas por Android.</p>
+<p>Cuando una aplicación los declara correctamente, el sistema puede concederlos automáticamente sin mostrar un diálogo de autorización al usuario.</p>
+<p>Dentro de esta categoría destacan los <strong>permisos normales</strong> y los <strong>permisos de firma</strong>.</p>
+<h3 id="permisos-normales">Permisos normales<a class="headerlink" href="#permisos-normales" title="Permanent link">¶</a></h3>
+<p>Los <strong>permisos normales</strong> permiten acceder a operaciones cuyo riesgo para la privacidad y seguridad del usuario se considera reducido.</p>
+<p>No requieren que el usuario pulse un botón para autorizarlos.</p>
+<p>Un ejemplo muy habitual es:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Este permiso permite que la aplicación establezca conexiones de red.</p>
+<p>Por ejemplo, una aplicación que utilice <strong>Retrofit</strong> para consultar una API REST necesitará normalmente:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;manifest</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">&lt;application</span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="err">...</span><span class="nt">&gt;</span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nt">&lt;/application&gt;</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="nt">&lt;/manifest&gt;</span>
+</span></code></pre></div>
 <div class="admonition example">
-<p class="admonition-title">Ejemplo de buena práctica</p>
-<p>Una app de mensajería que permite enviar notas de voz <strong>no pide acceso al micrófono al instalarse</strong>.
-Solo lo solicita cuando el usuario pulsa el botón <em>Grabar audio</em>.</p>
+<p class="admonition-title">Ejemplo</p>
+<p>Una aplicación que consulta información de libros desde una API REST necesita acceder a Internet.</p>
+<p>El permiso se declara en <code>AndroidManifest.xml</code>, pero Android <strong>no muestra un diálogo al usuario preguntando si quiere permitir el acceso a Internet</strong>.</p>
 </div>
+<h3 id="permisos-de-firma">Permisos de firma<a class="headerlink" href="#permisos-de-firma" title="Permanent link">¶</a></h3>
+<p>Los <strong>permisos de firma</strong> se conceden únicamente cuando la aplicación que solicita el permiso está firmada con el certificado requerido por la aplicación o componente que define dicho permiso.</p>
+<p>Se utilizan principalmente para proteger comunicaciones entre aplicaciones relacionadas o determinadas funciones especialmente sensibles.</p>
+<p>Son menos habituales en aplicaciones Android convencionales.</p>
+<h2 id="2-permisos-de-tiempo-de-ejecucion">2. Permisos de tiempo de ejecución<a class="headerlink" href="#2-permisos-de-tiempo-de-ejecucion" title="Permanent link">¶</a></h2>
+<p>Los permisos asociados a datos o recursos especialmente sensibles necesitan autorización explícita del usuario.</p>
+<p>También reciben habitualmente el nombre de <strong>runtime permissions</strong>.</p>
+<p>Algunos ejemplos son:</p>
 <ul>
-<li><strong>Control y transparencia</strong>: el usuario debe entender qué datos usas y para qué.</li>
-<li><strong>Minimización de datos</strong>: la app accede solo a lo estrictamente necesario.</li>
+<li>Cámara.</li>
+<li>Micrófono.</li>
+<li>Ubicación.</li>
+<li>Contactos.</li>
+<li>Determinadas funciones de dispositivos cercanos.</li>
+<li>Notificaciones en versiones recientes de Android.</li>
 </ul>
-<h2 id="permisos-en-componentes-de-la-app">Permisos en componentes de la app<a class="headerlink" href="#permisos-en-componentes-de-la-app" title="Permanent link">¶</a></h2>
-<p>Los permisos también sirven para <strong>restringir interacciones entre aplicaciones</strong>:</p>
+<p>El proceso general es:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut01/ut01_03_Permisos_Android_Tiempo_Ejecucion.png" data-desc-position="bottom"><img alt="Permisos en tiempo de ejecución en Android" src="../../img/ut01/ut01_03_Permisos_Android_Tiempo_Ejecucion.png"></a></p>
+<p>La aplicación <strong>no debe asumir</strong> que un permiso seguirá concedido permanentemente.</p>
+<p>Debe comprobar su estado antes de utilizar el recurso protegido.</p>
+<h1 id="ejemplo-permiso-de-camara">Ejemplo: permiso de cámara<a class="headerlink" href="#ejemplo-permiso-de-camara" title="Permanent link">¶</a></h1>
+<p>Supongamos que queremos utilizar la cámara.</p>
+<p>Primero declaramos el permiso en:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>AndroidManifest.xml
+</span></code></pre></div>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.CAMERA"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Después debemos comprobar durante la ejecución si el usuario ha concedido el permiso.</p>
+<h2 id="forma-clasica">Forma clásica<a class="headerlink" href="#forma-clasica" title="Permanent link">¶</a></h2>
+<p>Una forma tradicional de comprobar el permiso consiste en utilizar <code>ContextCompat.checkSelfPermission()</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">ContextCompat</span><span class="p">.</span><span class="na">checkSelfPermission</span><span class="p">(</span>
+</span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="k">this</span><span class="p">,</span>
+</span><span id="__span-9-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span>
+</span><span id="__span-9-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PackageManager</span><span class="p">.</span><span class="na">PERMISSION_GRANTED</span>
+</span><span id="__span-9-6"><span class="linenos" data-linenos=" 6 "></span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="c1">// El permiso está concedido</span>
+</span><span id="__span-9-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">abrirCamara</span><span class="p">()</span>
+</span><span id="__span-9-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="c1">// El permiso no está concedido</span>
+</span><span id="__span-9-11"><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>La comprobación devuelve:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span><span class="n">PackageManager</span><span class="p">.</span><span class="na">PERMISSION_GRANTED</span>
+</span></code></pre></div>
+<p>cuando el permiso está concedido.</p>
+<h2 id="solicitud-clasica-del-permiso">Solicitud clásica del permiso<a class="headerlink" href="#solicitud-clasica-del-permiso" title="Permanent link">¶</a></h2>
+<p>Tradicionalmente también se podía solicitar mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span><span class="n">ActivityCompat</span><span class="p">.</span><span class="na">requestPermissions</span><span class="p">(</span>
+</span><span id="__span-11-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="k">this</span><span class="p">,</span>
+</span><span id="__span-11-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">arrayOf</span><span class="p">(</span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">),</span>
+</span><span id="__span-11-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="m">100</span>
+</span><span id="__span-11-5"><span class="linenos" data-linenos="5 "></span><span class="p">)</span>
+</span></code></pre></div>
+<p>El valor:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span><span class="m">100</span>
+</span></code></pre></div>
+<p>es un identificador utilizado para reconocer posteriormente la solicitud.</p>
+<div class="admonition warning">
+<p class="admonition-title">Código heredado</p>
+<p><code>requestPermissions()</code> aparece todavía en numerosos proyectos y tutoriales antiguos.</p>
+<p>En aplicaciones modernas resulta preferible utilizar las <strong>Activity Result APIs</strong>.</p>
+</div>
+<h1 id="solicitud-moderna-con-activity-result-api">Solicitud moderna con Activity Result API<a class="headerlink" href="#solicitud-moderna-con-activity-result-api" title="Permanent link">¶</a></h1>
+<p>Una forma moderna de gestionar permisos consiste en utilizar:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span><span class="n">registerForActivityResult</span><span class="p">()</span>
+</span></code></pre></div>
+<p>junto con:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestPermission</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">solicitarPermisoCamara</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-15-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">registerForActivityResult</span><span class="p">(</span>
+</span><span id="__span-15-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestPermission</span><span class="p">()</span>
+</span><span id="__span-15-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">concedido</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-15-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-15-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">abrirCamara</span><span class="p">()</span>
+</span><span id="__span-15-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="c1">// El usuario ha rechazado el permiso</span>
+</span><span id="__span-15-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
+<p>Cuando queramos solicitar el permiso:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span><span class="n">solicitarPermisoCamara</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-16-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span>
+</span><span id="__span-16-3"><span class="linenos" data-linenos="3 "></span><span class="p">)</span>
+</span></code></pre></div>
+<p>El resultado se recibe mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span><span class="n">concedido</span>
+</span></code></pre></div>
+<p>que será:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>true  → permiso concedido
+</span><span id="__span-18-2"><span class="linenos" data-linenos="2 "></span>false → permiso rechazado
+</span></code></pre></div>
+<h1 id="permisos-con-jetpack-compose">Permisos con Jetpack Compose<a class="headerlink" href="#permisos-con-jetpack-compose" title="Permanent link">¶</a></h1>
+<p>En una aplicación desarrollada con <strong>Jetpack Compose</strong>, podemos utilizar igualmente las Activity Result APIs.</p>
+<p>Por ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-19-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">PantallaCamara</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-19-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-19-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-19-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">permisoCamara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberLauncherForActivityResult</span><span class="p">(</span>
+</span><span id="__span-19-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestPermission</span><span class="p">()</span>
+</span><span id="__span-19-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">concedido</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-19-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-19-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="c1">// Ya podemos utilizar la cámara</span>
+</span><span id="__span-19-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-19-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-19-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="n">Button</span><span class="p">(</span>
+</span><span id="__span-19-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-17"><span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="n">permisoCamara</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-19-18"><span class="linenos" data-linenos="18 "></span><span class="w">                </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span>
+</span><span id="__span-19-19"><span class="linenos" data-linenos="19 "></span><span class="w">            </span><span class="p">)</span>
+</span><span id="__span-19-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-19-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Abrir cámara"</span><span class="p">)</span>
+</span><span id="__span-19-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-24"><span class="linenos" data-linenos="24 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Pero este código todavía puede mejorarse comprobando primero si el permiso ya está concedido:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-20-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">PantallaCamara</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-20-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+</span><span id="__span-20-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-20-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">permisoCamara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberLauncherForActivityResult</span><span class="p">(</span>
+</span><span id="__span-20-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestPermission</span><span class="p">()</span>
+</span><span id="__span-20-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">concedido</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-20-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-20-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="c1">// Abrir cámara</span>
+</span><span id="__span-20-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-20-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-20-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="n">Button</span><span class="p">(</span>
+</span><span id="__span-20-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-17"><span class="linenos" data-linenos="17 "></span>
+</span><span id="__span-20-18"><span class="linenos" data-linenos="18 "></span><span class="w">            </span><span class="kd">val</span><span class="w"> </span><span class="nv">concedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContextCompat</span><span class="p">.</span><span class="na">checkSelfPermission</span><span class="p">(</span>
+</span><span id="__span-20-19"><span class="linenos" data-linenos="19 "></span><span class="w">                </span><span class="n">context</span><span class="p">,</span>
+</span><span id="__span-20-20"><span class="linenos" data-linenos="20 "></span><span class="w">                </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span>
+</span><span id="__span-20-21"><span class="linenos" data-linenos="21 "></span><span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PackageManager</span><span class="p">.</span><span class="na">PERMISSION_GRANTED</span>
+</span><span id="__span-20-22"><span class="linenos" data-linenos="22 "></span>
+</span><span id="__span-20-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-24"><span class="linenos" data-linenos="24 "></span><span class="w">                </span><span class="c1">// Abrir cámara</span>
+</span><span id="__span-20-25"><span class="linenos" data-linenos="25 "></span><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-26"><span class="linenos" data-linenos="26 "></span><span class="w">                </span><span class="n">permisoCamara</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-20-27"><span class="linenos" data-linenos="27 "></span><span class="w">                    </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span>
+</span><span id="__span-20-28"><span class="linenos" data-linenos="28 "></span><span class="w">                </span><span class="p">)</span>
+</span><span id="__span-20-29"><span class="linenos" data-linenos="29 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-20-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-20-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-32"><span class="linenos" data-linenos="32 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Abrir cámara"</span><span class="p">)</span>
+</span><span id="__span-20-33"><span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-34"><span class="linenos" data-linenos="34 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h1 id="ejemplo-permiso-de-microfono">Ejemplo: permiso de micrófono<a class="headerlink" href="#ejemplo-permiso-de-microfono" title="Permanent link">¶</a></h1>
+<p>Para grabar audio necesitamos declarar:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-21-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.RECORD_AUDIO"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Después podemos solicitarlo mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-22-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">solicitarMicrofono</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberLauncherForActivityResult</span><span class="p">(</span>
+</span><span id="__span-22-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestPermission</span><span class="p">()</span>
+</span><span id="__span-22-3"><span class="linenos" data-linenos="3 "></span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">concedido</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-22-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-22-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-6"><span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="c1">// Comenzar grabación</span>
+</span><span id="__span-22-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Y lanzarlo mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-23-1"><span class="linenos" data-linenos="1 "></span><span class="n">solicitarMicrofono</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-23-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">RECORD_AUDIO</span>
+</span><span id="__span-23-3"><span class="linenos" data-linenos="3 "></span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Buena práctica</p>
+<p>Una aplicación de mensajería que permite enviar notas de voz <strong>no debería solicitar acceso al micrófono al arrancar</strong>.</p>
+<p>El permiso debería solicitarse cuando el usuario pulsa por primera vez el botón <strong>Grabar audio</strong>.</p>
+</div>
+<h1 id="ejemplo-permiso-de-ubicacion">Ejemplo: permiso de ubicación<a class="headerlink" href="#ejemplo-permiso-de-ubicacion" title="Permanent link">¶</a></h1>
+<p>Para obtener una ubicación aproximada podemos declarar:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-24-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span>
+</span><span id="__span-24-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="na">android:name=</span><span class="s">"android.permission.ACCESS_COARSE_LOCATION"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Para una ubicación más precisa:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-25-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span>
+</span><span id="__span-25-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="na">android:name=</span><span class="s">"android.permission.ACCESS_FINE_LOCATION"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-26-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">solicitarUbicacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberLauncherForActivityResult</span><span class="p">(</span>
+</span><span id="__span-26-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestPermission</span><span class="p">()</span>
+</span><span id="__span-26-3"><span class="linenos" data-linenos="3 "></span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">concedido</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-26-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-26-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-6"><span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="c1">// Acceder a la ubicación</span>
+</span><span id="__span-26-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-26-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Solicitud:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-27-1"><span class="linenos" data-linenos="1 "></span><span class="n">solicitarUbicacion</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-27-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span>
+</span><span id="__span-27-3"><span class="linenos" data-linenos="3 "></span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Ubicación aproximada y precisa</p>
+<p>En versiones modernas de Android, el usuario dispone de mayor control sobre la precisión de la ubicación proporcionada a las aplicaciones.</p>
+<p>Una aplicación debe funcionar con <strong>ubicación aproximada</strong> siempre que no necesite realmente conocer la posición exacta del usuario.</p>
+</div>
+<h1 id="solicitar-varios-permisos">Solicitar varios permisos<a class="headerlink" href="#solicitar-varios-permisos" title="Permanent link">¶</a></h1>
+<p>Algunas operaciones necesitan comprobar más de un permiso.</p>
+<p>Para estos casos podemos utilizar:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-28-1"><span class="linenos" data-linenos="1 "></span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestMultiplePermissions</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-29-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">solicitarPermisos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberLauncherForActivityResult</span><span class="p">(</span>
+</span><span id="__span-29-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">contract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestMultiplePermissions</span><span class="p">()</span>
+</span><span id="__span-29-3"><span class="linenos" data-linenos=" 3 "></span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">permisos</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-29-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-29-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">camaraConcedida</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-29-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">permisos</span><span class="o">[</span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span><span class="o">]</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-29-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-29-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">microfonoConcedido</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-29-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">permisos</span><span class="o">[</span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">RECORD_AUDIO</span><span class="o">]</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-29-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-29-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">camaraConcedida</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">microfonoConcedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="c1">// Podemos utilizar cámara y micrófono</span>
+</span><span id="__span-29-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-29-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>La solicitud se realiza mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-30-1"><span class="linenos" data-linenos="1 "></span><span class="n">solicitarPermisos</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-30-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">arrayOf</span><span class="p">(</span>
+</span><span id="__span-30-3"><span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">,</span>
+</span><span id="__span-30-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">RECORD_AUDIO</span>
+</span><span id="__span-30-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-30-6"><span class="linenos" data-linenos="6 "></span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="permiso-para-mostrar-notificaciones">Permiso para mostrar notificaciones<a class="headerlink" href="#permiso-para-mostrar-notificaciones" title="Permanent link">¶</a></h2>
+<p>Desde <strong>Android 13 (API 33)</strong>, las aplicaciones necesitan solicitar permiso al usuario para enviar determinadas notificaciones.</p>
+<p>El permiso es:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-31-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span>
+</span><span id="__span-31-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="na">android:name=</span><span class="s">"android.permission.POST_NOTIFICATIONS"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Antes de solicitarlo debemos comprobar la versión de Android:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-32-1"><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION</span><span class="p">.</span><span class="na">SDK_INT</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION_CODES</span><span class="p">.</span><span class="na">TIRAMISU</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-32-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">permisoNotificaciones</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span>
+</span><span id="__span-32-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">POST_NOTIFICATIONS</span>
+</span><span id="__span-32-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-32-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Esto es necesario porque:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><span class="linenos" data-linenos="1 "></span>POST_NOTIFICATIONS → Android 13 / API 33+
+</span></code></pre></div>
+<h1 id="3-permisos-especiales">3. Permisos especiales<a class="headerlink" href="#3-permisos-especiales" title="Permanent link">¶</a></h1>
+<p>Existen operaciones especialmente sensibles que Android no gestiona mediante el diálogo habitual de permisos.</p>
+<p>Son los denominados <strong>permisos especiales</strong>.</p>
+<p>Pueden controlar operaciones como:</p>
 <ul>
-<li>Una app puede impedir que otras accedan a sus componentes internos (actividades, servicios, receptores, proveedores).</li>
-<li>Esto asegura que solo apps con permiso explícito puedan comunicarse con ella.</li>
+<li>Mostrar contenido sobre otras aplicaciones.</li>
+<li>Modificar determinados ajustes del sistema.</li>
+<li>Acceder a determinados datos o funciones especialmente protegidos.</li>
+<li>Instalar paquetes desde determinadas fuentes.</li>
 </ul>
+<p>En estos casos, normalmente el usuario debe acceder a una pantalla específica de <strong>Ajustes</strong> para conceder la autorización.</p>
+<h2 id="ejemplo-mostrar-sobre-otras-aplicaciones">Ejemplo: mostrar sobre otras aplicaciones<a class="headerlink" href="#ejemplo-mostrar-sobre-otras-aplicaciones" title="Permanent link">¶</a></h2>
+<p>El permiso se declara mediante:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-34-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span>
+</span><span id="__span-34-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="na">android:name=</span><span class="s">"android.permission.SYSTEM_ALERT_WINDOW"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Podemos comprobar si está concedido:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-35-1"><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Settings</span><span class="p">.</span><span class="na">canDrawOverlays</span><span class="p">(</span><span class="k">this</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-35-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span>
+</span><span id="__span-35-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">Settings</span><span class="p">.</span><span class="na">ACTION_MANAGE_OVERLAY_PERMISSION</span><span class="p">,</span>
+</span><span id="__span-35-5"><span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">"package:</span><span class="si">$</span><span class="n">packageName</span><span class="s">"</span><span class="p">)</span>
+</span><span id="__span-35-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-35-7"><span class="linenos" data-linenos="7 "></span>
+</span><span id="__span-35-8"><span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="n">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-35-9"><span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>En este caso Android lleva al usuario a una pantalla de configuración del sistema.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Los permisos especiales deben utilizarse únicamente cuando sean imprescindibles para la funcionalidad principal de la aplicación.</p>
+</div>
+<h1 id="grupos-de-permisos">Grupos de permisos<a class="headerlink" href="#grupos-de-permisos" title="Permanent link">¶</a></h1>
+<p>Android organiza determinados permisos relacionados dentro de <strong>grupos de permisos</strong>.</p>
+<p>Algunos ejemplos conceptuales son:</p>
+<table>
+<thead>
+<tr>
+<th>Grupo</th>
+<th>Permisos relacionados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cámara</td>
+<td>Uso de la cámara</td>
+</tr>
+<tr>
+<td>Micrófono</td>
+<td>Grabación de audio</td>
+</tr>
+<tr>
+<td>Ubicación</td>
+<td>Ubicación aproximada y precisa</td>
+</tr>
+<tr>
+<td>Contactos</td>
+<td>Lectura y modificación de contactos</td>
+</tr>
+<tr>
+<td>Calendario</td>
+<td>Lectura y modificación del calendario</td>
+</tr>
+</tbody>
+</table>
+<p>Los grupos ayudan al sistema a organizar y presentar los permisos relacionados.</p>
+<div class="admonition warning">
+<p class="admonition-title">No depender de los grupos</p>
+<p>Una aplicación no debe asumir que obtener un permiso implica automáticamente disponer de todos los permisos pertenecientes al mismo grupo.</p>
+<p>El código debe comprobar individualmente los permisos que realmente necesita.</p>
+</div>
+<h1 id="que-ocurre-si-el-usuario-rechaza-un-permiso">¿Qué ocurre si el usuario rechaza un permiso?<a class="headerlink" href="#que-ocurre-si-el-usuario-rechaza-un-permiso" title="Permanent link">¶</a></h1>
+<p>El usuario siempre puede decidir:</p>
+<ul>
+<li>Conceder el permiso.</li>
+<li>Rechazarlo.</li>
+<li>Conceder determinadas modalidades limitadas cuando Android las permita.</li>
+<li>Revocarlo posteriormente desde los ajustes del dispositivo.</li>
+</ul>
+<p>Por tanto, nuestra aplicación debe estar preparada para continuar funcionando cuando un permiso sea rechazado.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-36-1"><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">concedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-36-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-36-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">abrirCamara</span><span class="p">()</span>
+</span><span id="__span-36-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-36-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-36-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-36-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="c1">// Informar al usuario</span>
+</span><span id="__span-36-8"><span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="c1">// y mantener funcionando el resto de la aplicación</span>
+</span><span id="__span-36-9"><span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Nunca asumir que el usuario concederá el permiso</p>
+<p>Rechazar un permiso <strong>no debería provocar que la aplicación se cierre</strong>.</p>
+<p>Debe deshabilitarse únicamente la funcionalidad que depende de dicho permiso.</p>
+</div>
+<h1 id="explicar-por-que-necesitamos-un-permiso">Explicar por qué necesitamos un permiso<a class="headerlink" href="#explicar-por-que-necesitamos-un-permiso" title="Permanent link">¶</a></h1>
+<p>En determinadas situaciones conviene explicar al usuario por qué una función necesita acceder a un recurso protegido.</p>
+<p>Android permite comprobarlo mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-37-1"><span class="linenos" data-linenos="1 "></span><span class="n">ActivityCompat</span><span class="p">.</span><span class="na">shouldShowRequestPermissionRationale</span><span class="p">(</span>
+</span><span id="__span-37-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">activity</span><span class="p">,</span>
+</span><span id="__span-37-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span>
+</span><span id="__span-37-4"><span class="linenos" data-linenos="4 "></span><span class="p">)</span>
+</span></code></pre></div>
+<p>Podemos utilizarlo para mostrar un mensaje como:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><span class="linenos" data-linenos="1 "></span>Necesitamos acceder a la cámara para poder escanear
+</span><span id="__span-38-2"><span class="linenos" data-linenos="2 "></span>el código QR del producto.
+</span></code></pre></div>
+<p>Después, si el usuario decide continuar, solicitamos el permiso.</p>
+<div class="admonition example">
+<p class="admonition-title">Contexto antes que permiso</p>
+<p>Es mejor:</p>
+<p><strong>Escanear QR → explicar necesidad → solicitar cámara</strong></p>
+<p>que:</p>
+<p><strong>Abrir aplicación → solicitar cámara sin explicación</strong></p>
+</div>
+<h1 id="buenas-practicas">Buenas prácticas<a class="headerlink" href="#buenas-practicas" title="Permanent link">¶</a></h1>
+<h2 id="solicitar-el-minimo-numero-de-permisos">Solicitar el mínimo número de permisos<a class="headerlink" href="#solicitar-el-minimo-numero-de-permisos" title="Permanent link">¶</a></h2>
+<p>Una aplicación debe solicitar únicamente los permisos imprescindibles.</p>
+<p>Por ejemplo, una aplicación que muestra información obtenida mediante una API REST probablemente solo necesite:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-39-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>No debería solicitar:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><span class="linenos" data-linenos="1 "></span>Cámara
+</span><span id="__span-40-2"><span class="linenos" data-linenos="2 "></span>Micrófono
+</span><span id="__span-40-3"><span class="linenos" data-linenos="3 "></span>Contactos
+</span><span id="__span-40-4"><span class="linenos" data-linenos="4 "></span>Ubicación
+</span></code></pre></div>
+<p>si no utiliza esas funcionalidades.</p>
+<h2 id="solicitar-el-permiso-en-contexto">Solicitar el permiso en contexto<a class="headerlink" href="#solicitar-el-permiso-en-contexto" title="Permanent link">¶</a></h2>
+<p>El permiso debería solicitarse cuando el usuario intenta utilizar la funcionalidad relacionada.</p>
+<p>Ejemplo:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut01/ut01_04_Permisos_Contexto_Android.png" data-desc-position="bottom"><img alt="Permisos en tiempo de ejecución en Android" src="../../img/ut01/ut01_04_Permisos_Contexto_Android.png"></a></p>
+<h2 id="ofrecer-alternativas">Ofrecer alternativas<a class="headerlink" href="#ofrecer-alternativas" title="Permanent link">¶</a></h2>
+<p>Siempre que sea posible, la aplicación debe permitir realizar una acción sin acceder directamente a datos protegidos.</p>
+<p>Por ejemplo, en determinadas situaciones podemos utilizar un <strong>Photo Picker</strong> proporcionado por Android para que sea el propio usuario quien seleccione las imágenes que desea compartir con la aplicación.</p>
+<p>Esto evita solicitar acceso general a todas sus fotografías.</p>
+<h2 id="control-y-transparencia">Control y transparencia<a class="headerlink" href="#control-y-transparencia" title="Permanent link">¶</a></h2>
+<p>El usuario debe conocer:</p>
+<ul>
+<li>Qué información utiliza la aplicación.</li>
+<li>Por qué necesita esa información.</li>
+<li>Para qué será utilizada.</li>
+<li>Qué funcionalidad dejará de estar disponible si rechaza el permiso.</li>
+</ul>
+<h2 id="minimizacion-de-datos">Minimización de datos<a class="headerlink" href="#minimizacion-de-datos" title="Permanent link">¶</a></h2>
+<p>La aplicación debe acceder únicamente a los datos estrictamente necesarios.</p>
+<p>Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><span class="linenos" data-linenos="1 "></span>Necesidad: mostrar restaurantes cercanos
+</span></code></pre></div>
+<p>puede justificar utilizar ubicación mientras el usuario utiliza esa funcionalidad.</p>
+<p>Pero no implica necesariamente:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><span class="linenos" data-linenos="1 "></span>Acceder permanentemente a la ubicación
+</span><span id="__span-42-2"><span class="linenos" data-linenos="2 "></span>        +
+</span><span id="__span-42-3"><span class="linenos" data-linenos="3 "></span>Registrar todos los desplazamientos
+</span><span id="__span-42-4"><span class="linenos" data-linenos="4 "></span>        +
+</span><span id="__span-42-5"><span class="linenos" data-linenos="5 "></span>Mantener ubicación en segundo plano
+</span></code></pre></div>
+<h1 id="permisos-y-componentes-de-android">Permisos y componentes de Android<a class="headerlink" href="#permisos-y-componentes-de-android" title="Permanent link">¶</a></h1>
+<p>Los permisos no solo sirven para controlar el acceso del usuario a determinados recursos.</p>
+<p>También pueden utilizarse para <strong>proteger componentes de una aplicación frente a otras aplicaciones</strong>.</p>
+<p>Los principales componentes Android son:</p>
+<ul>
+<li><code>Activity</code>.</li>
+<li><code>Service</code>.</li>
+<li><code>BroadcastReceiver</code>.</li>
+<li><code>ContentProvider</code>.</li>
+</ul>
+<p>Por ejemplo, podemos controlar si una <code>Activity</code> puede ser utilizada desde otra aplicación mediante:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-43-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;activity</span>
+</span><span id="__span-43-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="na">android:name=</span><span class="s">".MainActivity"</span>
+</span><span id="__span-43-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="na">android:exported=</span><span class="s">"false"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Con:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-44-1"><span class="linenos" data-linenos="1 "></span>android:exported="false"
+</span></code></pre></div>
+<p>el componente no queda disponible para otras aplicaciones.</p>
+<p>Cuando un componente necesita ser accesible externamente, debemos analizar cuidadosamente qué aplicaciones deberían poder utilizarlo y qué mecanismos de seguridad necesita.</p>
+<h1 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th style="text-align: center;">¿Usuario interviene?</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normal</strong></td>
+<td style="text-align: center;">No</td>
+<td><code>INTERNET</code></td>
+</tr>
+<tr>
+<td><strong>Runtime</strong></td>
+<td style="text-align: center;">Sí</td>
+<td><code>CAMERA</code></td>
+</tr>
+<tr>
+<td><strong>Runtime</strong></td>
+<td style="text-align: center;">Sí</td>
+<td><code>RECORD_AUDIO</code></td>
+</tr>
+<tr>
+<td><strong>Runtime</strong></td>
+<td style="text-align: center;">Sí</td>
+<td><code>ACCESS_FINE_LOCATION</code></td>
+</tr>
+<tr>
+<td><strong>Runtime</strong></td>
+<td style="text-align: center;">Sí</td>
+<td><code>POST_NOTIFICATIONS</code></td>
+</tr>
+<tr>
+<td><strong>Especial</strong></td>
+<td style="text-align: center;">Ajustes del sistema</td>
+<td><code>SYSTEM_ALERT_WINDOW</code></td>
+</tr>
+<tr>
+<td><strong>Firma</strong></td>
+<td style="text-align: center;">No normalmente</td>
+<td>Comunicación entre apps firmadas adecuadamente</td>
+</tr>
+</tbody>
+</table>
+<p>El flujo que debemos recordar para los permisos de tiempo de ejecución es:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut01/ut01_05_Flujo_Permisos_Android.png" data-desc-position="bottom"><img alt="Permisos en tiempo de ejecución en Android" src="../../img/ut01/ut01_05_Flujo_Permisos_Android.png"></a></p>
 <div class="admonition quote">
 <p class="admonition-title">Gary Kovacs</p>
 <p>Privacy is not an option, and it shouldn't be the price we accept for just getting on the Internet.</p>
@@ -1335,8 +1823,8 @@ Solo lo solicita cuando el usuario pulsa el botón <em>Grabar audio</em>.</p>
 <ul>
 <li><strong><abbr title="Actividades de clase.">AC</abbr> 110</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> <abbr title="Se han identificado los distintos tipos de variables y la utilidad específica de cada uno.">CE1d</abbr> <abbr title="Se ha modificado el código de un programa para crear y utilizar variables.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p) Clasifica estos permisos en <strong>normales</strong> o <strong>peligrosos</strong>: acceso a Internet, leer contactos, cámara, vibración.</li>
 <li><strong><abbr title="Actividades de clase.">AC</abbr> 111</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se ha modificado el código de un programa para crear y utilizar variables.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p) Busca qué diferencia hay entre <strong>permisos de instalación</strong> y <strong>permisos de tiempo de ejecución</strong> a partir de Android 6.</li>
-<li><strong><abbr title="Prácticas">PR</abbr> 112</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> <abbr title="Se han identificado los distintos tipos de variables y la utilidad específica de cada uno.">CE1d</abbr> <abbr title="Se ha modificado el código de un programa para crear y utilizar variables.">CE1e</abbr> <abbr title="Se han creado y utilizado constantes y literales.">CE1f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Crea un ejemplo (en pseudocódigo o Kotlin simplificado) de cómo pedir permiso para acceder al micrófono solo cuando el usuario pulse un botón.</li>
-<li><strong><abbr title="Prácticas">PR</abbr> 113</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> <abbr title="Se han creado y utilizado constantes y literales.">CE1f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Debes analizar los posibles tipos de permisos que puede tener la aplicación WhatsApp</li>
+<li><strong><abbr title="Prácticas">PR</abbr> 112</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> <abbr title="Se han identificado los distintos tipos de variables y la utilidad específica de cada uno.">CE1d</abbr> <abbr title="Se ha modificado el código de un programa para crear y utilizar variables.">CE1e</abbr> <abbr title="Se han creado y utilizado constantes y literales.">CE1f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Crea un ejemplo en Kotlin simplificado, de cómo pedir permiso para acceder al micrófono solo cuando el usuario pulse un botón.</li>
+<li><strong><abbr title="Prácticas">PR</abbr> 113</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> <abbr title="Se han creado y utilizado constantes y literales.">CE1f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Debes analizar los posibles tipos de permisos que puede tener la aplicación WhatsApp.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

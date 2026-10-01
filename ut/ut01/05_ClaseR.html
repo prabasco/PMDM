@@ -747,30 +747,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#puntos-clave-sobre-la-clase-r" class="md-nav__link">
+  <a href="#para-que-sirve-la-clase-r" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Puntos clave sobre la clase R
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Puntos clave sobre la clase R">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ejemplos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ejemplos de uso
+        ¿Para qué sirve la clase R?
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#generacion-automatica-de-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generación automática de R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-la-clase-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructura de la clase R
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1189,58 +1194,580 @@
 
 
 
-<h1 id="la-clase-r">La clase R<a class="headerlink" href="#la-clase-r" title="Permanent link">¶</a></h1>
-<p>En Android, la <strong>clase <code>R</code></strong> es la encargada de organizar y dar acceso a todos los <strong>recursos</strong> de la aplicación (layouts, imágenes, cadenas de texto, identificadores de vistas, etc.).
-Se genera de forma <strong>automática</strong> en cada compilación del proyecto, por lo que el programador no necesita crearla ni modificarla manualmente.</p>
-<h2 id="puntos-clave-sobre-la-clase-r">Puntos clave sobre la clase R<a class="headerlink" href="#puntos-clave-sobre-la-clase-r" title="Permanent link">¶</a></h2>
-<ol>
-<li><strong>Generación automática</strong></li>
-</ol>
+<h1 id="la-clase-r">La clase <code>R</code><a class="headerlink" href="#la-clase-r" title="Permanent link">¶</a></h1>
+<p>En Android, la clase <strong><code>R</code></strong> es una clase generada automáticamente durante el proceso de compilación que permite acceder desde el código a los <strong>recursos de la aplicación</strong>.</p>
+<p>Los recursos se encuentran principalmente dentro de la carpeta:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>app/
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>└── src/
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    └── main/
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>        ├── java/
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>        ├── res/
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>        │   ├── drawable/
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>        │   ├── layout/
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>        │   ├── mipmap/
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>        │   ├── values/
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>        │   ├── font/
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        │   └── ...
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>        └── AndroidManifest.xml
+</span></code></pre></div>
+<p>Android procesa los recursos almacenados en <code>res/</code> y genera identificadores que quedan organizados dentro de la clase <code>R</code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>La clase <code>R</code> <strong>no se crea ni se modifica manualmente</strong>. Forma parte del código generado automáticamente durante la compilación del proyecto.</p>
+</div>
+<h2 id="para-que-sirve-la-clase-r">¿Para qué sirve la clase <code>R</code>?<a class="headerlink" href="#para-que-sirve-la-clase-r" title="Permanent link">¶</a></h2>
+<p>La clase <code>R</code> actúa como un puente entre los <strong>recursos almacenados en <code>res/</code></strong> y el <strong>código Kotlin o Java</strong> de nuestra aplicación.</p>
+<p>Por ejemplo, podemos tener una cadena de texto definida en:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>res/values/strings.xml
+</span></code></pre></div>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;resources&gt;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"app_name"</span><span class="nt">&gt;</span>Mi<span class="w"> </span>aplicación<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"mensaje_bienvenida"</span><span class="nt">&gt;</span>Bienvenido<span class="w"> </span>a<span class="w"> </span>Android<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></div>
+<p>Android genera un identificador para cada recurso.</p>
+<p>Conceptualmente, podemos imaginar que la clase <code>R</code> contiene algo similar a:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="kd">class</span><span class="w"> </span><span class="nc">R</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">class</span><span class="w"> </span><span class="nc">string</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kd">companion</span><span class="w"> </span><span class="kd">object</span><span class="w"> </span><span class="err">{</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">app_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">mensaje_bienvenida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Este código es únicamente una <strong>representación conceptual</strong>. No debemos crear esta clase manualmente.</p>
+<p>Desde Kotlin podemos acceder al recurso mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje_bienvenida</span>
+</span></code></pre></div>
+<p>Por tanto:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span>res/values/strings.xml
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>        │
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>        ▼
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>mensaje_bienvenida
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>        │
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>        ▼
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>R.string.mensaje_bienvenida
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>        │
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>        ▼
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>Código Kotlin
+</span></code></pre></div>
+<h2 id="generacion-automatica-de-r">Generación automática de <code>R</code><a class="headerlink" href="#generacion-automatica-de-r" title="Permanent link">¶</a></h2>
+<p>Durante la compilación, las herramientas de Android procesan los recursos de la aplicación y generan sus correspondientes identificadores.</p>
+<p>Por ejemplo, si tenemos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>res/drawable/logo.png
+</span></code></pre></div>
+<p>podremos acceder al recurso mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo</span>
+</span></code></pre></div>
+<p>Si tenemos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>res/layout/activity_main.xml
+</span></code></pre></div>
+<p>podremos acceder mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span>
+</span></code></pre></div>
+<p>Y si tenemos:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"titulo"</span><span class="nt">&gt;</span>Mi<span class="w"> </span>aplicación<span class="nt">&lt;/string&gt;</span>
+</span></code></pre></div>
+<p>podremos utilizar:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">titulo</span>
+</span></code></pre></div>
+<p>El programador trabaja con estos nombres en lugar de utilizar directamente rutas de archivos.</p>
+<h2 id="estructura-de-la-clase-r">Estructura de la clase <code>R</code><a class="headerlink" href="#estructura-de-la-clase-r" title="Permanent link">¶</a></h2>
+<p>Los identificadores están organizados según el <strong>tipo de recurso</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Carpeta / archivo</th>
+<th>Acceso desde <code>R</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Layout</td>
+<td><code>res/layout/</code></td>
+<td><code>R.layout.nombre</code></td>
+</tr>
+<tr>
+<td>Imagen</td>
+<td><code>res/drawable/</code></td>
+<td><code>R.drawable.nombre</code></td>
+</tr>
+<tr>
+<td>Texto</td>
+<td><code>res/values/strings.xml</code></td>
+<td><code>R.string.nombre</code></td>
+</tr>
+<tr>
+<td>Color</td>
+<td><code>res/values/colors.xml</code></td>
+<td><code>R.color.nombre</code></td>
+</tr>
+<tr>
+<td>Dimensión</td>
+<td><code>res/values/dimens.xml</code></td>
+<td><code>R.dimen.nombre</code></td>
+</tr>
+<tr>
+<td>Identificador</td>
+<td><code>android:id</code></td>
+<td><code>R.id.nombre</code></td>
+</tr>
+<tr>
+<td>Menú</td>
+<td><code>res/menu/</code></td>
+<td><code>R.menu.nombre</code></td>
+</tr>
+<tr>
+<td>Fuente</td>
+<td><code>res/font/</code></td>
+<td><code>R.font.nombre</code></td>
+</tr>
+<tr>
+<td>Animación</td>
+<td><code>res/anim/</code></td>
+<td><code>R.anim.nombre</code></td>
+</tr>
+<tr>
+<td>Iconos de aplicación</td>
+<td><code>res/mipmap/</code></td>
+<td><code>R.mipmap.nombre</code></td>
+</tr>
+<tr>
+<td>Estilos</td>
+<td><code>res/values/</code></td>
+<td><code>R.style.nombre</code></td>
+</tr>
+</tbody>
+</table>
+<p>La sintaxis general es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>R.tipo.nombre
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span>
+</span><span id="__span-13-2"><span class="linenos" data-linenos="2 "></span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">btnAceptar</span>
+</span><span id="__span-13-3"><span class="linenos" data-linenos="3 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">app_name</span>
+</span><span id="__span-13-4"><span class="linenos" data-linenos="4 "></span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo</span>
+</span><span id="__span-13-5"><span class="linenos" data-linenos="5 "></span><span class="n">R</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">primary</span>
+</span></code></pre></div>
+<h1 id="ejemplo-completo-con-xml">Ejemplo completo con XML<a class="headerlink" href="#ejemplo-completo-con-xml" title="Permanent link">¶</a></h1>
+<p>Supongamos que tenemos el siguiente proyecto:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos=" 1 "></span>res/
+</span><span id="__span-14-2"><span class="linenos" data-linenos=" 2 "></span>├── drawable/
+</span><span id="__span-14-3"><span class="linenos" data-linenos=" 3 "></span>│   └── logo_android.png
+</span><span id="__span-14-4"><span class="linenos" data-linenos=" 4 "></span>│
+</span><span id="__span-14-5"><span class="linenos" data-linenos=" 5 "></span>├── layout/
+</span><span id="__span-14-6"><span class="linenos" data-linenos=" 6 "></span>│   └── activity_main.xml
+</span><span id="__span-14-7"><span class="linenos" data-linenos=" 7 "></span>│
+</span><span id="__span-14-8"><span class="linenos" data-linenos=" 8 "></span>└── values/
+</span><span id="__span-14-9"><span class="linenos" data-linenos=" 9 "></span>    ├── colors.xml
+</span><span id="__span-14-10"><span class="linenos" data-linenos="10 "></span>    └── strings.xml
+</span></code></pre></div>
+<h2 id="stringsxml"><code>strings.xml</code><a class="headerlink" href="#stringsxml" title="Permanent link">¶</a></h2>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;resources&gt;</span>
+</span><span id="__span-15-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"app_name"</span><span class="nt">&gt;</span>Clase<span class="w"> </span>R<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-15-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"mensaje"</span><span class="nt">&gt;</span>Aprendiendo<span class="w"> </span>recursos<span class="w"> </span>en<span class="w"> </span>Android<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-15-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"boton_aceptar"</span><span class="nt">&gt;</span>Aceptar<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-15-5"><span class="linenos" data-linenos="5 "></span><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></div>
+<p>Android permite acceder a estos recursos mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">app_name</span>
+</span><span id="__span-16-2"><span class="linenos" data-linenos="2 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje</span>
+</span><span id="__span-16-3"><span class="linenos" data-linenos="3 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">boton_aceptar</span>
+</span></code></pre></div>
+<h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">¶</a></h2>
+<p>En <code>activity_main.xml</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-17-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-17-3"><span class="linenos" data-linenos=" 3 "></span><span class="nt">&lt;LinearLayout</span>
+</span><span id="__span-17-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-17-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-17-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+</span><span id="__span-17-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+</span><span id="__span-17-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-17-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-17-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/txtMensaje"</span>
+</span><span id="__span-17-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-17-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-17-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="na">android:text=</span><span class="s">"@string/mensaje"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-17-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-17-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="nt">&lt;ImageView</span>
+</span><span id="__span-17-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/imgLogo"</span>
+</span><span id="__span-17-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"150dp"</span>
+</span><span id="__span-17-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"150dp"</span>
+</span><span id="__span-17-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="na">android:src=</span><span class="s">"@drawable/logo_android"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-17-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-17-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="nt">&lt;Button</span>
+</span><span id="__span-17-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/btnAceptar"</span>
+</span><span id="__span-17-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-17-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-17-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="na">android:text=</span><span class="s">"@string/boton_aceptar"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-17-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-17-27"><span class="linenos" data-linenos="27 "></span><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></div>
+<p>Aquí aparecen varios tipos de recursos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>@+id/txtMensaje
+</span><span id="__span-18-2"><span class="linenos" data-linenos="2 "></span>@+id/imgLogo
+</span><span id="__span-18-3"><span class="linenos" data-linenos="3 "></span>@+id/btnAceptar
+</span><span id="__span-18-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-18-5"><span class="linenos" data-linenos="5 "></span>@string/mensaje
+</span><span id="__span-18-6"><span class="linenos" data-linenos="6 "></span>@string/boton_aceptar
+</span><span id="__span-18-7"><span class="linenos" data-linenos="7 "></span>
+</span><span id="__span-18-8"><span class="linenos" data-linenos="8 "></span>@drawable/logo_android
+</span></code></pre></div>
+<h1 id="acceso-desde-kotlin">Acceso desde Kotlin<a class="headerlink" href="#acceso-desde-kotlin" title="Permanent link">¶</a></h1>
+<p>En una <code>Activity</code> tradicional podemos cargar el layout:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos="1 "></span><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-19-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-4"><span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-19-5"><span class="linenos" data-linenos="5 "></span>
+</span><span id="__span-19-6"><span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
+</span><span id="__span-19-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>La expresión:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span>
+</span></code></pre></div>
+<p>hace referencia al archivo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><span class="linenos" data-linenos="1 "></span>res/layout/activity_main.xml
+</span></code></pre></div>
+<h2 id="acceder-a-una-vista">Acceder a una vista<a class="headerlink" href="#acceder-a-una-vista" title="Permanent link">¶</a></h2>
+<p>Podemos acceder a una vista mediante su identificador:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-22-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">boton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">Button</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">btnAceptar</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>R.id.btnAceptar</code> corresponde al identificador definido en XML:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-23-1"><span class="linenos" data-linenos="1 "></span>android:id="@+id/btnAceptar"
+</span></code></pre></div>
+<p>Otro ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-24-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">TextView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtMensaje</span><span class="p">)</span>
+</span><span id="__span-24-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-24-3"><span class="linenos" data-linenos="3 "></span><span class="n">texto</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Hola Android"</span>
+</span></code></pre></div>
+<p>En proyectos actuales basados en XML suele utilizarse <strong>View Binding</strong> en lugar de abusar de <code>findViewById()</code>, pero <code>R.id</code> sigue siendo fundamental para comprender cómo Android identifica los recursos.</p>
+<h1 id="obtener-una-cadena-de-texto">Obtener una cadena de texto<a class="headerlink" href="#obtener-una-cadena-de-texto" title="Permanent link">¶</a></h1>
+<p>Supongamos:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-25-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"mensaje"</span><span class="nt">&gt;</span>Aprendiendo<span class="w"> </span>Android<span class="nt">&lt;/string&gt;</span>
+</span></code></pre></div>
+<p>Podemos recuperarla desde Kotlin mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-26-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje</span><span class="p">)</span>
+</span></code></pre></div>
+<p>La variable <code>mensaje</code> contendrá:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><span class="linenos" data-linenos="1 "></span>Aprendiendo Android
+</span></code></pre></div>
+<p>Esto es diferente de:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-28-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje</span>
+</span></code></pre></div>
+<p>En este segundo caso <strong>no obtenemos directamente el texto</strong>.</p>
+<p><code>R.string.mensaje</code> representa el <strong>identificador del recurso</strong>.</p>
+<p>Por tanto:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-29-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje</span>
+</span></code></pre></div>
+<p>almacena un identificador numérico generado por Android.</p>
+<p>Mientras que:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-30-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje</span><span class="p">)</span>
+</span></code></pre></div>
+<p>obtiene el contenido real del recurso.</p>
+<div class="admonition warning">
+<p class="admonition-title">Error frecuente</p>
+<p><code>R.string.mensaje</code> no contiene directamente <code>"Aprendiendo Android"</code>. Contiene un identificador que Android utiliza para localizar ese recurso.</p>
+</div>
+<h1 id="recursos-parametrizados">Recursos parametrizados<a class="headerlink" href="#recursos-parametrizados" title="Permanent link">¶</a></h1>
+<p>Una ventaja importante de <code>strings.xml</code> es que podemos crear textos con parámetros.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-31-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"bienvenida"</span><span class="nt">&gt;</span>Bienvenido,<span class="w"> </span>%1$s<span class="nt">&lt;/string&gt;</span>
+</span></code></pre></div>
+<p>Después:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-32-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ana"</span>
+</span><span id="__span-32-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-32-3"><span class="linenos" data-linenos="3 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getString</span><span class="p">(</span>
+</span><span id="__span-32-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">bienvenida</span><span class="p">,</span>
+</span><span id="__span-32-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">nombre</span>
+</span><span id="__span-32-6"><span class="linenos" data-linenos="6 "></span><span class="p">)</span>
+</span></code></pre></div>
+<p>El resultado será:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><span class="linenos" data-linenos="1 "></span>Bienvenido, Ana
+</span></code></pre></div>
+<p>Esto evita construir textos manualmente:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-34-1"><span class="linenos" data-linenos="1 "></span><span class="s">"Bienvenido, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span>
+</span></code></pre></div>
+<p>y facilita la <strong>internacionalización de la aplicación</strong>.</p>
+<h1 id="la-clase-r-y-jetpack-compose">La clase <code>R</code> y Jetpack Compose<a class="headerlink" href="#la-clase-r-y-jetpack-compose" title="Permanent link">¶</a></h1>
+<p>La clase <code>R</code> también se utiliza en aplicaciones modernas desarrolladas con <strong>Jetpack Compose</strong>.</p>
+<p>Aunque Compose no utiliza archivos XML para crear normalmente la interfaz, sigue utilizando el sistema de recursos de Android.</p>
+<p>Por ejemplo:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-35-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"titulo"</span><span class="nt">&gt;</span>Mi<span class="w"> </span>aplicación<span class="nt">&lt;/string&gt;</span>
+</span></code></pre></div>
+<p>En Compose:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-36-1"><span class="linenos" data-linenos="1 "></span><span class="n">Text</span><span class="p">(</span>
+</span><span id="__span-36-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">titulo</span><span class="p">)</span>
+</span><span id="__span-36-3"><span class="linenos" data-linenos="3 "></span><span class="p">)</span>
+</span></code></pre></div>
+<p>Para una imagen:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-37-1"><span class="linenos" data-linenos="1 "></span><span class="n">Image</span><span class="p">(</span>
+</span><span id="__span-37-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">painter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">painterResource</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo_android</span><span class="p">),</span>
+</span><span id="__span-37-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">contentDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-37-4"><span class="linenos" data-linenos="4 "></span><span class="p">)</span>
+</span></code></pre></div>
+<p>Para un color:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-38-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colorResource</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">primary</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Por tanto, Compose elimina gran parte de la necesidad de:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><span class="linenos" data-linenos="1 "></span>R.layout
+</span><span id="__span-39-2"><span class="linenos" data-linenos="2 "></span>R.id
+</span></code></pre></div>
+<p>pero sigue utilizando frecuentemente:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><span class="linenos" data-linenos="1 "></span>R.string
+</span><span id="__span-40-2"><span class="linenos" data-linenos="2 "></span>R.drawable
+</span><span id="__span-40-3"><span class="linenos" data-linenos="3 "></span>R.color
+</span><span id="__span-40-4"><span class="linenos" data-linenos="4 "></span>R.font
+</span><span id="__span-40-5"><span class="linenos" data-linenos="5 "></span>R.dimen
+</span></code></pre></div>
+<h1 id="ejemplo-con-jetpack-compose">Ejemplo con Jetpack Compose<a class="headerlink" href="#ejemplo-con-jetpack-compose" title="Permanent link">¶</a></h1>
+<p>Supongamos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><span class="linenos" data-linenos="1 "></span>res/
+</span><span id="__span-41-2"><span class="linenos" data-linenos="2 "></span>├── drawable/
+</span><span id="__span-41-3"><span class="linenos" data-linenos="3 "></span>│   └── logo_android.png
+</span><span id="__span-41-4"><span class="linenos" data-linenos="4 "></span>│
+</span><span id="__span-41-5"><span class="linenos" data-linenos="5 "></span>└── values/
+</span><span id="__span-41-6"><span class="linenos" data-linenos="6 "></span>    └── strings.xml
+</span></code></pre></div>
+<p>Con:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-42-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;resources&gt;</span>
+</span><span id="__span-42-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-42-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"app_name"</span><span class="nt">&gt;</span>Mi<span class="w"> </span>aplicación<span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-42-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-42-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="nt">&lt;string</span><span class="w"> </span><span class="na">name=</span><span class="s">"mensaje_bienvenida"</span><span class="nt">&gt;</span>
+</span><span id="__span-42-6"><span class="linenos" data-linenos="6 "></span><span class="w">        </span>Bienvenido<span class="w"> </span>a<span class="w"> </span>Android
+</span><span id="__span-42-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="nt">&lt;/string&gt;</span>
+</span><span id="__span-42-8"><span class="linenos" data-linenos="8 "></span>
+</span><span id="__span-42-9"><span class="linenos" data-linenos="9 "></span><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></div>
+<p>Podemos crear:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-43-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-43-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">PantallaPrincipal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-43-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-43-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-43-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-43-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span>
+</span><span id="__span-43-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span>
+</span><span id="__span-43-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">                </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">mensaje_bienvenida</span>
+</span><span id="__span-43-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="p">)</span>
+</span><span id="__span-43-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-43-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-43-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">Image</span><span class="p">(</span>
+</span><span id="__span-43-13"><span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="n">painter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">painterResource</span><span class="p">(</span>
+</span><span id="__span-43-14"><span class="linenos" data-linenos="14 "></span><span class="w">                </span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo_android</span>
+</span><span id="__span-43-15"><span class="linenos" data-linenos="15 "></span><span class="w">            </span><span class="p">),</span>
+</span><span id="__span-43-16"><span class="linenos" data-linenos="16 "></span><span class="w">            </span><span class="n">contentDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-43-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-43-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-43-19"><span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>La relación sería:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><span class="linenos" data-linenos=" 1 "></span>res/
+</span><span id="__span-44-2"><span class="linenos" data-linenos=" 2 "></span> │
+</span><span id="__span-44-3"><span class="linenos" data-linenos=" 3 "></span> ├── values/strings.xml
+</span><span id="__span-44-4"><span class="linenos" data-linenos=" 4 "></span> │       │
+</span><span id="__span-44-5"><span class="linenos" data-linenos=" 5 "></span> │       └── mensaje_bienvenida
+</span><span id="__span-44-6"><span class="linenos" data-linenos=" 6 "></span> │                 │
+</span><span id="__span-44-7"><span class="linenos" data-linenos=" 7 "></span> │                 ▼
+</span><span id="__span-44-8"><span class="linenos" data-linenos=" 8 "></span> │       R.string.mensaje_bienvenida
+</span><span id="__span-44-9"><span class="linenos" data-linenos=" 9 "></span> │                 │
+</span><span id="__span-44-10"><span class="linenos" data-linenos="10 "></span> │                 ▼
+</span><span id="__span-44-11"><span class="linenos" data-linenos="11 "></span> │          stringResource()
+</span><span id="__span-44-12"><span class="linenos" data-linenos="12 "></span> │
+</span><span id="__span-44-13"><span class="linenos" data-linenos="13 "></span> └── drawable/logo_android.png
+</span><span id="__span-44-14"><span class="linenos" data-linenos="14 "></span>         │
+</span><span id="__span-44-15"><span class="linenos" data-linenos="15 "></span>         ▼
+</span><span id="__span-44-16"><span class="linenos" data-linenos="16 "></span> R.drawable.logo_android
+</span><span id="__span-44-17"><span class="linenos" data-linenos="17 "></span>         │
+</span><span id="__span-44-18"><span class="linenos" data-linenos="18 "></span>         ▼
+</span><span id="__span-44-19"><span class="linenos" data-linenos="19 "></span>   painterResource()
+</span></code></pre></div>
+<h1 id="nombres-de-los-recursos">Nombres de los recursos<a class="headerlink" href="#nombres-de-los-recursos" title="Permanent link">¶</a></h1>
+<p>Los nombres de los recursos deben seguir las reglas establecidas por Android.</p>
+<p>Normalmente se utiliza:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><span class="linenos" data-linenos="1 "></span>snake_case
+</span></code></pre></div>
+<p>Ejemplos correctos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><span class="linenos" data-linenos="1 "></span>logo_android.png
+</span><span id="__span-46-2"><span class="linenos" data-linenos="2 "></span>icono_usuario.xml
+</span><span id="__span-46-3"><span class="linenos" data-linenos="3 "></span>activity_main.xml
+</span><span id="__span-46-4"><span class="linenos" data-linenos="4 "></span>imagen_perfil.jpg
+</span></code></pre></div>
+<p>Y nombres como:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><span class="linenos" data-linenos="1 "></span>logoAndroid.png
+</span><span id="__span-47-2"><span class="linenos" data-linenos="2 "></span>LogoAndroid.png
+</span><span id="__span-47-3"><span class="linenos" data-linenos="3 "></span>logo-android.png
+</span></code></pre></div>
+<p>no son adecuados como nombres de recursos Android.</p>
+<p>Esto permite generar identificadores válidos como:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-48-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo_android</span>
+</span></code></pre></div>
+<h1 id="que-ocurre-si-eliminamos-un-recurso">¿Qué ocurre si eliminamos un recurso?<a class="headerlink" href="#que-ocurre-si-eliminamos-un-recurso" title="Permanent link">¶</a></h1>
+<p>Supongamos que tenemos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><span class="linenos" data-linenos="1 "></span>res/drawable/logo_android.png
+</span></code></pre></div>
+<p>y utilizamos:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-50-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo_android</span>
+</span></code></pre></div>
+<p>Si eliminamos el archivo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><span class="linenos" data-linenos="1 "></span>logo_android.png
+</span></code></pre></div>
+<p>el identificador dejará de estar disponible.</p>
+<p>El código:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-52-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo_android</span>
+</span></code></pre></div>
+<p>producirá entonces un <strong>error de compilación</strong>.</p>
+<p>Esto permite detectar rápidamente referencias a recursos que ya no existen.</p>
+<h1 id="errores-relacionados-con-r">Errores relacionados con <code>R</code><a class="headerlink" href="#errores-relacionados-con-r" title="Permanent link">¶</a></h1>
+<p>Uno de los problemas clásicos en Android es que aparezca un error como:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><span class="linenos" data-linenos="1 "></span>Unresolved reference: R
+</span></code></pre></div>
+<p>o:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><span class="linenos" data-linenos="1 "></span>Cannot resolve symbol R
+</span></code></pre></div>
+<p>Esto no significa necesariamente que exista un problema con la clase <code>R</code>.</p>
+<p>Normalmente indica que Android <strong>no ha podido procesar correctamente algún recurso del proyecto</strong>.</p>
+<p>Algunas causas habituales son:</p>
 <ul>
-<li>Cada vez que compilas la app, Android revisa la carpeta <code>res/</code> y crea la clase <code>R</code>.</li>
-<li>En ella se generan constantes para cada recurso (layout, string, drawable, etc.).</li>
+<li>Error en un archivo XML.</li>
+<li>Nombre de recurso no válido.</li>
+<li>Referencia a un recurso inexistente.</li>
+<li>Problemas durante la sincronización de Gradle.</li>
+<li>Error en la configuración del módulo.</li>
+<li>Importación incorrecta de otra clase <code>R</code>.</li>
 </ul>
-<ol start="2">
-<li><strong>Organización por subclases</strong></li>
-</ol>
+<p>Por ejemplo, debe evitarse importar accidentalmente:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-55-1"><span class="linenos" data-linenos="1 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.R</span>
+</span></code></pre></div>
+<p>porque esa clase contiene los recursos <strong>del propio sistema Android</strong>, no los recursos de nuestra aplicación.</p>
+<p>En nuestro código normalmente trabajaremos con la <code>R</code> correspondiente al paquete o <em>namespace</em> de nuestra aplicación.</p>
+<h1 id="recursos-de-android-frente-a-recursos-de-nuestra-aplicacion">Recursos de Android frente a recursos de nuestra aplicación<a class="headerlink" href="#recursos-de-android-frente-a-recursos-de-nuestra-aplicacion" title="Permanent link">¶</a></h1>
+<p>Existen recursos proporcionados por el propio sistema Android.</p>
+<p>Se accede a ellos mediante:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-56-1"><span class="linenos" data-linenos="1 "></span><span class="n">android</span><span class="p">.</span><span class="na">R</span>
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-57-1"><span class="linenos" data-linenos="1 "></span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">ok</span>
+</span></code></pre></div>
+<p>Mientras que los recursos propios utilizan:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-58-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">nombre</span>
+</span></code></pre></div>
+<p>Por tanto:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><span class="linenos" data-linenos="1 "></span>R
+</span><span id="__span-59-2"><span class="linenos" data-linenos="2 "></span>│
+</span><span id="__span-59-3"><span class="linenos" data-linenos="3 "></span>└── Recursos de nuestra aplicación
+</span><span id="__span-59-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-59-5"><span class="linenos" data-linenos="5 "></span>android.R
+</span><span id="__span-59-6"><span class="linenos" data-linenos="6 "></span>│
+</span><span id="__span-59-7"><span class="linenos" data-linenos="7 "></span>└── Recursos proporcionados por Android
+</span></code></pre></div>
+<h1 id="la-clase-r-y-los-modulos">La clase <code>R</code> y los módulos<a class="headerlink" href="#la-clase-r-y-los-modulos" title="Permanent link">¶</a></h1>
+<p>En proyectos Android grandes podemos tener varios módulos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><span class="linenos" data-linenos="1 "></span>Proyecto
+</span><span id="__span-60-2"><span class="linenos" data-linenos="2 "></span>│
+</span><span id="__span-60-3"><span class="linenos" data-linenos="3 "></span>├── app
+</span><span id="__span-60-4"><span class="linenos" data-linenos="4 "></span>├── feature_login
+</span><span id="__span-60-5"><span class="linenos" data-linenos="5 "></span>├── feature_profile
+</span><span id="__span-60-6"><span class="linenos" data-linenos="6 "></span>└── core
+</span></code></pre></div>
+<p>Cada módulo Android puede generar su propia clase <code>R</code> asociada a los recursos que le corresponden.</p>
+<p>Esto es especialmente importante cuando trabajamos con:</p>
 <ul>
-<li>Los recursos se agrupan en subclases según su tipo:</li>
-<li><code>R.layout</code>: diseña pantallas en XML.</li>
-<li><code>R.drawable</code>: imágenes y gráficos.</li>
-<li><code>R.string</code>: cadenas de texto.</li>
-<li><code>R.id</code>: identificadores de vistas en los layouts.</li>
+<li>aplicaciones modulares;</li>
+<li>bibliotecas Android;</li>
+<li>arquitecturas grandes;</li>
+<li>módulos de funcionalidades.</li>
 </ul>
-<ol start="3">
-<li><strong>Acceso directo y seguro</strong></li>
-</ol>
+<h1 id="esquema-general">Esquema general<a class="headerlink" href="#esquema-general" title="Permanent link">¶</a></h1>
+<p>El funcionamiento de la clase <code>R</code> puede resumirse así:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><span class="linenos" data-linenos=" 1 "></span>               RECURSOS
+</span><span id="__span-61-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-61-3"><span class="linenos" data-linenos=" 3 "></span>                   res/
+</span><span id="__span-61-4"><span class="linenos" data-linenos=" 4 "></span>                    │
+</span><span id="__span-61-5"><span class="linenos" data-linenos=" 5 "></span>        ┌───────────┼───────────┐
+</span><span id="__span-61-6"><span class="linenos" data-linenos=" 6 "></span>        │           │           │
+</span><span id="__span-61-7"><span class="linenos" data-linenos=" 7 "></span>     layout      drawable     values
+</span><span id="__span-61-8"><span class="linenos" data-linenos=" 8 "></span>        │           │           │
+</span><span id="__span-61-9"><span class="linenos" data-linenos=" 9 "></span>        ▼           ▼           ▼
+</span><span id="__span-61-10"><span class="linenos" data-linenos="10 "></span> activity_main   logo.png   strings.xml
+</span><span id="__span-61-11"><span class="linenos" data-linenos="11 "></span>        │           │           │
+</span><span id="__span-61-12"><span class="linenos" data-linenos="12 "></span>        └───────────┼───────────┘
+</span><span id="__span-61-13"><span class="linenos" data-linenos="13 "></span>                    │
+</span><span id="__span-61-14"><span class="linenos" data-linenos="14 "></span>                    ▼
+</span><span id="__span-61-15"><span class="linenos" data-linenos="15 "></span>          Procesamiento de recursos
+</span><span id="__span-61-16"><span class="linenos" data-linenos="16 "></span>                    │
+</span><span id="__span-61-17"><span class="linenos" data-linenos="17 "></span>                    ▼
+</span><span id="__span-61-18"><span class="linenos" data-linenos="18 "></span>                 Clase R
+</span><span id="__span-61-19"><span class="linenos" data-linenos="19 "></span>                    │
+</span><span id="__span-61-20"><span class="linenos" data-linenos="20 "></span>        ┌───────────┼────────────┐
+</span><span id="__span-61-21"><span class="linenos" data-linenos="21 "></span>        │           │            │
+</span><span id="__span-61-22"><span class="linenos" data-linenos="22 "></span>    R.layout    R.drawable    R.string
+</span><span id="__span-61-23"><span class="linenos" data-linenos="23 "></span>        │           │            │
+</span><span id="__span-61-24"><span class="linenos" data-linenos="24 "></span>        ▼           ▼            ▼
+</span><span id="__span-61-25"><span class="linenos" data-linenos="25 "></span>activity_main     logo          titulo
+</span><span id="__span-61-26"><span class="linenos" data-linenos="26 "></span>                    │
+</span><span id="__span-61-27"><span class="linenos" data-linenos="27 "></span>                    ▼
+</span><span id="__span-61-28"><span class="linenos" data-linenos="28 "></span>               Código Kotlin
+</span></code></pre></div>
+<h2 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">¶</a></h2>
+<p>La clase <code>R</code>:</p>
 <ul>
-<li>Se accede a cada recurso con la notación <code>R.tipo.nombre</code>.</li>
-<li>Evita errores tipográficos y asegura que el recurso existe en tiempo de compilación.</li>
+<li>Se <strong>genera automáticamente</strong> durante el proceso de compilación.</li>
+<li>Representa los recursos disponibles para el código Android.</li>
+<li>No debe modificarse manualmente.</li>
+<li>Organiza los recursos por tipos.</li>
+<li>Utiliza la sintaxis:</li>
 </ul>
-<ol start="4">
-<li><strong>Prevención de errores</strong></li>
-</ol>
-<ul>
-<li>Si borras un recurso del proyecto, su constante desaparece de <code>R</code>.</li>
-<li>Esto obliga al compilador a marcar errores donde se usaba, ayudando a detectar fallos rápidamente.</li>
-</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><span class="linenos" data-linenos="1 "></span>R.tipo.nombre
+</span></code></pre></div>
+<p>Ejemplos:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-63-1"><span class="linenos" data-linenos="1 "></span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">titulo</span>
+</span><span id="__span-63-2"><span class="linenos" data-linenos="2 "></span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">logo</span>
+</span><span id="__span-63-3"><span class="linenos" data-linenos="3 "></span><span class="n">R</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">primary</span>
+</span><span id="__span-63-4"><span class="linenos" data-linenos="4 "></span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span>
+</span><span id="__span-63-5"><span class="linenos" data-linenos="5 "></span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">btnAceptar</span>
+</span></code></pre></div>
+<p>En aplicaciones tradicionales basadas en XML son especialmente importantes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><span class="linenos" data-linenos="1 "></span>R.layout
+</span><span id="__span-64-2"><span class="linenos" data-linenos="2 "></span>R.id
+</span></code></pre></div>
+<p>En aplicaciones desarrolladas con <strong>Jetpack Compose</strong> son especialmente habituales:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><span class="linenos" data-linenos="1 "></span>R.string
+</span><span id="__span-65-2"><span class="linenos" data-linenos="2 "></span>R.drawable
+</span><span id="__span-65-3"><span class="linenos" data-linenos="3 "></span>R.color
+</span><span id="__span-65-4"><span class="linenos" data-linenos="4 "></span>R.font
+</span><span id="__span-65-5"><span class="linenos" data-linenos="5 "></span>R.dimen
+</span></code></pre></div>
+<p>La idea fundamental es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><span class="linenos" data-linenos="1 "></span>Recurso almacenado en res/
+</span><span id="__span-66-2"><span class="linenos" data-linenos="2 "></span>          ↓
+</span><span id="__span-66-3"><span class="linenos" data-linenos="3 "></span>Android genera un identificador
+</span><span id="__span-66-4"><span class="linenos" data-linenos="4 "></span>          ↓
+</span><span id="__span-66-5"><span class="linenos" data-linenos="5 "></span>R.tipo.nombre
+</span><span id="__span-66-6"><span class="linenos" data-linenos="6 "></span>          ↓
+</span><span id="__span-66-7"><span class="linenos" data-linenos="7 "></span>El código Kotlin utiliza el recurso
+</span></code></pre></div>
 <h3 id="ejemplos-de-uso">Ejemplos de uso<a class="headerlink" href="#ejemplos-de-uso" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">Layout y vista principal</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>// Enlazar la actividad con el layout definido en XML
-</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>setContentView(R.layout.activity_main);
+<div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><span class="linenos" data-linenos="1 "></span>// Enlazar la actividad con el layout definido en XML
+</span><span id="__span-67-2"><span class="linenos" data-linenos="2 "></span>setContentView(R.layout.activity_main);
 </span></code></pre></div>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Cargar un recurso gráfico</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>// Asignar una imagen a un ImageView
-</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>imageView.setImageResource(R.drawable.logo);
+<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><span class="linenos" data-linenos="1 "></span>// Asignar una imagen a un ImageView
+</span><span id="__span-68-2"><span class="linenos" data-linenos="2 "></span>imageView.setImageResource(R.drawable.logo);
 </span></code></pre></div>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Acceder a un texto definido en strings.xml</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>// Obtener una cadena de texto
-</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>String saludo = getString(R.string.bienvenida);
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><span class="linenos" data-linenos="1 "></span>// Obtener una cadena de texto
+</span><span id="__span-69-2"><span class="linenos" data-linenos="2 "></span>String saludo = getString(R.string.bienvenida);
 </span></code></pre></div>
 </div>
 <p>A lo largo del curso avanzaremos en ella, pero tienes una <a href="https://developer.android.com/guide/topics/resources/available-resources?hl=es-419">descripción general de los tipos de recursos</a> que hacen uso de ella.</p>
