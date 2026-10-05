@@ -1521,6 +1521,7 @@
 </li>
 <li>Los guarda en un <code>Bundle</code> de pares clave-valor.</li>
 <li>El sistema restaura automáticamente datos de las <code>Views</code> con <code>android:id</code>.</li>
+<li></li>
 <li>
 <p><strong>ViewModel</strong></p>
 </li>
@@ -1595,15 +1596,22 @@ Ejemplo: abrir la app de correo desde la pantalla principal, o iniciar la cámar
 <ul>
 <li><strong><abbr title="Actividades de clase.">AC</abbr> 201</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p) Analiza de forma teórica el ciclo de vida de una Activity en Android y reflexiona sobre su importancia.</li>
 </ul>
-<p>!!! info "Tareas a realizar"
-    - Analogía personal: Crea tu propia analogía comparando cada estado del ciclo de vida de una Activity con situaciones de la vida real (puede ser un día de clase, un viaje, un partido de fútbol…). Explica en 1–2 frases cada relación.
-    - Preguntas de reflexión</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>  - ¿Qué podría pasar si una app no guardara la información al pasar de `onPause` a `onStop`?
-<span class="linenos" data-linenos="2 "></span>  - ¿Por qué crees que Android no garantiza siempre que se llame a `onDestroy`?
-<span class="linenos" data-linenos="3 "></span>  - ¿En qué se parecen `onPause` y `onStop` y en qué se diferencian?
-<span class="linenos" data-linenos="4 "></span>  - ¿Por qué es importante diferenciar entre estar visible y estar interactiva?
-<span class="linenos" data-linenos="5 "></span>- Resumen final: Redacta en 5–6 líneas por qué crees que el ciclo de vida es fundamental para que una app funcione correctamente en móviles, donde los recursos son limitados y el usuario cambia de tareas con frecuencia.
-</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Tareas a realizar</p>
+<ul>
+<li>Analogía personal: Crea tu propia analogía comparando cada estado del ciclo de vida de una Activity con situaciones de la vida real (puede ser un día de clase, un viaje, un partido de fútbol…). Explica en 1–2 frases cada relación.</li>
+<li>
+<p>Preguntas de reflexión</p>
+</li>
+<li>
+<p>¿Qué podría pasar si una app no guardara la información al pasar de <code>onPause</code> a <code>onStop</code>?</p>
+</li>
+<li>¿Por qué crees que Android no garantiza siempre que se llame a <code>onDestroy</code>?</li>
+<li>¿En qué se parecen <code>onPause</code> y <code>onStop</code> y en qué se diferencian?</li>
+<li>¿Por qué es importante diferenciar entre estar visible y estar interactiva?</li>
+<li>Resumen final: Redacta en 5–6 líneas por qué crees que el ciclo de vida es fundamental para que una app funcione correctamente en móviles, donde los recursos son limitados y el usuario cambia de tareas con frecuencia.</li>
+</ul>
+</div>
 <ul>
 <li><strong><abbr title="Actividades de clase.">AC</abbr> 202</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han identificado los bloques que componen la estructura de un programa informático.">CE1a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p) Reflexiona sobre la conservación del estado de una aplicación y la navegación entre Activities en Android.</li>
 </ul>
@@ -1613,21 +1621,21 @@ Ejemplo: abrir la app de correo desde la pantalla principal, o iniciar la cámar
 <ul>
 <li>¿Qué esperas que ocurra con el texto que estabas escribiendo?</li>
 <li>¿Qué sucedería si la app no guardara el estado correctamente?</li>
-<li>
-<p>¿Por qué crees que el sistema destruye y recrea la Activity en una rotación?
-  2. Escenario B: Imagina que en una app de mensajería seleccionas <strong>“Adjuntar foto”</strong>. La app abre la <strong>galería</strong> (otra Activity).</p>
+<li>¿Por qué crees que el sistema destruye y recrea la Activity en una rotación?</li>
+</ul>
 </li>
 <li>
-<p>¿Qué datos debe enviar la app de mensajería a la galería?</p>
-</li>
+<p>Escenario B: Imagina que en una app de mensajería seleccionas <strong>“Adjuntar foto”</strong>. La app abre la <strong>galería</strong> (otra Activity).</p>
+<ul>
+<li>¿Qué datos debe enviar la app de mensajería a la galería?</li>
 <li>¿Qué resultado debe devolver la galería a la app de mensajería?</li>
-<li>
-<p>¿Qué ocurre con la primera Activity mientras la segunda está activa?
-  3. Comparación</p>
+<li>¿Qué ocurre con la primera Activity mientras la segunda está activa?</li>
+</ul>
 </li>
 <li>
-<p>¿En qué se parecen los problemas de <strong>conservar estado</strong> y <strong>navegación entre Activities</strong>?</p>
-</li>
+<p>Comparación</p>
+<ul>
+<li>¿En qué se parecen los problemas de <strong>conservar estado</strong> y <strong>navegación entre Activities</strong>?</li>
 <li>¿Cómo afectan ambos al usuario si no se implementan correctamente?</li>
 </ul>
 </li>
