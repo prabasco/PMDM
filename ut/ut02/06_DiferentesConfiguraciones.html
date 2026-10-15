@@ -1344,17 +1344,19 @@
 <li><strong>Persistencia local</strong> → para datos grandes o permanentes.</li>
 </ol>
 <ul>
-<li>
-<p>Ej.: base de datos, <code>DataStore</code>, ficheros locales.
-2. <strong>Objetos retenidos en memoria</strong> → para estado de UI mientras la app está activa.</p>
-</li>
-<li>
-<p>Ej.: <code>ViewModel</code>.
-3. <strong>Estado de instancia guardada</strong> → para datos <strong>transitorios</strong> que deben sobrevivir a recreaciones.</p>
-</li>
-<li>
-<p>Ej.: <code>onSaveInstanceState(Bundle)</code> para entradas del usuario, navegación, etc.</p>
-</li>
+<li>Ej.: base de datos, <code>DataStore</code>, ficheros locales.  </li>
+</ul>
+<ol start="2">
+<li><strong>Objetos retenidos en memoria</strong> → para estado de UI mientras la app está activa.</li>
+</ol>
+<ul>
+<li>Ej.: <code>ViewModel</code>.  </li>
+</ul>
+<ol start="3">
+<li><strong>Estado de instancia guardada</strong> → para datos <strong>transitorios</strong> que deben sobrevivir a recreaciones.</li>
+</ol>
+<ul>
+<li>Ej.: <code>onSaveInstanceState(Bundle)</code> para entradas del usuario, navegación, etc.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">No te agobies</p>
