@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controles-basicos-de-android" class="md-skip">
+        <a href="#controles-basicos-de-android-con-jetpack-compose" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1127,10 +1127,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#textview" class="md-nav__link">
+  <a href="#preparacion-de-los-ejemplos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TextView
+        Preparación de los ejemplos
       
     </span>
   </a>
@@ -1138,10 +1138,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edittext" class="md-nav__link">
+  <a href="#textview-text" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EditText
+        TextView → Text
       
     </span>
   </a>
@@ -1149,10 +1149,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checkbox" class="md-nav__link">
+  <a href="#edittext-textfield-y-outlinedtextfield" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CheckBox
+        EditText → TextField y OutlinedTextField
       
     </span>
   </a>
@@ -1160,10 +1160,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#radiobutton" class="md-nav__link">
+  <a href="#checkbox-checkbox" class="md-nav__link">
     <span class="md-ellipsis">
       
-        RadioButton
+        CheckBox → Checkbox
       
     </span>
   </a>
@@ -1171,10 +1171,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#button" class="md-nav__link">
+  <a href="#radiobutton-radiobutton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Button
+        RadioButton → RadioButton
       
     </span>
   </a>
@@ -1182,10 +1182,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#togglebutton" class="md-nav__link">
+  <a href="#button-button" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ToggleButton
+        Button → Button
       
     </span>
   </a>
@@ -1193,10 +1193,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagebutton" class="md-nav__link">
+  <a href="#togglebutton-switch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ImageButton
+        ToggleButton → Switch
       
     </span>
   </a>
@@ -1204,10 +1204,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#imageview" class="md-nav__link">
+  <a href="#imagebutton-iconbutton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ImageView
+        ImageButton → IconButton
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imageview-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImageView → Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizacion-de-los-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organización de los componentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-completo-formulario-de-alumno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo completo: formulario de alumno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacion-entre-android-tradicional-y-jetpack-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparación entre Android tradicional y Jetpack Compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-fundamentales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptos fundamentales
       
     </span>
   </a>
@@ -1258,54 +1313,390 @@
 
 
 
-<h1 id="controles-basicos-de-android">Controles básicos de Android<a class="headerlink" href="#controles-basicos-de-android" title="Permanent link">¶</a></h1>
-<p>En el <a href="05_ElementosBasicos.html">apartado anterior</a> hemos visto algunos de los elementos presentes en las interfaces de usuario, pero es importante detenernos en los <strong>controles básicos</strong> que ofrece Android. Estos componentes nos permiten <strong>diseñar aplicaciones simples de manera rápida y funcional</strong>, y constituyen la base de la mayoría de <a href="04_DisenyoIU.html">interfaces gráficas</a>.</p>
-<p>Dentro de este grupo se encuentran los controles <strong>TextView, EditText, CheckBox, RadioButton, Button, ToggleButton, ImageButton e ImageView</strong>. A continuación se describen brevemente sus características principales y los parámetros más importantes para cada uno.</p>
+<h1 id="controles-basicos-de-android-con-jetpack-compose">Controles básicos de Android con Jetpack Compose<a class="headerlink" href="#controles-basicos-de-android-con-jetpack-compose" title="Permanent link">¶</a></h1>
+<p>En el <a href="05_ElementosBasicos.html">apartado anterior</a> hemos estudiado los elementos de una interfaz de usuario. Ahora veremos los <strong>controles básicos</strong> y cómo utilizarlos con <strong>Kotlin y Jetpack Compose</strong>, el sistema moderno de creación de interfaces declarativas de Android.</p>
+<p>En las interfaces tradicionales se utilizan vistas como <code>TextView</code>, <code>EditText</code>, <code>CheckBox</code>, <code>RadioButton</code>, <code>Button</code>, <code>ToggleButton</code>, <code>ImageButton</code> e <code>ImageView</code>, normalmente definidas mediante XML. En <strong>Jetpack Compose</strong> se emplean funciones <code>@Composable</code> que describen la interfaz a partir de su estado.</p>
 <ul>
-<li><a href="proyectos/ProductosApp.zip">Ejemplo de proyecto:</a></li>
+<li><a href="proyectos/ProductosApp.zip">Ejemplo de proyecto usando Jetpack Compose:</a></li>
 </ul>
-<h2 id="textview">TextView<a class="headerlink" href="#textview" title="Permanent link">¶</a></h2>
-<p>El control <strong>TextView</strong> es uno de los más utilizados y también uno de los más sencillos. Su función principal es <strong>mostrar texto en pantalla</strong>, sin que el usuario pueda modificarlo.</p>
-<p>Algunos de sus atributos más comunes son:</p>
+<div class="admonition note">
+<p class="admonition-title">Importante</p>
+<p>Los ejemplos siguientes están escritos para <strong>Jetpack Compose con Material 3</strong>, no para interfaces XML. Las funciones <code>setText()</code>, <code>getText()</code> o <code>findViewById()</code> pertenecen al enfoque tradicional basado en vistas y no son necesarias para los ejemplos de Compose.</p>
+</div>
+<h2 id="preparacion-de-los-ejemplos">Preparación de los ejemplos<a class="headerlink" href="#preparacion-de-los-ejemplos" title="Permanent link">¶</a></h2>
+<p>Crea en Android Studio un proyecto <strong>Empty Activity</strong> con Kotlin y Jetpack Compose. Los ejemplos pueden incorporarse a la función <code>setContent</code> de <code>MainActivity</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">MaterialTheme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="n">MiPantalla</span><span class="p">()</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Cada ejemplo define su propia función <code>MiPantalla()</code> o una función de demostración. <strong>Prueba los ejemplos por separado</strong>, o cambia el nombre de la función cuando combines varios en un proyecto.</p>
+<p>Los componentes Material 3 suelen importarse desde <code>androidx.compose.material3</code>, mientras que <code>remember</code>, <code>mutableStateOf</code> y <code>getValue</code>/<code>setValue</code> pertenecen a <code>androidx.compose.runtime</code>. Android Studio permite añadir los imports automáticamente con <strong>Alt + Enter</strong>.</p>
+<h2 id="textview-text">TextView → Text<a class="headerlink" href="#textview-text" title="Permanent link">¶</a></h2>
+<p>En Android tradicional, <strong><code>TextView</code></strong> muestra texto que el usuario no puede editar. En Compose se utiliza <strong><code>Text()</code></strong>.</p>
+<p>Los parámetros principales son:</p>
 <ul>
-<li><code>android:text</code> permite establecer el texto que se mostrará.</li>
-<li><code>android:background</code> define el color de fondo del texto.</li>
-<li><code>android:textColor</code> cambia el color del texto (en formato hexadecimal).</li>
-<li><code>android:textSize</code> define el tamaño del texto. Se recomienda usar la unidad <strong>sp</strong>.</li>
-<li><code>android:textStyle</code> permite establecer el estilo (negrita <code>bold</code> o cursiva <code>italic</code>).</li>
+<li><code>text</code>: texto que se muestra.</li>
+<li><code>color</code>: color del texto.</li>
+<li><code>fontSize</code>: tamaño en <code>sp</code>.</li>
+<li><code>fontWeight</code>: grosor, por ejemplo <code>FontWeight.Bold</code>.</li>
+<li><code>fontStyle</code>: estilo, por ejemplo <code>FontStyle.Italic</code>.</li>
+<li><code>modifier</code>: permite configurar tamaño, fondo, márgenes internos y otros aspectos.</li>
 </ul>
-<p>En el código, se puede cambiar el texto mediante el método <code>setText()</code>.</p>
-<h2 id="edittext">EditText<a class="headerlink" href="#edittext" title="Permanent link">¶</a></h2>
-<p>El control <strong>EditText</strong> es una <strong>caja de texto editable</strong>, utilizada para introducir datos por teclado. Se puede recuperar el texto introducido mediante el método <code>getText()</code> y establecer contenido con <code>setText()</code>.</p>
-<p>Entre sus atributos más útiles destacan:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploText</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">Text</span><span class="p">(</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Bienvenidos a Android"</span><span class="p">,</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="m">0</span><span class="n">xFF1565C0</span><span class="p">),</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">fontSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22.</span><span class="n">sp</span><span class="p">,</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">fontWeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="na">Bold</span><span class="p">,</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="p">.</span><span class="na">background</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="m">0</span><span class="n">xFFE3F2FD</span><span class="p">))</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">12.</span><span class="n">dp</span><span class="p">)</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>En Compose, para cambiar el texto se actualiza el <strong>estado</strong> del que depende <code>Text</code>, en lugar de llamar a <code>setText()</code>.</p>
+<h2 id="edittext-textfield-y-outlinedtextfield">EditText → TextField y OutlinedTextField<a class="headerlink" href="#edittext-textfield-y-outlinedtextfield" title="Permanent link">¶</a></h2>
+<p><strong><code>EditText</code></strong> es una caja editable para introducir datos. En Compose sus equivalentes más habituales son <strong><code>TextField()</code></strong> y <strong><code>OutlinedTextField()</code></strong> (con borde).</p>
+<p>Parámetros principales:</p>
 <ul>
-<li><code>android:text</code> permite definir un texto inicial.</li>
-<li><code>android:hint</code> muestra un texto semitransparente (una “pista”) dentro de la caja, el cual desaparece al hacer clic sobre ella.</li>
+<li><code>value</code>: texto actual.</li>
+<li><code>onValueChange</code>: función que recibe el texto nuevo.</li>
+<li><code>label</code>: etiqueta del campo.</li>
+<li><code>placeholder</code>: pista visible cuando el campo está vacío.</li>
+<li><code>singleLine</code>: limita la entrada a una línea.</li>
+<li><code>keyboardOptions</code>: permite sugerir un tipo de teclado.</li>
 </ul>
-<p>Este componente resulta esencial para capturar datos del usuario, como nombres, correos o contraseñas.</p>
-<h2 id="checkbox">CheckBox<a class="headerlink" href="#checkbox" title="Permanent link">¶</a></h2>
-<p>El componente <strong>CheckBox</strong> representa una <strong>casilla de verificación</strong>, con dos estados posibles: <strong>marcado</strong> (<code>true</code>) o <strong>desmarcado</strong> (<code>false</code>).
-Se usa principalmente para indicar la selección o deselección de una opción. En el código, el estado puede comprobarse mediante el método <code>isChecked()</code>, y puede modificarse con <code>setChecked(boolean)</code>.</p>
-<p>El evento más importante asociado a este control es <code>onCheckedChanged(CompoundButton checkView, boolean isChecked)</code>, que permite capturar el momento en que el usuario cambia el estado de la casilla.</p>
-<p>El parámetro <code>checkView</code> hace referencia al propio CheckBox que generó el evento.</p>
-<h2 id="radiobutton">RadioButton<a class="headerlink" href="#radiobutton" title="Permanent link">¶</a></h2>
-<p>El control <strong>RadioButton</strong> tiene un comportamiento similar al del CheckBox, pero con una diferencia clave:
-los RadioButtons suelen <strong>agruparse dentro de un <code>RadioGroup</code></strong>, lo que garantiza que <strong>solo uno puede estar seleccionado</strong> al mismo tiempo. Cuando el usuario selecciona un RadioButton, el resto del grupo se desmarcan automáticamente.</p>
-<p>Su atributo más habitual es <code>android:text</code>, con el que se asigna una etiqueta visible.</p>
-<p>El evento principal es <code>onCheckedChanged(RadioGroup group, int checkedId)</code>, que se dispara cuando cambia la selección dentro del grupo. En el código también pueden utilizarse métodos como <code>clearCheck()</code>, para dejar el grupo sin ninguna opción seleccionada.</p>
-<h2 id="button">Button<a class="headerlink" href="#button" title="Permanent link">¶</a></h2>
-<p>El <strong>Button</strong> es el control más simple y directo: un botón estándar que el usuario puede pulsar para ejecutar una acción. El evento más importante asociado es <code>onClick(View v)</code>, que se ejecuta cuando se hace clic sobre él.</p>
-<p>Este control es la base para la interacción del usuario con la aplicación.</p>
-<h2 id="togglebutton">ToggleButton<a class="headerlink" href="#togglebutton" title="Permanent link">¶</a></h2>
-<p>El <strong>ToggleButton</strong> es una variante del botón clásico que mantiene <strong>dos estados persistentes</strong>: encendido y apagado. Funciona como un interruptor, y también utiliza el evento <code>onClick(View v)</code> para capturar la acción del usuario.</p>
-<p>Para conocer el estado actual, puede usarse el método <code>isChecked()</code>, de forma similar a los CheckBox. Este tipo de control resulta útil para activar o desactivar funciones dentro de una app.</p>
-<h2 id="imagebutton">ImageButton<a class="headerlink" href="#imagebutton" title="Permanent link">¶</a></h2>
-<p>El <strong>ImageButton</strong> combina la funcionalidad del botón con una representación visual más atractiva.
-En lugar de texto, muestra una <strong>imagen</strong> que el usuario puede pulsar. El atributo <code>android:src</code> permite definir la imagen que se mostrará, generalmente almacenada dentro de la carpeta <code>/res/drawable/</code>.</p>
-<p>En esencia, un ImageButton actúa como un botón convencional, pero ofrece una presentación más visual, ideal para iconos o acciones rápidas.</p>
-<h2 id="imageview">ImageView<a class="headerlink" href="#imageview" title="Permanent link">¶</a></h2>
-<p>Por último, el control <strong>ImageView</strong> permite <strong>mostrar imágenes en la interfaz</strong> sin que el usuario pueda interactuar directamente con ellas. No tiene funcionalidad propia, aunque puede combinarse con eventos de otros controles o utilizarse como elemento decorativo o informativo.</p>
-<p>El atributo principal es <code>android:src</code>, que define la imagen a mostrar. Si se desea cambiar la imagen de forma dinámica desde el código, se puede usar el método <code>setImageResource()</code> o <code>setImageBitmap()</code>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploTextField</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">nombre</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">OutlinedTextField</span><span class="p">(</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">onValueChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s">"Nombre"</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="n">placeholder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s">"Escribe tu nombre"</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="n">singleLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Hola, </span><span class="si">$</span><span class="n">nombre</span><span class="s">"</span><span class="p">)</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p><code>remember</code> conserva el valor durante las recomposiciones y <code>mutableStateOf</code> permite que Compose observe los cambios. Para conservar el texto también ante una recreación de la actividad, como un giro de pantalla, se puede utilizar <code>rememberSaveable</code> en lugar de <code>remember</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Contraseñas</p>
+<p>Para contraseñas puede utilizarse <code>PasswordVisualTransformation()</code> con el parámetro <code>visualTransformation</code> de <code>OutlinedTextField</code>. Esto oculta visualmente los caracteres, pero no constituye por sí solo un sistema de autenticación seguro.</p>
+</div>
+<h2 id="checkbox-checkbox">CheckBox → Checkbox<a class="headerlink" href="#checkbox-checkbox" title="Permanent link">¶</a></h2>
+<p><strong><code>CheckBox</code></strong> permite seleccionar o deseleccionar una opción. En Compose se utiliza <strong><code>Checkbox()</code></strong>.</p>
+<ul>
+<li><code>checked</code>: estado booleano (<code>true</code> o <code>false</code>).</li>
+<li><code>onCheckedChange</code>: función que recibe el nuevo estado.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploCheckbox</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">aceptado</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">Row</span><span class="p">(</span><span class="n">verticalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterVertically</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Checkbox</span><span class="p">(</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">checked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aceptado</span><span class="p">,</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">onCheckedChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">aceptado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Acepto las condiciones"</span><span class="p">)</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>El valor de <code>aceptado</code> se puede consultar en cualquier parte de esta función para activar o desactivar otras acciones.</p>
+<h2 id="radiobutton-radiobutton">RadioButton → RadioButton<a class="headerlink" href="#radiobutton-radiobutton" title="Permanent link">¶</a></h2>
+<p><strong><code>RadioButton</code></strong> representa una opción dentro de un conjunto de selección exclusiva. En el sistema tradicional se agrupa dentro de <code>RadioGroup</code>. <strong>En Compose no hace falta un <code>RadioGroup</code></strong>: se comparte una única variable de estado entre todos los botones.</p>
+<ul>
+<li><code>selected</code>: indica si la opción está seleccionada.</li>
+<li><code>onClick</code>: acción que cambia la selección.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploRadioButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">opciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Kotlin"</span><span class="p">,</span><span class="w"> </span><span class="s">"Python"</span><span class="p">)</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">seleccion</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">opciones</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">Row</span><span class="p">(</span><span class="n">verticalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterVertically</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">                </span><span class="n">RadioButton</span><span class="p">(</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="w">                    </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seleccion</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">opcion</span><span class="p">,</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span><span class="w">                    </span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">seleccion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="w">                </span><span class="p">)</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="n">opcion</span><span class="p">)</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Lenguaje seleccionado: </span><span class="si">$</span><span class="n">seleccion</span><span class="s">"</span><span class="p">)</span>
+</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>La exclusividad se consigue porque <strong>todos los <code>RadioButton</code> comparan su valor con la misma variable</strong>. En una aplicación completa conviene hacer pulsable toda la fila y añadir semántica de accesibilidad al grupo.</p>
+<h2 id="button-button">Button → Button<a class="headerlink" href="#button-button" title="Permanent link">¶</a></h2>
+<p><strong><code>Button</code></strong> permite ejecutar una acción al pulsarlo. En Compose se utiliza <strong><code>Button(onClick = { ... })</code></strong>.</p>
+<p>Otros botones disponibles en Material 3 son <code>OutlinedButton</code>, <code>TextButton</code>, <code>ElevatedButton</code> y <code>FilledTonalButton</code>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">contador</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableIntStateOf</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Pulsaciones: </span><span class="si">$</span><span class="n">contador</span><span class="s">"</span><span class="p">)</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">contador</span><span class="o">++</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Pulsar"</span><span class="p">)</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Cada pulsación incrementa <code>contador</code> y Compose actualiza el texto automáticamente.</p>
+<h2 id="togglebutton-switch">ToggleButton → Switch<a class="headerlink" href="#togglebutton-switch" title="Permanent link">¶</a></h2>
+<p>En Android tradicional, <strong><code>ToggleButton</code></strong> permite mantener un estado de encendido o apagado. En Material 3 se utiliza habitualmente <strong><code>Switch()</code></strong>, que resulta apropiado para activar o desactivar una configuración.</p>
+<ul>
+<li><code>checked</code>: estado actual.</li>
+<li><code>onCheckedChange</code>: función que recibe el nuevo estado.</li>
+</ul>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploSwitch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">notificaciones</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">Row</span><span class="p">(</span><span class="n">verticalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterVertically</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Notificaciones"</span><span class="p">)</span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">Switch</span><span class="p">(</span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">checked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">notificaciones</span><span class="p">,</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="n">onCheckedChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">notificaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Si se necesita un botón que permanezca seleccionado, Material 3 también ofrece patrones de botones seleccionables; <code>Switch</code> es el equivalente más sencillo para un ajuste binario.</p>
+<h2 id="imagebutton-iconbutton">ImageButton → IconButton<a class="headerlink" href="#imagebutton-iconbutton" title="Permanent link">¶</a></h2>
+<p>En Android tradicional, <strong><code>ImageButton</code></strong> muestra una imagen pulsable. En Compose se utiliza normalmente <strong><code>IconButton()</code></strong> con un <code>Icon()</code> en su interior.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploIconButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">favorito</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">IconButton</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">favorito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">favorito</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Icon</span><span class="p">(</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">imageVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">favorito</span><span class="p">)</span><span class="w"> </span><span class="n">Icons</span><span class="p">.</span><span class="na">Filled</span><span class="p">.</span><span class="na">Favorite</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">                          </span><span class="k">else</span><span class="w"> </span><span class="n">Icons</span><span class="p">.</span><span class="na">Filled</span><span class="p">.</span><span class="na">FavoriteBorder</span><span class="p">,</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="n">contentDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">favorito</span><span class="p">)</span><span class="w"> </span><span class="s">"Quitar de favoritos"</span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="w">                                 </span><span class="k">else</span><span class="w"> </span><span class="s">"Añadir a favoritos"</span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Este ejemplo utiliza los iconos <code>Favorite</code> y <code>FavoriteBorder</code> de <code>androidx.compose.material.icons.filled</code>. <strong>Puede ser necesario añadir la dependencia <code>androidx.compose.material:material-icons-extended</code></strong> al módulo para disponer de ellos.</p>
+<p><code>contentDescription</code> facilita que los lectores de pantalla describan la acción del botón.</p>
+<h2 id="imageview-image">ImageView → Image<a class="headerlink" href="#imageview-image" title="Permanent link">¶</a></h2>
+<p><strong><code>ImageView</code></strong> muestra imágenes. En Compose se utiliza <strong><code>Image()</code></strong>, normalmente con <code>painterResource()</code> para cargar recursos de <code>res/drawable</code>.</p>
+<ul>
+<li><code>painter</code>: recurso gráfico que se muestra.</li>
+<li><code>contentDescription</code>: descripción accesible de la imagen (puede ser <code>null</code> si es decorativa).</li>
+<li><code>modifier</code>: tamaño y disposición.</li>
+<li><code>contentScale</code>: determina cómo se ajusta la imagen al espacio disponible.</li>
+</ul>
+<p>Primero añade una imagen llamada <code>paisaje.png</code> a la carpeta <code>app/src/main/res/drawable</code>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">EjemploImage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">Image</span><span class="p">(</span>
+</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">painter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">painterResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">paisaje</span><span class="p">),</span>
+</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">contentDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Paisaje de montaña"</span><span class="p">,</span>
+</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span>
+</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">()</span>
+</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="p">.</span><span class="na">height</span><span class="p">(</span><span class="m">180.</span><span class="n">dp</span><span class="p">),</span>
+</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">contentScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContentScale</span><span class="p">.</span><span class="na">Crop</span>
+</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p><code>ContentScale.Crop</code> rellena el espacio disponible y puede recortar partes de la imagen. <code>ContentScale.Fit</code> muestra la imagen completa manteniendo sus proporciones.</p>
+<p>Para imágenes descargadas de Internet se suelen utilizar bibliotecas como <strong>Coil</strong>, que permiten cargar imágenes mediante <code>AsyncImage</code>. <code>painterResource()</code> está destinado a recursos locales de la aplicación.</p>
+<h2 id="organizacion-de-los-componentes">Organización de los componentes<a class="headerlink" href="#organizacion-de-los-componentes" title="Permanent link">¶</a></h2>
+<p>En Compose, los componentes se colocan dentro de contenedores de diseño:</p>
+<table>
+<thead>
+<tr>
+<th>Contenedor</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Column</code></td>
+<td>Organiza los elementos verticalmente.</td>
+</tr>
+<tr>
+<td><code>Row</code></td>
+<td>Organiza los elementos horizontalmente.</td>
+</tr>
+<tr>
+<td><code>Box</code></td>
+<td>Permite superponer o alinear elementos dentro de un mismo espacio.</td>
+</tr>
+<tr>
+<td><code>LazyColumn</code></td>
+<td>Muestra listas verticales de forma eficiente.</td>
+</tr>
+</tbody>
+</table>
+<p>El objeto <strong><code>Modifier</code></strong> permite personalizar cada componente. Algunas funciones habituales son <code>padding(16.dp)</code>, <code>fillMaxWidth()</code>, <code>size(48.dp)</code>, <code>background(...)</code> y <code>clickable { ... }</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Unidades</p>
+<ul>
+<li><strong><code>dp</code></strong>: unidad independiente de la densidad de pantalla; se utiliza para dimensiones y espacios.</li>
+<li><strong><code>sp</code></strong>: unidad escalable para texto; tiene en cuenta las preferencias de tamaño de fuente del usuario.</li>
+</ul>
+</div>
+<h2 id="ejemplo-completo-formulario-de-alumno">Ejemplo completo: formulario de alumno<a class="headerlink" href="#ejemplo-completo-formulario-de-alumno" title="Permanent link">¶</a></h2>
+<p>El siguiente ejemplo combina texto, entrada de datos, casilla, selección exclusiva, interruptor y botón. Puede utilizarse como contenido de <code>setContent { MaterialTheme { FormularioAlumno() } }</code>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span><span class="nd">@Composable</span>
+</span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">FormularioAlumno</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">nombre</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rememberSaveable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">lenguaje</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rememberSaveable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">acepta</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rememberSaveable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">avisos</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rememberSaveable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">resultado</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rememberSaveable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-9-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">Column</span><span class="p">(</span>
+</span><span id="__span-9-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span>
+</span><span id="__span-9-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">()</span>
+</span><span id="__span-9-12"><span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">rememberScrollState</span><span class="p">())</span>
+</span><span id="__span-9-13"><span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">16.</span><span class="n">dp</span><span class="p">),</span>
+</span><span id="__span-9-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">verticalArrangement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrangement</span><span class="p">.</span><span class="na">spacedBy</span><span class="p">(</span><span class="m">12.</span><span class="n">dp</span><span class="p">)</span>
+</span><span id="__span-9-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Registro del alumno"</span><span class="p">,</span><span class="w"> </span><span class="n">fontSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24.</span><span class="n">sp</span><span class="p">)</span>
+</span><span id="__span-9-17"><span class="linenos" data-linenos="17 "></span>
+</span><span id="__span-9-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">OutlinedTextField</span><span class="p">(</span>
+</span><span id="__span-9-19"><span class="linenos" data-linenos="19 "></span><span class="w">            </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span>
+</span><span id="__span-9-20"><span class="linenos" data-linenos="20 "></span><span class="w">            </span><span class="n">onValueChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-9-21"><span class="linenos" data-linenos="21 "></span><span class="w">            </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s">"Nombre del alumno"</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-9-22"><span class="linenos" data-linenos="22 "></span><span class="w">            </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">(),</span>
+</span><span id="__span-9-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="n">singleLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-9-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-9-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-9-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Lenguaje preferido"</span><span class="p">)</span>
+</span><span id="__span-9-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">listOf</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Kotlin"</span><span class="p">).</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-9-28"><span class="linenos" data-linenos="28 "></span><span class="w">            </span><span class="n">Row</span><span class="p">(</span><span class="n">verticalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterVertically</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-29"><span class="linenos" data-linenos="29 "></span><span class="w">                </span><span class="n">RadioButton</span><span class="p">(</span>
+</span><span id="__span-9-30"><span class="linenos" data-linenos="30 "></span><span class="w">                    </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lenguaje</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">opcion</span><span class="p">,</span>
+</span><span id="__span-9-31"><span class="linenos" data-linenos="31 "></span><span class="w">                    </span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">lenguaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-32"><span class="linenos" data-linenos="32 "></span><span class="w">                </span><span class="p">)</span>
+</span><span id="__span-9-33"><span class="linenos" data-linenos="33 "></span><span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="n">opcion</span><span class="p">)</span>
+</span><span id="__span-9-34"><span class="linenos" data-linenos="34 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-9-35"><span class="linenos" data-linenos="35 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-36"><span class="linenos" data-linenos="36 "></span>
+</span><span id="__span-9-37"><span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="n">Row</span><span class="p">(</span><span class="n">verticalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterVertically</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-38"><span class="linenos" data-linenos="38 "></span><span class="w">            </span><span class="n">Checkbox</span><span class="p">(</span>
+</span><span id="__span-9-39"><span class="linenos" data-linenos="39 "></span><span class="w">                </span><span class="n">checked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acepta</span><span class="p">,</span>
+</span><span id="__span-9-40"><span class="linenos" data-linenos="40 "></span><span class="w">                </span><span class="n">onCheckedChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">acepta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-41"><span class="linenos" data-linenos="41 "></span><span class="w">            </span><span class="p">)</span>
+</span><span id="__span-9-42"><span class="linenos" data-linenos="42 "></span><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Acepto las condiciones"</span><span class="p">)</span>
+</span><span id="__span-9-43"><span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-44"><span class="linenos" data-linenos="44 "></span>
+</span><span id="__span-9-45"><span class="linenos" data-linenos="45 "></span><span class="w">        </span><span class="n">Row</span><span class="p">(</span><span class="n">verticalAlignment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="na">CenterVertically</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-46"><span class="linenos" data-linenos="46 "></span><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Recibir avisos"</span><span class="p">)</span>
+</span><span id="__span-9-47"><span class="linenos" data-linenos="47 "></span><span class="w">            </span><span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">width</span><span class="p">(</span><span class="m">12.</span><span class="n">dp</span><span class="p">))</span>
+</span><span id="__span-9-48"><span class="linenos" data-linenos="48 "></span><span class="w">            </span><span class="n">Switch</span><span class="p">(</span>
+</span><span id="__span-9-49"><span class="linenos" data-linenos="49 "></span><span class="w">                </span><span class="n">checked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">avisos</span><span class="p">,</span>
+</span><span id="__span-9-50"><span class="linenos" data-linenos="50 "></span><span class="w">                </span><span class="n">onCheckedChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">avisos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-51"><span class="linenos" data-linenos="51 "></span><span class="w">            </span><span class="p">)</span>
+</span><span id="__span-9-52"><span class="linenos" data-linenos="52 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-53"><span class="linenos" data-linenos="53 "></span>
+</span><span id="__span-9-54"><span class="linenos" data-linenos="54 "></span><span class="w">        </span><span class="n">Button</span><span class="p">(</span>
+</span><span id="__span-9-55"><span class="linenos" data-linenos="55 "></span><span class="w">            </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">.</span><span class="na">isNotBlank</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">acepta</span><span class="p">,</span>
+</span><span id="__span-9-56"><span class="linenos" data-linenos="56 "></span><span class="w">            </span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-57"><span class="linenos" data-linenos="57 "></span><span class="w">                </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Alumno: </span><span class="si">$</span><span class="n">nombre</span><span class="s"> | Lenguaje: </span><span class="si">$</span><span class="n">lenguaje</span><span class="s"> | "</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-9-58"><span class="linenos" data-linenos="58 "></span><span class="w">                    </span><span class="s">"Avisos: </span><span class="si">${</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">avisos</span><span class="p">)</span><span class="w"> </span><span class="s">"</span><span class="n">Sí</span><span class="s">"</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s">"</span><span class="n">No</span><span class="s">"</span><span class="si">}</span><span class="s">"</span>
+</span><span id="__span-9-59"><span class="linenos" data-linenos="59 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-9-60"><span class="linenos" data-linenos="60 "></span><span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-61"><span class="linenos" data-linenos="61 "></span><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Registrar"</span><span class="p">)</span>
+</span><span id="__span-9-62"><span class="linenos" data-linenos="62 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-63"><span class="linenos" data-linenos="63 "></span>
+</span><span id="__span-9-64"><span class="linenos" data-linenos="64 "></span><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</span><span id="__span-9-65"><span class="linenos" data-linenos="65 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-66"><span class="linenos" data-linenos="66 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>En este ejemplo:</p>
+<ol>
+<li><code>rememberSaveable</code> conserva los valores básicos ante recreaciones habituales de la actividad.</li>
+<li>Cada control recibe su valor actual y una función que lo actualiza.</li>
+<li>El botón solo está habilitado cuando se ha escrito un nombre y se han aceptado las condiciones.</li>
+<li>Al pulsar <strong>Registrar</strong>, el resultado aparece en pantalla sin acceder directamente a ningún componente mediante identificadores.</li>
+</ol>
+<h2 id="comparacion-entre-android-tradicional-y-jetpack-compose">Comparación entre Android tradicional y Jetpack Compose<a class="headerlink" href="#comparacion-entre-android-tradicional-y-jetpack-compose" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Android con XML (Views)</th>
+<th>Jetpack Compose</th>
+<th>Uso principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TextView</code></td>
+<td><code>Text</code></td>
+<td>Mostrar texto</td>
+</tr>
+<tr>
+<td><code>EditText</code></td>
+<td><code>TextField</code> / <code>OutlinedTextField</code></td>
+<td>Introducir texto</td>
+</tr>
+<tr>
+<td><code>CheckBox</code></td>
+<td><code>Checkbox</code></td>
+<td>Selección independiente</td>
+</tr>
+<tr>
+<td><code>RadioButton</code> + <code>RadioGroup</code></td>
+<td><code>RadioButton</code> + estado compartido</td>
+<td>Selección exclusiva</td>
+</tr>
+<tr>
+<td><code>Button</code></td>
+<td><code>Button</code></td>
+<td>Ejecutar acciones</td>
+</tr>
+<tr>
+<td><code>ToggleButton</code></td>
+<td><code>Switch</code></td>
+<td>Activar o desactivar opciones</td>
+</tr>
+<tr>
+<td><code>ImageButton</code></td>
+<td><code>IconButton</code> + <code>Icon</code></td>
+<td>Acción mediante icono</td>
+</tr>
+<tr>
+<td><code>ImageView</code></td>
+<td><code>Image</code></td>
+<td>Mostrar imágenes</td>
+</tr>
+<tr>
+<td><code>LinearLayout</code> vertical</td>
+<td><code>Column</code></td>
+<td>Distribución vertical</td>
+</tr>
+<tr>
+<td><code>LinearLayout</code> horizontal</td>
+<td><code>Row</code></td>
+<td>Distribución horizontal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conceptos-fundamentales">Conceptos fundamentales<a class="headerlink" href="#conceptos-fundamentales" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><code>@Composable</code></strong> identifica una función que describe parte de la interfaz.</li>
+<li><strong>Estado</strong>: dato que determina lo que aparece en pantalla, por ejemplo el texto de un campo o si una casilla está marcada.</li>
+<li><strong>Recomposición</strong>: Compose vuelve a ejecutar las funciones necesarias cuando cambian los estados que utilizan.</li>
+<li><strong><code>remember</code></strong>: conserva un valor entre recomposiciones, pero no garantiza conservarlo ante la recreación de la actividad.</li>
+<li><strong><code>rememberSaveable</code></strong>: conserva estados compatibles con el mecanismo de guardado de Android en recreaciones habituales.</li>
+<li><strong>Elevación del estado (<em>state hoisting</em>)</strong>: consiste en mover el estado a un componente superior y pasar a los componentes hijos el valor y las funciones de actualización.</li>
+</ul>
+<p>La idea principal de Compose es <strong>describir cómo debe verse la interfaz para un estado determinado</strong>. Cuando el estado cambia, Compose se encarga de actualizar las partes necesarias de la pantalla.</p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">¶</a></h2>
 <ul>
 <li>
