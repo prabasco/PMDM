@@ -1281,10 +1281,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#funcionamiento-basico" class="md-nav__link">
+  <a href="#1-que-es-un-adaptador" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Funcionamiento básico
+        1. ¿Qué es un adaptador?
       
     </span>
   </a>
@@ -1292,10 +1292,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tipos-de-adaptadores" class="md-nav__link">
+  <a href="#2-funcionamiento-de-listview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tipos de adaptadores
+        2. Funcionamiento de ListView
       
     </span>
   </a>
@@ -1303,10 +1303,177 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-actual" class="md-nav__link">
+  <a href="#3-primer-ejemplo-arrayadapter-con-cadenas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uso actual
+        3. Primer ejemplo: ArrayAdapter con cadenas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Primer ejemplo: ArrayAdapter con cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-diseno-de-la-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Diseño de la actividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-codigo-de-la-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Código de la actividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mostrar-objetos-adaptador-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mostrar objetos: adaptador personalizado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mostrar objetos: adaptador personalizado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-modelo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Modelo de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-diseno-de-cada-fila" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Diseño de cada fila
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-implementacion-con-baseadapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Implementación con BaseAdapter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-utilizar-el-adaptador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Utilizar el adaptador
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-actualizar-los-datos-de-una-lista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Actualizar los datos de una lista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recyclerview-alternativa-moderna-basada-en-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RecyclerView: alternativa moderna basada en vistas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. RecyclerView: alternativa moderna basada en vistas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-minimo-de-adaptador-recyclerview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo mínimo de adaptador RecyclerView
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-listas-con-jetpack-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Listas con Jetpack Compose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Listas con Jetpack Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Referencias
       
     </span>
   </a>
@@ -1431,26 +1598,331 @@
 
 
 <h1 id="adaptadores-en-android">Adaptadores en Android<a class="headerlink" href="#adaptadores-en-android" title="Permanent link">¶</a></h1>
-<p>Un <strong>adaptador</strong> es un objeto que comunica a un <strong>ListView</strong> los datos necesarios para crear las filas de la lista.
-En otras palabras, <strong>conecta la lista con una fuente de información</strong>, funcionando como un “adaptador de corriente” que alimenta de datos a la interfaz visual.</p>
-<p>Además de proporcionar la información, el adaptador también se encarga de <strong>generar los <code>View</code></strong> correspondientes a cada elemento de la lista.</p>
-<h2 id="funcionamiento-basico">Funcionamiento básico<a class="headerlink" href="#funcionamiento-basico" title="Permanent link">¶</a></h2>
-<p>Cuando se asocia un adaptador a una lista, comienza un proceso interno de comunicación para poblarla a partir de la fuente de datos.
-Este proceso se basa principalmente en los siguientes métodos del adaptador:</p>
+<h2 id="1-que-es-un-adaptador">1. ¿Qué es un adaptador?<a class="headerlink" href="#1-que-es-un-adaptador" title="Permanent link">¶</a></h2>
+<p>Un <strong>adaptador</strong> conecta una fuente de datos (por ejemplo, una lista de objetos Kotlin) con un componente visual que muestra esos datos. En la interfaz clásica de Android, <code>ListView</code> solicita al adaptador las vistas que representan cada elemento.</p>
+<p>El adaptador permite separar <strong>datos</strong> y <strong>presentación</strong>: los datos pueden cambiar sin que tengamos que construir manualmente todas las filas.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[Lista de datos] --&gt; B[Adapter]
+    B --&gt; C[ListView]
+    C --&gt; D[Filas visibles]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Android actual</p>
+<p><code>ListView</code> y sus adaptadores siguen disponibles. En interfaces basadas en vistas se suele preferir <code>RecyclerView</code>; en proyectos con <strong>Jetpack Compose</strong> se utilizan <code>LazyColumn</code> y <code>LazyRow</code>, sin necesidad de crear un <code>Adapter</code> clásico.</p>
+</div>
+<h2 id="2-funcionamiento-de-listview">2. Funcionamiento de ListView<a class="headerlink" href="#2-funcionamiento-de-listview" title="Permanent link">¶</a></h2>
+<p><code>ListView</code> consulta al adaptador cuántos elementos existen y solicita las vistas necesarias para mostrar la zona visible. Al desplazarse, puede reutilizar vistas antiguas para evitar crearlas continuamente.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getCount()</code></td>
+<td>Número de elementos disponibles.</td>
+</tr>
+<tr>
+<td><code>getItem(position)</code></td>
+<td>Obtiene el dato de una posición.</td>
+</tr>
+<tr>
+<td><code>getItemId(position)</code></td>
+<td>Devuelve el identificador <code>Long</code> de un elemento.</td>
+</tr>
+<tr>
+<td><code>getView(position, convertView, parent)</code></td>
+<td>Proporciona la vista de la fila; puede reutilizar <code>convertView</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos métodos pertenecen a la API de adaptadores clásicos. En <code>ArrayAdapter</code> varios ya están implementados; no es necesario sobrescribirlos para una lista sencilla.</p>
+<h2 id="3-primer-ejemplo-arrayadapter-con-cadenas">3. Primer ejemplo: ArrayAdapter con cadenas<a class="headerlink" href="#3-primer-ejemplo-arrayadapter-con-cadenas" title="Permanent link">¶</a></h2>
+<p>Vamos a mostrar nombres de lenguajes en una lista. Este ejemplo utiliza <strong>Kotlin y XML</strong>, no Jetpack Compose.</p>
+<h3 id="31-diseno-de-la-actividad">3.1. Diseño de la actividad<a class="headerlink" href="#31-diseno-de-la-actividad" title="Permanent link">¶</a></h3>
+<p>Archivo <code>res/layout/activity_main.xml</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="na">android:padding=</span><span class="s">"16dp"</span><span class="nt">&gt;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nt">&lt;ListView</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/listaLenguajes"</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></div>
+<h3 id="32-codigo-de-la-actividad">3.2. Código de la actividad<a class="headerlink" href="#32-codigo-de-la-actividad" title="Permanent link">¶</a></h3>
+<p>Archivo <code>MainActivity.kt</code> (ajusta el paquete al de tu proyecto):</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.app.Activity</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.ArrayAdapter</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.ListView</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.Toast</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Activity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">lenguajes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">,</span><span class="w"> </span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Python"</span><span class="p">,</span><span class="w"> </span><span class="s">"C#"</span><span class="p">)</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">ListView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">listaLenguajes</span><span class="p">)</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">adaptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayAdapter</span><span class="p">(</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="w">            </span><span class="k">this</span><span class="p">,</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">simple_list_item_1</span><span class="p">,</span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span><span class="w">            </span><span class="n">lenguajes</span>
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">lista</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">adaptador</span>
+</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span>
+</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">lista</span><span class="p">.</span><span class="na">setOnItemClickListener</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-1-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span>
+</span><span id="__span-1-24"><span class="linenos" data-linenos="24 "></span><span class="w">                </span><span class="k">this</span><span class="p">,</span>
+</span><span id="__span-1-25"><span class="linenos" data-linenos="25 "></span><span class="w">                </span><span class="s">"Seleccionado: </span><span class="si">${</span><span class="n">lenguajes</span><span class="o">[</span><span class="n">position</span><span class="o">]</span><span class="si">}</span><span class="s">"</span><span class="p">,</span>
+</span><span id="__span-1-26"><span class="linenos" data-linenos="26 "></span><span class="w">                </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span>
+</span><span id="__span-1-27"><span class="linenos" data-linenos="27 "></span><span class="w">            </span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
+</span><span id="__span-1-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-30"><span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Explicación:</strong> <code>simple_list_item_1</code> es un diseño de fila incluido en Android que contiene un <code>TextView</code>. <code>ArrayAdapter</code> transforma cada cadena en el texto de una fila. <code>setOnItemClickListener</code> permite detectar qué elemento ha pulsado el usuario.</p>
+<div class="admonition tip">
+<p class="admonition-title">Comprobación</p>
+<p>Ejecuta la aplicación y pulsa una fila. Comprueba que el mensaje cambia según el elemento seleccionado.</p>
+</div>
+<h2 id="4-mostrar-objetos-adaptador-personalizado">4. Mostrar objetos: adaptador personalizado<a class="headerlink" href="#4-mostrar-objetos-adaptador-personalizado" title="Permanent link">¶</a></h2>
+<p>Cuando una fila debe mostrar varios datos (por ejemplo, nombre y horas de un módulo), conviene definir un diseño propio y un adaptador personalizado.</p>
+<h3 id="41-modelo-de-datos">4.1. Modelo de datos<a class="headerlink" href="#41-modelo-de-datos" title="Permanent link">¶</a></h3>
+<p>Archivo <code>Modulo.kt</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Modulo</span><span class="p">(</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">nombre</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">horas</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="42-diseno-de-cada-fila">4.2. Diseño de cada fila<a class="headerlink" href="#42-diseno-de-cada-fila" title="Permanent link">¶</a></h3>
+<p>Archivo <code>res/layout/item_modulo.xml</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="na">android:padding=</span><span class="s">"12dp"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/txtNombre"</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="na">android:textSize=</span><span class="s">"18sp"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/txtHoras"</span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></div>
+<h3 id="43-implementacion-con-baseadapter">4.3. Implementación con BaseAdapter<a class="headerlink" href="#43-implementacion-con-baseadapter" title="Permanent link">¶</a></h3>
+<p>Archivo <code>ModuloAdapter.kt</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Context</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.view.LayoutInflater</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.view.View</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.view.ViewGroup</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.BaseAdapter</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">class</span><span class="w"> </span><span class="nc">ModuloAdapter</span><span class="p">(</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">contexto</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">,</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">modulos</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Modulo</span><span class="o">&gt;</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseAdapter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getCount</span><span class="p">():</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulos</span><span class="p">.</span><span class="na">size</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItem</span><span class="p">(</span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">Modulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulos</span><span class="o">[</span><span class="n">position</span><span class="o">]</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItemId</span><span class="p">(</span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="kt">Long</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">position</span><span class="p">.</span><span class="na">toLong</span><span class="p">()</span>
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getView</span><span class="p">(</span>
+</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span>
+</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">convertView</span><span class="p">:</span><span class="w"> </span><span class="n">View?,</span>
+</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">parent</span><span class="p">:</span><span class="w"> </span><span class="n">ViewGroup</span>
+</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">):</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">vista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">convertView</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="n">LayoutInflater</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">contexto</span><span class="p">)</span>
+</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span><span class="w">            </span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">item_modulo</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-4-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-4-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">modulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getItem</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+</span><span id="__span-4-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="n">vista</span><span class="p">.</span><span class="na">findViewById</span><span class="o">&lt;</span><span class="n">TextView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtNombre</span><span class="p">).</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulo</span><span class="p">.</span><span class="na">nombre</span>
+</span><span id="__span-4-29"><span class="linenos" data-linenos="29 "></span><span class="w">        </span><span class="n">vista</span><span class="p">.</span><span class="na">findViewById</span><span class="o">&lt;</span><span class="n">TextView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtHoras</span><span class="p">).</span><span class="na">text</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-4-30"><span class="linenos" data-linenos="30 "></span><span class="w">            </span><span class="s">"Duración: </span><span class="si">${</span><span class="n">modulo</span><span class="p">.</span><span class="na">horas</span><span class="si">}</span><span class="s"> horas"</span>
+</span><span id="__span-4-31"><span class="linenos" data-linenos="31 "></span>
+</span><span id="__span-4-32"><span class="linenos" data-linenos="32 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">vista</span>
+</span><span id="__span-4-33"><span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-34"><span class="linenos" data-linenos="34 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>¿Qué hace <code>convertView</code>?</strong> Si es <code>null</code>, creamos una fila inflando el XML. Si no lo es, reutilizamos la vista recibida y actualizamos su contenido. Esto reduce la creación de objetos durante el desplazamiento.</p>
+<div class="admonition warning">
+<p class="admonition-title">Identificadores</p>
+<p>En este ejemplo <code>getItemId()</code> utiliza la posición por simplicidad. En listas con elementos que se insertan, eliminan o reordenan, la posición no es un identificador estable: es preferible usar un ID propio si se necesita identidad estable.</p>
+</div>
+<h3 id="44-utilizar-el-adaptador">4.4. Utilizar el adaptador<a class="headerlink" href="#44-utilizar-el-adaptador" title="Permanent link">¶</a></h3>
+<p>Sustituye el contenido de <code>onCreate()</code> del primer ejemplo, manteniendo <code>setContentView()</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">modulos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Modulo</span><span class="p">(</span><span class="s">"Programación"</span><span class="p">,</span><span class="w"> </span><span class="m">256</span><span class="p">),</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">Modulo</span><span class="p">(</span><span class="s">"Bases de Datos"</span><span class="p">,</span><span class="w"> </span><span class="m">192</span><span class="p">),</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">Modulo</span><span class="p">(</span><span class="s">"Entornos de Desarrollo"</span><span class="p">,</span><span class="w"> </span><span class="m">96</span><span class="p">)</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos="5 "></span><span class="p">)</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos="7 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">ListView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">listaLenguajes</span><span class="p">)</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos="8 "></span><span class="n">lista</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModuloAdapter</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">modulos</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Las horas son datos de ejemplo, no una referencia curricular oficial.</p>
+<h2 id="5-actualizar-los-datos-de-una-lista">5. Actualizar los datos de una lista<a class="headerlink" href="#5-actualizar-los-datos-de-una-lista" title="Permanent link">¶</a></h2>
+<p>Si los datos cambian, la interfaz debe recibir una notificación para actualizar las filas.</p>
+<p>Ejemplo con <code>ArrayAdapter</code> y una lista mutable:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">lenguajes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">,</span><span class="w"> </span><span class="s">"Java"</span><span class="p">)</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">adaptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayAdapter</span><span class="p">(</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="k">this</span><span class="p">,</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">simple_list_item_1</span><span class="p">,</span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">lenguajes</span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span><span class="p">)</span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span><span class="n">lista</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">adaptador</span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span><span class="c1">// Añadimos un nuevo elemento mediante el adaptador.</span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="n">adaptador</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Python"</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>ArrayAdapter</code> tiene activada por defecto la notificación automática de cambios al utilizar métodos como <code>add()</code>. Si se modifica directamente una colección mutable que sirve de fuente de datos, puede ser necesario llamar a <code>notifyDataSetChanged()</code>.</p>
+<h2 id="6-recyclerview-alternativa-moderna-basada-en-vistas">6. RecyclerView: alternativa moderna basada en vistas<a class="headerlink" href="#6-recyclerview-alternativa-moderna-basada-en-vistas" title="Permanent link">¶</a></h2>
+<p><code>RecyclerView</code> separa varias responsabilidades:</p>
 <ul>
-<li><code>getCount()</code> → Retorna la cantidad total de elementos de la fuente de datos. Este valor permite al <code>ListView</code> establecer cuántos ítems debe mostrar.</li>
-<li><code>getItem()</code> → Obtiene un elemento concreto de la fuente de datos, generalmente a partir de su posición. La fuente suele ser una lista de objetos o un <code>Cursor</code>.</li>
-<li><code>getView()</code> → Retorna el <code>View</code> inflado y vinculado con los datos correspondientes a una posición específica.</li>
+<li><strong><code>RecyclerView</code></strong>: contenedor que muestra los elementos.</li>
+<li><strong><code>RecyclerView.Adapter</code></strong>: crea y vincula los elementos visuales con los datos.</li>
+<li><strong><code>ViewHolder</code></strong>: conserva referencias a las vistas de una fila.</li>
+<li><strong><code>LayoutManager</code></strong>: organiza los elementos (lista vertical, horizontal o cuadrícula).</li>
 </ul>
-<p>Aunque estos no son los únicos métodos disponibles, son los <strong>más representativos</strong> para comprender el funcionamiento de un adaptador.</p>
-<h2 id="tipos-de-adaptadores">Tipos de adaptadores<a class="headerlink" href="#tipos-de-adaptadores" title="Permanent link">¶</a></h2>
-<p>Android proporciona diversas subclases de adaptadores que facilitan su implementación.
-Una de las más comunes es <strong><code>ArrayAdapter</code></strong>, una clase genérica sencilla y flexible.</p>
-<p>Gracias a su naturaleza genérica, <code>ArrayAdapter</code> permite usar prácticamente <strong>cualquier tipo de objeto</strong> para poblar una lista.
-Este adaptador infla los ítems utilizando un <strong>layout predefinido</strong> de Android, invoca automáticamente el método <code>toString()</code> de cada elemento y lo muestra en uno o varios <code>TextView</code> según el diseño elegido.</p>
-<h2 id="uso-actual">Uso actual<a class="headerlink" href="#uso-actual" title="Permanent link">¶</a></h2>
-<p>Si bien <code>ListView</code> y <code>ArrayAdapter</code> siguen funcionando, en las versiones más recientes de Android se recomienda emplear <strong><code>RecyclerView</code></strong> junto con <strong><code>RecyclerView.Adapter</code></strong> o <strong><code>ListAdapter</code></strong>, que ofrecen un mejor rendimiento, reutilización de vistas y mayor control sobre el diseño.</p>
-<p>Sin embargo, comprender los adaptadores clásicos sigue siendo importante para <strong>entender la evolución del modelo de datos y vistas</strong> en Android.</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Lista de módulos] --&gt; B[RecyclerView.Adapter]
+    B --&gt; C[ViewHolder]
+    C --&gt; D[RecyclerView]
+    E[LinearLayoutManager] --&gt; D</code></pre>
+<p>Para utilizarlo, incorpora la dependencia <code>androidx.recyclerview:recyclerview</code> con una versión compatible con tu proyecto.</p>
+<h3 id="ejemplo-minimo-de-adaptador-recyclerview">Ejemplo mínimo de adaptador RecyclerView<a class="headerlink" href="#ejemplo-minimo-de-adaptador-recyclerview" title="Permanent link">¶</a></h3>
+<p>Reutilizaremos <code>Modulo</code> y <code>item_modulo.xml</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.view.LayoutInflater</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.view.View</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.view.ViewGroup</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.recyclerview.widget.RecyclerView</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">class</span><span class="w"> </span><span class="nc">ModuloRecyclerAdapter</span><span class="p">(</span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">modulos</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Modulo</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">ModuloRecyclerAdapter</span><span class="p">.</span><span class="na">ModuloViewHolder</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">class</span><span class="w"> </span><span class="nc">ModuloViewHolder</span><span class="p">(</span><span class="n">vista</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">ViewHolder</span><span class="p">(</span><span class="n">vista</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">nombre</span><span class="p">:</span><span class="w"> </span><span class="n">TextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vista</span><span class="p">.</span><span class="na">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtNombre</span><span class="p">)</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">horas</span><span class="p">:</span><span class="w"> </span><span class="n">TextView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vista</span><span class="p">.</span><span class="na">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtHoras</span><span class="p">)</span>
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-7-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreateViewHolder</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span><span class="w"> </span><span class="n">ViewGroup</span><span class="p">,</span><span class="w"> </span><span class="n">viewType</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">ModuloViewHolder</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">vista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LayoutInflater</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">context</span><span class="p">)</span>
+</span><span id="__span-7-17"><span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">item_modulo</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-7-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ModuloViewHolder</span><span class="p">(</span><span class="n">vista</span><span class="p">)</span>
+</span><span id="__span-7-19"><span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-7-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onBindViewHolder</span><span class="p">(</span><span class="n">holder</span><span class="p">:</span><span class="w"> </span><span class="n">ModuloViewHolder</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">modulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulos</span><span class="o">[</span><span class="n">position</span><span class="o">]</span>
+</span><span id="__span-7-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">nombre</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulo</span><span class="p">.</span><span class="na">nombre</span>
+</span><span id="__span-7-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">horas</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Duración: </span><span class="si">${</span><span class="n">modulo</span><span class="p">.</span><span class="na">horas</span><span class="si">}</span><span class="s"> horas"</span>
+</span><span id="__span-7-25"><span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-7-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getItemCount</span><span class="p">():</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulos</span><span class="p">.</span><span class="na">size</span>
+</span><span id="__span-7-28"><span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Diseño <code>activity_main.xml</code> para este ejemplo:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span><span class="nt">&lt;androidx.recyclerview.widget.RecyclerView</span>
+</span><span id="__span-8-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+</span><span id="__span-8-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="na">android:id=</span><span class="s">"@+id/recyclerModulos"</span>
+</span><span id="__span-8-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+</span><span id="__span-8-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Código de inicialización dentro de <code>onCreate()</code> después de <code>setContentView()</code>:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span><span class="kd">val</span><span class="w"> </span><span class="nv">recycler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="o">&lt;</span><span class="n">RecyclerView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">recyclerModulos</span><span class="p">)</span>
+</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span><span class="n">recycler</span><span class="p">.</span><span class="na">layoutManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinearLayoutManager</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+</span><span id="__span-9-3"><span class="linenos" data-linenos="3 "></span><span class="n">recycler</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModuloRecyclerAdapter</span><span class="p">(</span><span class="n">modulos</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Importa <code>androidx.recyclerview.widget.RecyclerView</code> y <code>androidx.recyclerview.widget.LinearLayoutManager</code>. Aquí <code>modulos</code> debe ser una lista definida previamente, como en el apartado 4.4.</p>
+<p>Para listas cuyos elementos cambian con frecuencia, <code>ListAdapter</code> y <code>DiffUtil</code> permiten calcular y aplicar cambios de forma más precisa que refrescar toda la lista.</p>
+<h2 id="7-listas-con-jetpack-compose">7. Listas con Jetpack Compose<a class="headerlink" href="#7-listas-con-jetpack-compose" title="Permanent link">¶</a></h2>
+<p>En <strong>Jetpack Compose</strong> no es necesario utilizar <code>ArrayAdapter</code>, <code>BaseAdapter</code> ni <code>RecyclerView.Adapter</code>. La lista se describe directamente mediante composables.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span>
+</span><span id="__span-10-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.LazyColumn</span>
+</span><span id="__span-10-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.items</span>
+</span><span id="__span-10-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material3.Text</span>
+</span><span id="__span-10-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span>
+</span><span id="__span-10-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-10-7"><span class="linenos" data-linenos=" 7 "></span><span class="nd">@Composable</span>
+</span><span id="__span-10-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">fun</span><span class="w"> </span><span class="nf">ListaModulos</span><span class="p">(</span><span class="n">modulos</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Modulo</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">LazyColumn</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">items</span><span class="p">(</span><span class="n">modulos</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">modulo</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-10-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-12"><span class="linenos" data-linenos="12 "></span><span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulo</span><span class="p">.</span><span class="na">nombre</span><span class="p">)</span>
+</span><span id="__span-10-13"><span class="linenos" data-linenos="13 "></span><span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Duración: </span><span class="si">${</span><span class="n">modulo</span><span class="p">.</span><span class="na">horas</span><span class="si">}</span><span class="s"> horas"</span><span class="p">)</span>
+</span><span id="__span-10-14"><span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-10-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-17"><span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p><code>LazyColumn</code> compone los elementos que necesita mostrar y utiliza claves (<code>key</code>) para mantener la identidad de cada elemento. El nombre se usa aquí como clave únicamente suponiendo que no hay nombres repetidos; en una aplicación real conviene usar un identificador único.</p>
+<h3 id="comparacion">Comparación<a class="headerlink" href="#comparacion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>ListView</th>
+<th>RecyclerView</th>
+<th>LazyColumn (Compose)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tecnología</td>
+<td>Vistas XML</td>
+<td>Vistas XML</td>
+<td>Composables Kotlin</td>
+</tr>
+<tr>
+<td>Adaptador</td>
+<td><code>ArrayAdapter</code> / <code>BaseAdapter</code></td>
+<td><code>RecyclerView.Adapter</code> / <code>ListAdapter</code></td>
+<td>No necesita adaptador clásico</td>
+</tr>
+<tr>
+<td>Reutilización</td>
+<td><code>convertView</code></td>
+<td><code>ViewHolder</code></td>
+<td>Composición diferida y reutilización interna</td>
+</tr>
+<tr>
+<td>Actualización</td>
+<td>Notificación al adaptador</td>
+<td>Notificación o <code>DiffUtil</code></td>
+<td>Recomposición a partir del estado</td>
+</tr>
+<tr>
+<td>Uso recomendado</td>
+<td>Mantenimiento y aprendizaje</td>
+<td>Interfaces basadas en vistas</td>
+<td>Proyectos nuevos con Compose</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-referencias">8. Referencias<a class="headerlink" href="#8-referencias" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://developer.android.com/reference/android/widget/Adapter">Android Developers: Adapter</a></li>
+<li><a href="https://developer.android.com/reference/android/widget/ArrayAdapter">Android Developers: ArrayAdapter</a></li>
+<li><a href="https://developer.android.com/develop/ui/views/layout/recyclerview">Android Developers: RecyclerView</a></li>
+<li><a href="https://developer.android.com/develop/ui/compose/lists">Android Developers: Listas en Compose</a></li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
