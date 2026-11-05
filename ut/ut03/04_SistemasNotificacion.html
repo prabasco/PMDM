@@ -1958,15 +1958,7 @@
 <p><code>notify()</code> solicita la publicación, pero no garantiza que el usuario vea un aviso: el canal puede estar desactivado, la importancia puede ser baja o el sistema puede aplicar restricciones. Para una app real, comprueba también el estado del canal y comunica adecuadamente los errores. El ejemplo está pensado para una actividad simple; en producción conviene separar la lógica de notificaciones de la interfaz.</p>
 </div>
 <p><strong>Flujo de ejecución:</strong></p>
-<pre class="mermaid"><code>graph TD
-    A[Usuario pulsa botón] --&gt; B{Android 13 o superior y falta permiso?}
-    B --&gt;|Sí| C[Solicitar POST_NOTIFICATIONS]
-    C --&gt; D{Permiso concedido?}
-    D --&gt;|No| E[Mostrar información en la app]
-    D --&gt;|Sí| F[Construir notificación]
-    B --&gt;|No| F
-    F --&gt; G[Comprobar avisos habilitados]
-    G --&gt; H[Solicitar publicación al sistema]</code></pre>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_14.png" data-desc-position="bottom"><img alt="Flujo ejecución notiticación Android" src="../../img/ut03/ut03_14.png"></a></p>
 <h3 id="55-acciones-cancelacion-y-actualizacion">5.5. Acciones, cancelación y actualización<a class="headerlink" href="#55-acciones-cancelacion-y-actualizacion" title="Permanent link">¶</a></h3>
 <p><code>setContentIntent(pendingIntent)</code> define qué sucede al tocar la notificación. <code>setAutoCancel(true)</code> hace que se retire al tocarla, cuando corresponde. El identificador <code>1001</code> permite <strong>actualizar</strong> una notificación publicando otra con el mismo ID o <strong>cancelarla</strong>:</p>
 <div class="language-kotlin highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="n">NotificationManagerCompat</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">contexto</span><span class="p">).</span><span class="na">cancel</span><span class="p">(</span><span class="m">1001</span><span class="p">)</span>
