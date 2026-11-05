@@ -1822,6 +1822,7 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_09.png" data-desc-position="bottom"><img alt="Permiso de las notiticaciones Android" src="../../img/ut03/ut03_09.png"></a></p>
 <h3 id="54-ejemplo-completo-una-notificacion-desde-jetpack-compose">5.4. Ejemplo completo: una notificación desde Jetpack Compose<a class="headerlink" href="#54-ejemplo-completo-una-notificacion-desde-jetpack-compose" title="Permanent link">¶</a></h3>
 <p><strong>Objetivo:</strong> pulsar un botón, solicitar permiso cuando corresponda, publicar una notificación en el canal «Recordatorios» y abrir <code>MainActivity</code> al tocarla.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_08.png" data-desc-position="bottom"><img alt="Ciclo creación notificación Android" src="../../img/ut03/ut03_08.png"></a></p>
 <p><strong>Paso 1.</strong> En <code>app/build.gradle.kts</code>, dentro de <code>dependencies</code>, añade AndroidX Core si tu proyecto no lo incluye:</p>
 <div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"androidx.core:core-ktx:1.17.0"</span><span class="p">)</span>
@@ -1835,7 +1836,6 @@
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.POST_NOTIFICATIONS"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><strong>Paso 3.</strong> Crea un recurso vectorial <code>res/drawable/ic_notificacion.xml</code> desde <strong>New &gt; Vector Asset</strong> (por ejemplo, un icono de campana). Se utilizará como icono pequeño. Para producción, utiliza un icono monocromático adecuado para la barra de estado.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_08.png" data-desc-position="bottom"><img alt="Ciclo creación notificación Android" src="../../img/ut03/ut03_08.png"></a></p>
 <p><strong>Paso 4.</strong> Código de <code>MainActivity.kt</code> (ajusta el <code>package</code>):</p>
 <div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="  1 "></span><span class="k">package</span><span class="w"> </span><span class="nn">com.example.notificaciones</span>
 </span><span id="__span-6-2"><span class="linenos" data-linenos="  2 "></span>
