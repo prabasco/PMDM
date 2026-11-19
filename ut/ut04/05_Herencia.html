@@ -1911,37 +1911,45 @@
 <li><code>genero: String</code></li>
 <li><code>historial: HistorialClinico</code></li>
 <li>Método abstracto <code>fun sonido(): String</code></li>
+<li>Método no abstracto <code>fun descripcionBasica(): String</code></li>
 <li>
-<p>Método no abstracto <code>fun descripcionBasica(): String</code>
-  2. Crea el <code>data class</code> <code>HistorialClinico(vacunasAlDia: Boolean, observaciones: String)</code>.
-  3. Implementa las subclases:</p>
+<ol start="2">
+<li>Crea el <code>data class</code> <code>HistorialClinico(vacunasAlDia: Boolean, observaciones: String)</code>.</li>
+</ol>
+</li>
+</ul>
 </li>
 <li>
-<p><strong>Perro</strong> → propiedad <code>raza: String</code>, método <code>necesitaPaseo()</code></p>
-</li>
+<p>Implementa las subclases:</p>
+<ul>
+<li><strong>Perro</strong> → propiedad <code>raza: String</code>, método <code>necesitaPaseo()</code></li>
 <li><strong>Gato</strong> → propiedad <code>color: String</code>, método <code>esPeligroso()</code></li>
-<li>
-<p><strong>Conejo</strong> → propiedad <code>peso: Double</code>, método <code>dieta()</code>
-  4. Construye una <strong>lista polimórfica</strong> de varios animales.
-  5. Implementa un composable <code>FichaAnimal(animal: Animal)</code> que muestre:</p>
+<li><strong>Conejo</strong> → propiedad <code>peso: Double</code>, método <code>dieta()</code></li>
+</ul>
 </li>
 <li>
-<p>Nombre</p>
+<p>Construye una <strong>lista polimórfica</strong> de varios animales.</p>
 </li>
+<li>
+<p>Implementa un composable <code>FichaAnimal(animal: Animal)</code> que muestre:</p>
+<ul>
+<li>Nombre</li>
 <li>Edad</li>
 <li>Género</li>
 <li>Sonido polimórfico</li>
-<li>
-<p>Historial clínico
-  6. Crea un composable <code>DetalleEspecifico(animal)</code> que, usando <code>when (animal)</code>, muestre datos específicos:</p>
-</li>
-<li>
-<p>Perro → raza, <code>necesitaPaseo()</code></p>
-</li>
-<li>Gato → color, <code>esPeligroso()</code></li>
-<li>Conejo → peso, <code>dieta()</code>
-  7. Muestra los animales en una <strong>LazyColumn</strong>, cada uno dentro de una <code>Card</code>.</li>
+<li>Historial clínico</li>
 </ul>
+</li>
+<li>
+<p>Crea un composable <code>DetalleEspecifico(animal)</code> que, usando <code>when (animal)</code>, muestre datos específicos:</p>
+<ul>
+<li>Perro → raza, <code>necesitaPaseo()</code></li>
+<li>Gato → color, <code>esPeligroso()</code></li>
+<li>Conejo → peso, <code>dieta()</code></li>
+</ul>
+</li>
+<li>
+<p>Muestra los animales en una <strong>LazyColumn</strong>, cada uno dentro de una <code>Card</code>.</p>
 </li>
 </ol>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

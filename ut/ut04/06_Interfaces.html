@@ -1937,9 +1937,11 @@ En Kotlin, una interface puede contener:</p>
 <li>Tipo de vehículo (usa <code>when</code>)</li>
 <li>Resultado de <code>despegar()</code></li>
 <li>Resultado de <code>aterrizar()</code></li>
-<li>Información del ID (<code>infoId()</code>)
-  5. Implementa otro composable:</li>
+<li>Información del ID (<code>infoId()</code>)</li>
 </ul>
+</li>
+<li>
+<p>Implementa otro composable:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>ListaVuelos(lista: List&lt;IVolar&gt;)
 </span></code></pre></div>
 <ul>
@@ -1947,20 +1949,24 @@ En Kotlin, una interface puede contener:</p>
 <li>Cada elemento debe mostrarse dentro de una <code>Card</code>
   6. La pantalla principal mostrará una lista polimórfica:</li>
 </ul>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>val lista = listOf(
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>val lista = listOf(
 </span><span id="__span-14-2"><span class="linenos" data-linenos="2 "></span>    Avion("A320", "Airbus"),
 </span><span id="__span-14-3"><span class="linenos" data-linenos="3 "></span>    Helicoptero("H700", 4),
 </span><span id="__span-14-4"><span class="linenos" data-linenos="4 "></span>    Dron("DRN-01")
 </span><span id="__span-14-5"><span class="linenos" data-linenos="5 "></span>)
 </span></code></pre></div>
-  !!! note "Se valorará"
-- Debes usar <strong>dos interfaces</strong> implementadas por varias clases.
-- Debe verse el <strong>polimorfismo</strong> en acción al llamar a <code>despegar()</code> y <code>aterrizar()</code>.
-- Usa <strong>relación de colaboración</strong> en la clase <code>Dron</code>.
-- La UI debe usar <code>LazyColumn</code>, <code>Card</code> y <code>when()</code> para distinguir tipos.
-- Usa al menos una propiedad con implementación por defecto en la interface.<p></p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Se valorará</p>
+<ul>
+<li>Debes usar <strong>dos interfaces</strong> implementadas por varias clases.</li>
+<li>Debe verse el <strong>polimorfismo</strong> en acción al llamar a <code>despegar()</code> y <code>aterrizar()</code>.</li>
+<li>Usa <strong>relación de colaboración</strong> en la clase <code>Dron</code>.</li>
+<li>La UI debe usar <code>LazyColumn</code>, <code>Card</code> y <code>when()</code> para distinguir tipos.</li>
+<li>Usa al menos una propiedad con implementación por defecto en la interface.</li>
+</ul>
+</div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
