@@ -1863,49 +1863,37 @@
 </span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>    override fun hablar() = "Miau"
 </span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>}
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span>abstract class Animal(val nombre: String) {
-</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun hablar(): String
-</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>}
-</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>class Perro(nombre: String) : Animal(nombre) {
-</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>    override fun hablar() = "Guau guau"
-</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>}
-</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>class Gato(nombre: String) : Animal(nombre) {
-</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>    override fun hablar() = "Miau"
-</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>}
-</span></code></pre></div>
 </div>
 <div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>fun FichaAnimal(animal: Animal) {
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>    Card(
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>        modifier = Modifier
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>            .fillMaxWidth()
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>            .padding(8.dp),
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>        elevation = CardDefaults.cardElevation()
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>    ) {
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>        Column(Modifier.padding(16.dp)) {
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>            Text("Animal: ${animal.nombre}")
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>            Text("Sonido: ${animal.hablar()}")
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>        }
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>    }
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span>}
+</span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
-</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>fun FichaAnimal(animal: Animal) {
-</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>    Card(
-</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>        modifier = Modifier
-</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>            .fillMaxWidth()
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>            .padding(8.dp),
-</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>        elevation = CardDefaults.cardElevation()
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>    ) {
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>        Column(Modifier.padding(16.dp)) {
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>            Text("Animal: ${animal.nombre}")
-</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>            Text("Sonido: ${animal.hablar()}")
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>fun ListaAnimales() {
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>    val animales: List&lt;Animal&gt; = listOf(
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>        Perro("Bobby"),
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>        Gato("Misu"),
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>        Perro("Toby")
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>    )
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>    LazyColumn {
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>        items(animales) { animal -&gt;
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>            FichaAnimal(animal)
 </span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>        }
 </span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    }
 </span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>}
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
-</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>fun ListaAnimales() {
-</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>    val animales: List&lt;Animal&gt; = listOf(
-</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>        Perro("Bobby"),
-</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>        Gato("Misu"),
-</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>        Perro("Toby")
-</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>    )
-</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>    LazyColumn {
-</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>        items(animales) { animal -&gt;
-</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>            FichaAnimal(animal)
-</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>        }
-</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span>    }
-</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span>}
 </span></code></pre></div>
 </div>
 </div>
