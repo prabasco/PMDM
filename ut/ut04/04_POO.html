@@ -2060,21 +2060,21 @@ El constructor tiene las siguientes características:</p>
 <p><strong><abbr title="Actividades de profundización.">AP</abbr> 417</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p). Diseña una clase <code>Rectangulo</code> con un <strong>constructor primario</strong> que reciba <code>base</code> y <code>altura</code>. Implementa un método <code>area()</code> y otro <code>esCuadrado()</code>. En <strong>Compose</strong>, crea una pantalla con dos <code>OutlinedTextField</code> para capturar base y altura, genera un objeto <code>Rectangulo</code> y muestra dinámicamente:</p>
 <ul>
 <li>el área</li>
-<li>si es cuadrado o no</li>
+<li>si es cuadrado o no
+Asegúrate de validar entradas y usar funciones puras para la lógica.</li>
 </ul>
 </li>
-</ul>
-<p>Asegúrate de validar entradas y usar funciones puras para la lógica.</p>
+<li>
+<p><strong><abbr title="Actividades de refuerzo.">AR</abbr> 418</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p). Crea un <code>data class</code> llamado <code>Alumno(val nombre: String, val nota: Double)</code> y un método dentro de la clase que indique si está <strong>APTO/NO APTO</strong> (nota ≥ 5). Implementa una lista de varios alumnos y muéstralos en una interfaz <strong>Compose con LazyColumn</strong>.
+  Cada tarjeta debe mostrar:</p>
 <ul>
-<li><strong><abbr title="Actividades de refuerzo.">AR</abbr> 418</strong> (<abbr title="Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.">RA2</abbr> / <abbr title="Se han identificado los fundamentos de la programación orientada a objetos.">CE2a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 1p). Crea un <code>data class</code> llamado <code>Alumno(val nombre: String, val nota: Double)</code> y un método dentro de la clase que indique si está <strong>APTO/NO APTO</strong> (nota ≥ 5). Implementa una lista de varios alumnos y muéstralos en una interfaz <strong>Compose con LazyColumn</strong>.
-  Cada tarjeta debe mostrar:<ul>
 <li>Nombre</li>
 <li>Nota</li>
-<li>Resultado del método (<code>APTO</code> / <code>NO APTO</code>)</li>
+<li>Resultado del método (<code>APTO</code> / <code>NO APTO</code>)
+Debes usar desestructuración (<code>val (n, _) = alumno</code>) al menos una vez en el código.</li>
 </ul>
 </li>
 </ul>
-<p>Debes usar desestructuración (<code>val (n, _) = alumno</code>) al menos una vez en el código.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
