@@ -1886,9 +1886,11 @@ En Kotlin, una interface puede contener:</p>
 <li><code>val id: String</code></li>
 <li>Método con implementación por defecto:</li>
 </ul>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>fun infoId(): String = "ID del vehículo: $id"
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>fun infoId(): String = "ID del vehículo: $id"
 </span></code></pre></div>
-  3. Implementa las siguientes clases:<p></p>
+</li>
+<li>
+<p>Implementa las siguientes clases:</p>
 <p><strong>Avion</strong></p>
 <ul>
 <li>Implementa <strong>IVolar</strong> e <strong>IIdentificable</strong>.</li>
@@ -1927,9 +1929,11 @@ En Kotlin, una interface puede contener:</p>
 </ul>
 <p><strong>Dron</strong></p>
 <ul>
-<li>Implementa <strong>IVolar</strong> e <strong>IIdentificable</strong>.
-  4. Implementa un composable:</li>
+<li>Implementa <strong>IVolar</strong> e <strong>IIdentificable</strong>.</li>
 </ul>
+</li>
+<li>
+<p>Implementa un composable:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>FichaVuelo(vehiculo: IVolar)
 </span></code></pre></div>
 <p>Debe mostrar:</p>
@@ -1946,9 +1950,11 @@ En Kotlin, una interface puede contener:</p>
 </span></code></pre></div>
 <ul>
 <li>Usa <code>LazyColumn</code></li>
-<li>Cada elemento debe mostrarse dentro de una <code>Card</code>
-  6. La pantalla principal mostrará una lista polimórfica:</li>
+<li>Cada elemento debe mostrarse dentro de una <code>Card</code></li>
 </ul>
+</li>
+<li>
+<p>La pantalla principal mostrará una lista polimórfica:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>val lista = listOf(
 </span><span id="__span-14-2"><span class="linenos" data-linenos="2 "></span>    Avion("A320", "Airbus"),
 </span><span id="__span-14-3"><span class="linenos" data-linenos="3 "></span>    Helicoptero("H700", 4),
