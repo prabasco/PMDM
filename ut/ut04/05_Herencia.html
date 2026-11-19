@@ -1731,43 +1731,42 @@
 
 <h1 id="concepto-de-herencia">Concepto de Herencia<a class="headerlink" href="#concepto-de-herencia" title="Permanent link">¶</a></h1>
 <p>La <strong>herencia</strong> permite crear nuevas clases partiendo de una clase existente. Una <strong>subclase</strong> hereda automáticamente propiedades y métodos de su <strong>clase padre</strong>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>classDiagram
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    Vehiculo &lt;|-- Auto
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    Vehiculo &lt;|-- Moto
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    Vehiculo &lt;|-- Camion
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    class Vehiculo{
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>      +marca: String
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>      +modelo: String
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>      +acelerar()
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>      +frenar()
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    }
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    class Auto{
-</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>      +numeroPuertas: Int
-</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>      +abrirMaletero()
-</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>    }
-</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>
-</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>    class Moto{
-</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span>      +tipoCasco: String
-</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span>    }
-</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>
-</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span>    class Camion{
-</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span>      +capacidadCarga: Double
-</span><span id="__span-0-24"><span class="linenos" data-linenos="24 "></span>      +descargar()
-</span><span id="__span-0-25"><span class="linenos" data-linenos="25 "></span>    }
-</span></code></pre></div>
+<pre class="mermaid"><code>classDiagram
+    Vehiculo &lt;|-- Auto
+    Vehiculo &lt;|-- Moto
+    Vehiculo &lt;|-- Camion
+
+    class Vehiculo{
+      +marca: String
+      +modelo: String
+      +acelerar()
+      +frenar()
+    }
+
+    class Auto{
+      +numeroPuertas: Int
+      +abrirMaletero()
+    }
+
+    class Moto{
+      +tipoCasco: String
+    }
+
+    class Camion{
+      +capacidadCarga: Double
+      +descargar()
+    }</code></pre>
 <h2 id="uso-en-kotlin">Uso en Kotlin<a class="headerlink" href="#uso-en-kotlin" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span>open class Vehiculo(val marca: String, val modelo: String) {
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    fun acelerar() = println("$marca $modelo acelerando...")
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    fun frenar() = println("$marca $modelo frenando...")
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>}
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>class Auto(marca: String, modelo: String, val numeroPuertas: Int)
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    : Vehiculo(marca, modelo) {
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>    fun abrirMaletero() = println("Abriendo maletero…")
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>open class Vehiculo(val marca: String, val modelo: String) {
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    fun acelerar() = println("$marca $modelo acelerando...")
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    fun frenar() = println("$marca $modelo frenando...")
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>}
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>class Auto(marca: String, modelo: String, val numeroPuertas: Int)
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    : Vehiculo(marca, modelo) {
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>    fun abrirMaletero() = println("Abriendo maletero…")
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>}
 </span></code></pre></div>
 <h2 id="herencia-vs-colaboracion">Herencia vs Colaboración<a class="headerlink" href="#herencia-vs-colaboracion" title="Permanent link">¶</a></h2>
 <p>El primer tipo de relación que habíamos visto entre dos clases, es la de colaboración. Recordemos que es cuando una clase contiene un objeto de otra clase como atributo.</p>
@@ -1776,39 +1775,38 @@
 <p>En algunas situaciones tenemos métodos y propiedades comunes a un conjunto de clases, podemos agrupar dichos métodos y propiedades en una clase abstracta.</p>
 <p>Hay una sintaxis especial en Kotlin para indicar que una clase es abstracta.</p>
 <p>No se pueden definir objetos de una clase abstracta y seguramente será heredada por otras clases de las que si podremos definir objetos.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span>classDiagram
-</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>    FiguraGeometrica &lt;|-- Circulo
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>    FiguraGeometrica &lt;|-- Rectangulo
-</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    class FiguraGeometrica{
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>      &lt;&lt;abstract&gt;&gt;
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>      +color: String
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>      +area()* Double
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    }
-</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    class Circulo{
-</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>      +radio: Double
-</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>      +area() Double
-</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>    }
-</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>
-</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>    class Rectangulo{
-</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>      +base: Double
-</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>      +altura: Double
-</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>      +area() Double
-</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span>    }
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span>abstract class FiguraGeometrica(val color: String) {
-</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun area(): Double
-</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>}
-</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>class Circulo(color: String, val radio: Double) : FiguraGeometrica(color) {
-</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>    override fun area() = Math.PI * radio * radio
-</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>}
-</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>class Rectangulo(color: String, val base: Double, val altura: Double)
-</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>    : FiguraGeometrica(color) {
-</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>    override fun area() = base * altura
-</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>}
+<pre class="mermaid"><code>classDiagram
+    FiguraGeometrica &lt;|-- Circulo
+    FiguraGeometrica &lt;|-- Rectangulo
+
+    class FiguraGeometrica{
+      &lt;&lt;abstract&gt;&gt;
+      +color: String
+      +area()* Double
+    }
+
+    class Circulo{
+      +radio: Double
+      +area() Double
+    }
+
+    class Rectangulo{
+      +base: Double
+      +altura: Double
+      +area() Double
+    }</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span>abstract class FiguraGeometrica(val color: String) {
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun area(): Double
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>}
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>class Circulo(color: String, val radio: Double) : FiguraGeometrica(color) {
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    override fun area() = Math.PI * radio * radio
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>}
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>class Rectangulo(color: String, val base: Double, val altura: Double)
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    : FiguraGeometrica(color) {
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>    override fun area() = base * altura
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>}
 </span></code></pre></div>
 <hr>
 <h2 id="que-hereda-una-subclase">¿Qué hereda una subclase?<a class="headerlink" href="#que-hereda-una-subclase" title="Permanent link">¶</a></h2>
@@ -1834,81 +1832,81 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Diagrama</label><label for="__tabbed_1_2">En Kotlin</label><label for="__tabbed_1_3">En Compose</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span>classDiagram
-</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>    Animal &lt;|-- Perro
-</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>    Animal &lt;|-- Gato
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span>classDiagram
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>    Animal &lt;|-- Perro
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>    Animal &lt;|-- Gato
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    class Animal{
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>    &lt;&lt;abstract&gt;&gt;
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>    +nombre: String
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>    +hablar()* String
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    }
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    class Perro{
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>    +hablar() String
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    }
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>    class Gato{
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>    +hablar() String
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>    }
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span>abstract class Animal(val nombre: String) {
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun hablar(): String
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>}
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>class Perro(nombre: String) : Animal(nombre) {
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>    override fun hablar() = "Guau guau"
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>}
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>class Gato(nombre: String) : Animal(nombre) {
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>    override fun hablar() = "Miau"
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>}
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span>abstract class Animal(val nombre: String) {
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun hablar(): String
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>}
 </span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>    class Animal{
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>    &lt;&lt;abstract&gt;&gt;
-</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>    +nombre: String
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>    +hablar()* String
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>    }
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>    class Perro{
-</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>    +hablar() String
-</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    }
-</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>
-</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span>    class Gato{
-</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>    +hablar() String
-</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span>    }
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>class Perro(nombre: String) : Animal(nombre) {
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>    override fun hablar() = "Guau guau"
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>}
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>class Gato(nombre: String) : Animal(nombre) {
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>    override fun hablar() = "Miau"
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>}
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span>abstract class Animal(val nombre: String) {
-</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun hablar(): String
-</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>}
-</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>class Perro(nombre: String) : Animal(nombre) {
-</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>    override fun hablar() = "Guau guau"
-</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>}
-</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>class Gato(nombre: String) : Animal(nombre) {
-</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>    override fun hablar() = "Miau"
-</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>fun FichaAnimal(animal: Animal) {
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>    Card(
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>        modifier = Modifier
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>            .fillMaxWidth()
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>            .padding(8.dp),
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>        elevation = CardDefaults.cardElevation()
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>    ) {
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>        Column(Modifier.padding(16.dp)) {
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>            Text("Animal: ${animal.nombre}")
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>            Text("Sonido: ${animal.hablar()}")
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>        }
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span>    }
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span>}
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span>abstract class Animal(val nombre: String) {
-</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>    abstract fun hablar(): String
-</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span>}
-</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span>class Perro(nombre: String) : Animal(nombre) {
-</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>    override fun hablar() = "Guau guau"
-</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>fun ListaAnimales() {
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span>    val animales: List&lt;Animal&gt; = listOf(
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>        Perro("Bobby"),
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span>        Gato("Misu"),
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>        Perro("Toby")
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>    )
 </span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>class Gato(nombre: String) : Animal(nombre) {
-</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>    override fun hablar() = "Miau"
-</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>}
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
-</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span>fun FichaAnimal(animal: Animal) {
-</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>    Card(
-</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>        modifier = Modifier
-</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span>            .fillMaxWidth()
-</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>            .padding(8.dp),
-</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>        elevation = CardDefaults.cardElevation()
-</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span>    ) {
-</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>        Column(Modifier.padding(16.dp)) {
-</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span>            Text("Animal: ${animal.nombre}")
-</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span>            Text("Sonido: ${animal.hablar()}")
-</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span>        }
-</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span>    }
-</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span>}
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
-</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span>fun ListaAnimales() {
-</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span>    val animales: List&lt;Animal&gt; = listOf(
-</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span>        Perro("Bobby"),
-</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span>        Gato("Misu"),
-</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span>        Perro("Toby")
-</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span>    )
-</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span>    LazyColumn {
-</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span>        items(animales) { animal -&gt;
-</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span>            FichaAnimal(animal)
-</span><span id="__span-8-12"><span class="linenos" data-linenos="12 "></span>        }
-</span><span id="__span-8-13"><span class="linenos" data-linenos="13 "></span>    }
-</span><span id="__span-8-14"><span class="linenos" data-linenos="14 "></span>}
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>    LazyColumn {
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>        items(animales) { animal -&gt;
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>            FichaAnimal(animal)
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>        }
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span>    }
+</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span>}
 </span></code></pre></div>
 </div>
 </div>

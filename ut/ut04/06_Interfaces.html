@@ -1730,141 +1730,140 @@ En Kotlin, una interface puede contener:</p>
 <p class="admonition-title">¿Qué es una interface?</p>
 <p>Una interface define un <strong>contrato</strong> que las clases implementadoras deben cumplir.</p>
 </div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>classDiagram
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    IVolar &lt;|.. Avion
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    IVolar &lt;|.. Helicoptero
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>    class IVolar{
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>        &lt;&lt;interface&gt;&gt;
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>        +volar(): void
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    }
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>    class Avion{
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        +volar(): void
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>    }
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>
-</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>    class Helicoptero{
-</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>        +volar(): void
-</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>    }
-</span></code></pre></div>
+<pre class="mermaid"><code>classDiagram
+    IVolar &lt;|.. Avion
+    IVolar &lt;|.. Helicoptero
+
+    class IVolar{
+        &lt;&lt;interface&gt;&gt;
+        +volar(): void
+    }
+
+    class Avion{
+        +volar(): void
+    }
+
+    class Helicoptero{
+        +volar(): void
+    }</code></pre>
 <h2 id="sintaxis-de-una-interface-en-kotlin">Sintaxis de una interface en Kotlin<a class="headerlink" href="#sintaxis-de-una-interface-en-kotlin" title="Permanent link">¶</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Implementación</label><label for="__tabbed_1_2">Interfaces con métodos implementados</label><label for="__tabbed_1_3">Interfaces con propiedades</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>interface IVolar {
-</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>    fun volar()
-</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>interface IVolar {
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>    fun volar()
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>}
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span>class Avion : IVolar {
-</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>    override fun volar() {
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>        println("El avión despega por la pista y asciende.")
-</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>    }
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>}
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>class Helicoptero : IVolar {
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>    override fun volar() {
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>        println("El helicóptero asciende verticalmente con sus hélices.")
-</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>    }
-</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>}
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>interface IVehiculo {
-</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>    fun arrancar() {
-</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span>        println("Iniciando secuencia de arranque…")
-</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span>    }
-</span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span>    fun descripcion(): String
-</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span>}
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>class Coche : IVehiculo {
-</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>    override fun descripcion() = "Vehículo de cuatro ruedas"
-</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span>class Avion : IVolar {
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    override fun volar() {
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>        println("El avión despega por la pista y asciende.")
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    }
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>}
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>class Helicoptero : IVolar {
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>    override fun volar() {
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>        println("El helicóptero asciende verticalmente con sus hélices.")
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    }
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>}
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>interface Identificable {
-</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>    val id: String
-</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span>    val tipo: String get() = "GENÉRICO"
-</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>interface IVehiculo {
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>    fun arrancar() {
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>        println("Iniciando secuencia de arranque…")
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>    }
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span>    fun descripcion(): String
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span>}
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>class Coche : IVehiculo {
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>    override fun descripcion() = "Vehículo de cuatro ruedas"
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span>}
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>interface Identificable {
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>    val id: String
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>    val tipo: String get() = "GENÉRICO"
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span>}
 </span></code></pre></div>
 </div>
 </div>
 </div>
 <h2 id="clases-implementando-varias-interfaces">Clases implementando varias interfaces<a class="headerlink" href="#clases-implementando-varias-interfaces" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>interface A { fun accionA() }
-</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>interface B { fun accionB() }
-</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span>
-</span><span id="__span-6-4"><span class="linenos" data-linenos="4 "></span>class Multi : A, B {
-</span><span id="__span-6-5"><span class="linenos" data-linenos="5 "></span>    override fun accionA() = println("Realizando A")
-</span><span id="__span-6-6"><span class="linenos" data-linenos="6 "></span>    override fun accionB() = println("Realizando B")
-</span><span id="__span-6-7"><span class="linenos" data-linenos="7 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>interface A { fun accionA() }
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>interface B { fun accionB() }
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span>class Multi : A, B {
+</span><span id="__span-5-5"><span class="linenos" data-linenos="5 "></span>    override fun accionA() = println("Realizando A")
+</span><span id="__span-5-6"><span class="linenos" data-linenos="6 "></span>    override fun accionB() = println("Realizando B")
+</span><span id="__span-5-7"><span class="linenos" data-linenos="7 "></span>}
 </span></code></pre></div>
 <h2 id="pasar-interfaces-como-parametro">Pasar interfaces como parámetro<a class="headerlink" href="#pasar-interfaces-como-parametro" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>fun hacerVolar(v: IVolar) {
-</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span>    v.volar()
-</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span>}
-</span><span id="__span-7-4"><span class="linenos" data-linenos="4 "></span>
-</span><span id="__span-7-5"><span class="linenos" data-linenos="5 "></span>fun main() {
-</span><span id="__span-7-6"><span class="linenos" data-linenos="6 "></span>    hacerVolar(Avion())
-</span><span id="__span-7-7"><span class="linenos" data-linenos="7 "></span>    hacerVolar(Helicoptero())
-</span><span id="__span-7-8"><span class="linenos" data-linenos="8 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>fun hacerVolar(v: IVolar) {
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>    v.volar()
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span>}
+</span><span id="__span-6-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos="5 "></span>fun main() {
+</span><span id="__span-6-6"><span class="linenos" data-linenos="6 "></span>    hacerVolar(Avion())
+</span><span id="__span-6-7"><span class="linenos" data-linenos="7 "></span>    hacerVolar(Helicoptero())
+</span><span id="__span-6-8"><span class="linenos" data-linenos="8 "></span>}
 </span></code></pre></div>
 <h2 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Definicion</label><label for="__tabbed_2_2">Adaptación a Jetpack Compose</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span>interface Conectable {
-</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span>    fun conectar(): Boolean
-</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span>}
-</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span>data class Sistema(val nombre: String)
-</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span>class Drone(val id: String, val sistema: Sistema) : Conectable {
-</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span>    override fun conectar(): Boolean {
-</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span>        println("Conectando drone $id al sistema ${sistema.nombre}…")
-</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span>        return true
-</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span>    }
-</span><span id="__span-8-12"><span class="linenos" data-linenos="12 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span>interface Conectable {
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span>    fun conectar(): Boolean
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>}
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span>data class Sistema(val nombre: String)
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>class Drone(val id: String, val sistema: Sistema) : Conectable {
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span>    override fun conectar(): Boolean {
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>        println("Conectando drone $id al sistema ${sistema.nombre}…")
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span>        return true
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span>    }
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span>}
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span>interface IVolar {
-</span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span>    fun volar(): String
-</span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span>}
-</span><span id="__span-9-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-9-5"><span class="linenos" data-linenos=" 5 "></span>class Avion : IVolar {
-</span><span id="__span-9-6"><span class="linenos" data-linenos=" 6 "></span>    override fun volar() = "El avión despega a gran velocidad"
-</span><span id="__span-9-7"><span class="linenos" data-linenos=" 7 "></span>}
-</span><span id="__span-9-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-9-9"><span class="linenos" data-linenos=" 9 "></span>class Helicoptero : IVolar {
-</span><span id="__span-9-10"><span class="linenos" data-linenos="10 "></span>    override fun volar() = "El helicóptero asciende verticalmente"
-</span><span id="__span-9-11"><span class="linenos" data-linenos="11 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span>interface IVolar {
+</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span>    fun volar(): String
+</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span>}
+</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span>class Avion : IVolar {
+</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span>    override fun volar() = "El avión despega a gran velocidad"
+</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span>}
+</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span>class Helicoptero : IVolar {
+</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span>    override fun volar() = "El helicóptero asciende verticalmente"
+</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span>}
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
+</span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span>fun FichaVuelo(vehiculo: IVolar) {
+</span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span>    Card(
+</span><span id="__span-9-4"><span class="linenos" data-linenos=" 4 "></span>        modifier = Modifier
+</span><span id="__span-9-5"><span class="linenos" data-linenos=" 5 "></span>            .fillMaxWidth()
+</span><span id="__span-9-6"><span class="linenos" data-linenos=" 6 "></span>            .padding(8.dp)
+</span><span id="__span-9-7"><span class="linenos" data-linenos=" 7 "></span>    ) {
+</span><span id="__span-9-8"><span class="linenos" data-linenos=" 8 "></span>        Text(
+</span><span id="__span-9-9"><span class="linenos" data-linenos=" 9 "></span>            vehiculo.volar(),
+</span><span id="__span-9-10"><span class="linenos" data-linenos="10 "></span>            modifier = Modifier.padding(16.dp),
+</span><span id="__span-9-11"><span class="linenos" data-linenos="11 "></span>            style = MaterialTheme.typography.bodyLarge
+</span><span id="__span-9-12"><span class="linenos" data-linenos="12 "></span>        )
+</span><span id="__span-9-13"><span class="linenos" data-linenos="13 "></span>    }
+</span><span id="__span-9-14"><span class="linenos" data-linenos="14 "></span>}
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
-</span><span id="__span-10-2"><span class="linenos" data-linenos=" 2 "></span>fun FichaVuelo(vehiculo: IVolar) {
-</span><span id="__span-10-3"><span class="linenos" data-linenos=" 3 "></span>    Card(
-</span><span id="__span-10-4"><span class="linenos" data-linenos=" 4 "></span>        modifier = Modifier
-</span><span id="__span-10-5"><span class="linenos" data-linenos=" 5 "></span>            .fillMaxWidth()
-</span><span id="__span-10-6"><span class="linenos" data-linenos=" 6 "></span>            .padding(8.dp)
-</span><span id="__span-10-7"><span class="linenos" data-linenos=" 7 "></span>    ) {
-</span><span id="__span-10-8"><span class="linenos" data-linenos=" 8 "></span>        Text(
-</span><span id="__span-10-9"><span class="linenos" data-linenos=" 9 "></span>            vehiculo.volar(),
-</span><span id="__span-10-10"><span class="linenos" data-linenos="10 "></span>            modifier = Modifier.padding(16.dp),
-</span><span id="__span-10-11"><span class="linenos" data-linenos="11 "></span>            style = MaterialTheme.typography.bodyLarge
-</span><span id="__span-10-12"><span class="linenos" data-linenos="12 "></span>        )
-</span><span id="__span-10-13"><span class="linenos" data-linenos="13 "></span>    }
-</span><span id="__span-10-14"><span class="linenos" data-linenos="14 "></span>}
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos=" 1 "></span>@Composable
-</span><span id="__span-11-2"><span class="linenos" data-linenos=" 2 "></span>fun ListaVuelos() {
-</span><span id="__span-11-3"><span class="linenos" data-linenos=" 3 "></span>    val objetos: List&lt;IVolar&gt; = listOf(Avion(), Helicoptero())
-</span><span id="__span-11-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-11-5"><span class="linenos" data-linenos=" 5 "></span>    LazyColumn {
-</span><span id="__span-11-6"><span class="linenos" data-linenos=" 6 "></span>        items(objetos) { obj -&gt;
-</span><span id="__span-11-7"><span class="linenos" data-linenos=" 7 "></span>            FichaVuelo(obj)
-</span><span id="__span-11-8"><span class="linenos" data-linenos=" 8 "></span>        }
-</span><span id="__span-11-9"><span class="linenos" data-linenos=" 9 "></span>    }
-</span><span id="__span-11-10"><span class="linenos" data-linenos="10 "></span>}
+</span><span id="__span-10-2"><span class="linenos" data-linenos=" 2 "></span>fun ListaVuelos() {
+</span><span id="__span-10-3"><span class="linenos" data-linenos=" 3 "></span>    val objetos: List&lt;IVolar&gt; = listOf(Avion(), Helicoptero())
+</span><span id="__span-10-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-10-5"><span class="linenos" data-linenos=" 5 "></span>    LazyColumn {
+</span><span id="__span-10-6"><span class="linenos" data-linenos=" 6 "></span>        items(objetos) { obj -&gt;
+</span><span id="__span-10-7"><span class="linenos" data-linenos=" 7 "></span>            FichaVuelo(obj)
+</span><span id="__span-10-8"><span class="linenos" data-linenos=" 8 "></span>        }
+</span><span id="__span-10-9"><span class="linenos" data-linenos=" 9 "></span>    }
+</span><span id="__span-10-10"><span class="linenos" data-linenos="10 "></span>}
 </span></code></pre></div>
 </div>
 </div>
@@ -1887,7 +1886,7 @@ En Kotlin, una interface puede contener:</p>
 </li>
 <li>Método con implementación por defecto:</li>
 </ul>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>fun infoId(): String = "ID del vehículo: $id"
+<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>fun infoId(): String = "ID del vehículo: $id"
 </span></code></pre></div>
   3. Implementa las siguientes clases:<p></p>
 <p><strong>Avion</strong></p>
@@ -1931,7 +1930,7 @@ En Kotlin, una interface puede contener:</p>
 <li>Implementa <strong>IVolar</strong> e <strong>IIdentificable</strong>.
   4. Implementa un composable:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>FichaVuelo(vehiculo: IVolar)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>FichaVuelo(vehiculo: IVolar)
 </span></code></pre></div>
 <p>Debe mostrar:</p>
 <ul>
@@ -1941,18 +1940,18 @@ En Kotlin, una interface puede contener:</p>
 <li>Información del ID (<code>infoId()</code>)
   5. Implementa otro composable:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>ListaVuelos(lista: List&lt;IVolar&gt;)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>ListaVuelos(lista: List&lt;IVolar&gt;)
 </span></code></pre></div>
 <ul>
 <li>Usa <code>LazyColumn</code></li>
 <li>Cada elemento debe mostrarse dentro de una <code>Card</code>
   6. La pantalla principal mostrará una lista polimórfica:</li>
 </ul>
-<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>val lista = listOf(
-</span><span id="__span-15-2"><span class="linenos" data-linenos="2 "></span>    Avion("A320", "Airbus"),
-</span><span id="__span-15-3"><span class="linenos" data-linenos="3 "></span>    Helicoptero("H700", 4),
-</span><span id="__span-15-4"><span class="linenos" data-linenos="4 "></span>    Dron("DRN-01")
-</span><span id="__span-15-5"><span class="linenos" data-linenos="5 "></span>)
+<p></p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>val lista = listOf(
+</span><span id="__span-14-2"><span class="linenos" data-linenos="2 "></span>    Avion("A320", "Airbus"),
+</span><span id="__span-14-3"><span class="linenos" data-linenos="3 "></span>    Helicoptero("H700", 4),
+</span><span id="__span-14-4"><span class="linenos" data-linenos="4 "></span>    Dron("DRN-01")
+</span><span id="__span-14-5"><span class="linenos" data-linenos="5 "></span>)
 </span></code></pre></div>
   !!! note "Se valorará"
 - Debes usar <strong>dos interfaces</strong> implementadas por varias clases.
